@@ -20,7 +20,7 @@
 
             <?php require 'includes/ajoutJoueur.php' ?>
 
-
+            <a href="index.php">HOME</a>
             <h3>Saisie d'un joueur</h3>
 
             <form action="<?php print $_SERVER['PHP_SELF']; ?>" method="post" enctype="multipart/form-data">
