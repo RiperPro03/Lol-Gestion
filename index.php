@@ -17,6 +17,7 @@
 </head>
 <body>
     <h1>Vous êtes connecté en tant que : <?= $_SESSION['user'];?></h1>
+    <a href="saisie-Joueur.php">Saisie Joueur</a>
     <a href="logout.php">Déconnection</a>
 </body>
 </html>
