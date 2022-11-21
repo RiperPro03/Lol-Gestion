@@ -58,7 +58,7 @@ if (!(isset($_SESSION['user']))) {
                         <td><?= $joueur['statut'] ?></td>
                         <td><?= $joueur['commentaire'] ?></td>
                         <td><a href="#?id_Joueur=<?= $joueur['id_Joueur'] ?>"><i class="fa-solid fa-pen"></i></a></td>
-                        <td><a href="#?id_Joueur=<?= $joueur['id_Joueur'] ?>"><i class="fa-solid fa-trash"></i></a></td>
+                        <td><a href="suppression-Joueur.php?id=<?= $joueur['id_Joueur'] ?>"><i class="fa-solid fa-trash"></i></a></td>
                     </tr>
 
         <?php
