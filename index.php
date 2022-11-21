@@ -49,7 +49,7 @@ if (!(isset($_SESSION['user']))) {
                     <tr>
                         <td><?= $joueur['nom'] ?></td>
                         <td><?= $joueur['prenom'] ?></td>
-                        <td><?= "<img src='./img/players/".$joueur['photo']."' width='50px' >"?></td>
+                        <td><?= "<img src='vue-img.php?id=".$joueur['photo']."' width='50px' >"?></td>
                         <td><?= $joueur['num_License'] ?></td>
                         <td><?= date('d-m-Y', strtotime($joueur['date_naissance'])); ?></td>
                         <td><?= $joueur['taille'] ?></td>
@@ -66,9 +66,10 @@ if (!(isset($_SESSION['user']))) {
             } else {
                 echo "Aucun utilisateur trouvé";
             }
-        
+            
         ?>
     </table>
+
 </body>
 
 </html>

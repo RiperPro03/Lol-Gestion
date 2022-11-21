@@ -48,7 +48,7 @@ if (isset($_POST['reponse'])) {
             <p>Voulez vous suprimer le Contact : </p>
             <p>Nom : <?= $joueur['nom'] ?></p>
             <p>Prenom : <?= $joueur['prenom'] ?></p>
-            <p><?= "<img src='./img/players/".$joueur['photo']."' width='80px' >"?></p>
+            <p><?= "<img src='vue-img.php?id=".$joueur['photo']."' width='80px' >"?></p>
             <form method="post">
                 <p>
                     <input type="submit" name="reponse" value="Oui" class="button">
