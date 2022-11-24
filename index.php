@@ -34,8 +34,9 @@ if (!(isset($_SESSION['user']))) {
             <td>Poste</td>
             <td>Statut</td>
             <td>Commentaire</td>
+            <td>Modifier</td>
             <td>Supprimer</td>
-            <td><a href="saisie-Joueur.php">Ajouter <i class="fa-solid fa-plus"></i></a></td>
+            <td><a href="saisie-Equipe.php">Ajouter <i class="fa-solid fa-plus"></i></a></td>
         </tr>
         <?php
 
@@ -49,7 +50,7 @@ if (!(isset($_SESSION['user']))) {
                     <tr>
                         <td><?= $joueur['nom'] ?></td>
                         <td><?= $joueur['prenom'] ?></td>
-                        <td><?= "<img src='vue-img.php?id=".$joueur['photo']."' width='50px' >"?></td>
+                        <td><?= "<img src='vue-img.php?img=".$joueur['photo']."' width='50px' >"?></td>
                         <td><?= $joueur['num_License'] ?></td>
                         <td><?= date('d-m-Y', strtotime($joueur['date_naissance'])); ?></td>
                         <td><?= $joueur['taille'] ?></td>
@@ -57,7 +58,7 @@ if (!(isset($_SESSION['user']))) {
                         <td><?= $joueur['poste'] ?></td>
                         <td><?= $joueur['statut'] ?></td>
                         <td><?= $joueur['commentaire'] ?></td>
-                        <td><a href="#?id_Joueur=<?= $joueur['id_Joueur'] ?>"><i class="fa-solid fa-pen"></i></a></td>
+                        <td><a href="#?id=<?= $joueur['id_Joueur'] ?>"><i class="fa-solid fa-pen"></i></a></td>
                         <td><a href="suppression-Joueur.php?id=<?= $joueur['id_Joueur'] ?>"><i class="fa-solid fa-trash"></i></a></td>
                     </tr>
 
@@ -70,6 +71,38 @@ if (!(isset($_SESSION['user']))) {
         ?>
     </table>
 
+    <table>
+        <tr class="item">
+            <td>Nom</td>
+            <td>Prénom</td>
+            <td>Modifier</td>
+            <td>Supprimer</td>
+            <td><a href="saisie-Equipe.php">Ajouter <i class="fa-solid fa-plus"></i></a></td>
+        </tr>
+        <?php
+
+            $q = $db->prepare('SELECT * FROM equipes');
+            $q->execute();
+            
+
+            if ($q->rowCount() > 0) {
+                while ($equipe = $q->fetch()) {
+        ?>
+                    <tr>
+                        <td><a href="#?id=<?= $equipe['id_Equipe'] ?>"><?= $equipe['nom'] ?></a></td>
+                        <td><?= $equipe['prefixe'] ?></td>
+                        <td><a href="modification-Equipe.php?id=<?= $equipe['id_Equipe'] ?>"><i class="fa-solid fa-pen"></i></a></td>
+                        <td><a href="suppression-Equipe.php?id=<?= $equipe['id_Equipe'] ?>"><i class="fa-solid fa-trash"></i></a></td>
+                    </tr>
+
+        <?php
+                }
+            } else {
+                echo "Aucun utilisateur trouvé";
+            }
+            
+        ?>
+    </table>
 </body>
 
 </html>

@@ -58,6 +58,8 @@
                 echo "erreur la taille ou le poids ne sont pas valide";
             }
             
+        } else {
+            echo "Veuillez erreur de saisie";
         }
     }
 ?>

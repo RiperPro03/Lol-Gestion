@@ -3,13 +3,13 @@
 
     if(isset($_GET['id']) && !empty($_GET['id'])) {
         $id = $_GET['id'];
-        $q = $db->prepare("SELECT nom, prenom, photo FROM joueurs WHERE id_Joueur = :id_Joueur");
+        $q = $db->prepare("SELECT nom, prefixe FROM equipes WHERE id_Equipe = :id_Equipe");
         $q->execute([
-            'id_Joueur' => $id
+            'id_Equipe' => $id
         ]);
         $nbc = $q->rowCount();
         if($nbc == 1) {
-            $joueur = $q->fetch();
+            $equipe = $q->fetch();
         } else {
             header("Location:index.php");
         }
@@ -22,9 +22,9 @@
         $reponse = $_POST['reponse'];
         if (strcmp($reponse,"Oui") == 0) {
             if(isset($_GET['id']) && !empty($_GET['id'])) {
-                $q = $db->prepare("DELETE FROM joueurs WHERE id_Joueur = :id_Joueur");
+                $q = $db->prepare("DELETE FROM equipes WHERE id_Equipe = :id_Equipe");
                 $q->execute([
-                    'id_Joueur' => $id
+                    'id_Equipe' => $id
                 ]);
             }
         }
@@ -38,7 +38,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LoL Gestion | Supprimer Joueur</title>
+    <title>LoL Gestion | Supprimer Equipe</title>
     <link rel="stylesheet" href="css/form-saisie.css">
     <link rel="icon" href="img/logo/lol.jpg">
 </head>
@@ -46,10 +46,9 @@
 <body>
     <div class="container">
         <div class="card">
-            <p>Voulez vous suprimer le Joueur : </p>
-            <p>Nom : <?= $joueur['nom'] ?></p>
-            <p>Prenom : <?= $joueur['prenom'] ?></p>
-            <p><?= "<img src='vue-img.php?img=".$joueur['photo']."' width='80px' >"?></p>
+            <p>Voulez vous suprimer l'équipe : </p>
+            <p>Nom : <?= $equipe['nom'] ?></p>
+            <p>Prefixe : <?= $equipe['prefixe'] ?></p>
             <form method="post">
                 <p>
                     <input type="submit" name="reponse" value="Oui" class="button">

@@ -18,7 +18,7 @@
     <div class="container">
         <div class="card">
 
-            <?php require 'includes/ajoutJoueur.php' ?>
+            <?php require 'includes/ajout-Joueur.php' ?>
 
             <a href="index.php">HOME</a>
             <h3>Saisie d'un joueur</h3>
