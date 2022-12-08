@@ -1,5 +1,5 @@
 <?php
-    include 'db.php';
+    include 'db.inc';
     global $db;
     session_start();
     if (!(isset($_SESSION['user']))) {

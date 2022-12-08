@@ -1,9 +1,26 @@
 <?php
+    if(isset($_GET['id']) && !empty($_GET['id'])) {
+        $id = $_GET['id'];
+        $q = $db->prepare("SELECT nom, prefixe FROM equipes WHERE id_Equipe = :id_Equipe");
+        $q->execute([
+            'id_Equipe' => $id
+        ]);
+        $nbc = $q->rowCount();
+        if($nbc == 1) {
+            $equipe = $q->fetch();
+        } else {
+            header("Location:index.php");
+        }
+        
+    } else {
+        header("Location:index.php");
+    }
+
     if (isset($_POST['formsend'])) {
 
         extract($_POST);
 
-        if(!empty($nom) && !empty($prenom)) {
+        if(!empty($nom) && !empty($prefixe)) {
             if(strlen($nom) <= 50 && strlen($prefixe) <= 3) {
                 $c = $db->prepare("SELECT id_Equipe FROM equipes WHERE nom = :nom AND prefixe = :prefixe AND id_Equipe != :id_Equipe");
                 $c->execute([
@@ -30,7 +47,7 @@
             }
             
         } else {
-            echo "Veuillez erreur de saisie";
+            echo "Les champ doivent être rempli";
         }
     }
 ?>

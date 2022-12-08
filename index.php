@@ -1,5 +1,5 @@
 <?php
-require 'includes/db.php';
+require 'includes/db.inc';
 global $db;
 session_start();
 if (!(isset($_SESSION['user']))) {
@@ -105,7 +105,7 @@ if (!(isset($_SESSION['user']))) {
             <?php
                 }
             } else {
-                echo "Aucun utilisateur trouvé";
+                echo "Aucune équipe trouvé";
             }
 
             ?>

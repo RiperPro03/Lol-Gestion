@@ -1,21 +1,6 @@
 <?php 
-    require 'includes/header.php';
-    if(isset($_GET['id']) && !empty($_GET['id'])) {
-        $id = $_GET['id'];
-        $q = $db->prepare("SELECT nom, prefixe FROM equipes WHERE id_Equipe = :id_Equipe");
-        $q->execute([
-            'id_Equipe' => $id
-        ]);
-        $nbc = $q->rowCount();
-        if($nbc == 1) {
-            $equipe = $q->fetch();
-        } else {
-            header("Location:index.php");
-        }
-        
-    } else {
-        header("Location:index.php");
-    }
+    require 'includes/header.inc';
+    
 ?>
 
 <!DOCTYPE html>
@@ -32,7 +17,7 @@
 <div class="container">
         <div class="card">
 
-            <?php require 'includes/modif-Equipe.php'?>
+            <?php require 'includes/modif-Equipe.inc'?>
 
             <a href="index.php">HOME</a>
             <h3>Modification d'une équipe</h3>
