@@ -23,9 +23,9 @@
                     $error = $_FILES['photo']['error'];
                     $tabExtension = explode('.', $name);
                     $extension = strtolower(end($tabExtension));
-                    $extensions = ['jpg', 'png', 'jpeg', 'gif'];
+                    $extensions = ['jpg', 'png', 'jpeg'];
 
-                    if (in_array($extension, $extensions) && $error == 0) {
+                    if (in_array($extension, $extensions) && $error == 0 && $size <= 500000) {
 
                         $uniqueName = uniqid('', true);
                         $file = $uniqueName . "." . $extension;

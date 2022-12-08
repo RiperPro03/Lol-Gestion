@@ -10,8 +10,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LoL Gestion | Saisie Joueur</title>
-    <link rel="stylesheet" href="css/form-saisie.css">
-    <link rel="icon" href="img/logo/lol.jpg">
+    <link rel="stylesheet" href="./css/form-saisie.css">
+    <link rel="icon" href="vue-img.php?img=lol.jpg">
+    
 </head>
 
 <body>
@@ -24,11 +25,6 @@
             <h3>Saisie d'un joueur</h3>
 
             <form action="<?php print $_SERVER['PHP_SELF']; ?>" method="post" enctype="multipart/form-data">
-
-                <div>
-                    <span>Photo</span>
-                    <input type="file" name="photo" required="required">
-                </div>
                 
                 <div class="inputBox">
                     <input type="text" name="nom" required="required">
@@ -59,7 +55,7 @@
                     <span>Poids</span>
                 </div>
 
-                <div>
+                <div class="box">
                     <span>Poste</span>
                     <select name="poste" required="required">
                         <choice/>
@@ -71,7 +67,7 @@
                     </select>
                 </div>
 
-                <div>
+                <div class="box">
                     <span>Statut</span>
                     <select name="statut" required="required">
                         <option value="Actif">Actif</option>
@@ -84,6 +80,11 @@
                 <div class="inputBox">
                     <input type="text" name="commentaire">
                     <span>Commentaire</span>
+                </div>
+
+                <div class="box">
+                    <span>Photo</span>
+                    <input type="file" name="photo" required="required">
                 </div>
 
                 <input type="submit" name="formsend" value="Ajouter" class="button">

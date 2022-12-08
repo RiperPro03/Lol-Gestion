@@ -26,6 +26,11 @@
                 $q->execute([
                     'id_Joueur' => $id
                 ]);
+                if (unlink("./img/players/".$joueur['photo'])) {
+                    echo "Le fichier a été supprimé avec succès.";
+                } else {
+                    echo "Il y a eu une erreur lors de la suppression du fichier.";
+                }
             }
         }
         header("Location:index.php");
@@ -40,7 +45,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LoL Gestion | Supprimer Joueur</title>
     <link rel="stylesheet" href="css/form-saisie.css">
-    <link rel="icon" href="img/logo/lol.jpg">
+    <link rel="icon" href="vue-img.php?img=lol.jpg">
 </head>
 
 <body>
