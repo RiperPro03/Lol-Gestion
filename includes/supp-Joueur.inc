@@ -1,6 +1,4 @@
 <?php
-    require 'includes/header.inc';
-
     if(isset($_GET['id']) && !empty($_GET['id'])) {
         $id = $_GET['id'];
         $q = $db->prepare("SELECT nom, prenom, photo FROM joueurs WHERE id_Joueur = :id_Joueur");

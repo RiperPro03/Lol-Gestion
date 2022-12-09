@@ -1,7 +1,7 @@
 <?php
     require 'includes/header.inc';
 
-    require 'includes/supp-Equipe.inc';
+    require 'includes/supp-Joueur.inc';
 ?>
 <!DOCTYPE html>
 <html lang="fr">

@@ -1,5 +1,5 @@
 <?php
-    require 'includes/header.inc';
+    require './includes/header.inc';
 ?>
 
 <!DOCTYPE html>
@@ -19,7 +19,7 @@
     <div class="container">
         <div class="card">
 
-            <?php require 'includes/ajout-Joueur.inc' ?>
+            <?php require 'includes/ajout-Joueur.inc';?>
 
             <a href="index.php">HOME</a>
             <h3>Saisie d'un joueur</h3>
@@ -37,8 +37,8 @@
                 </div>
 
                 <div class="inputBox">
-                    <input type="text" name="num_License" required="required">
-                    <span>N° License</span>
+                    <input type="text" name="pseudo" required="required">
+                    <span>Pseudo</span>
                 </div>
 
                 <div class="inputBox">

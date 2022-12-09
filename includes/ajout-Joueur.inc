@@ -3,7 +3,7 @@
 
         extract($_POST);
 
-        if(!empty($nom) && !empty($prenom) && !empty($num_License) && !empty($date_naissance) && 
+        if(!empty($nom) && !empty($prenom) && !empty($pseudo) && !empty($date_naissance) && 
             !empty($taille) && !empty($poids) && !empty($poste) && !empty($statut) && isset($_FILES['photo'])) {
 
             if(is_numeric($taille) && is_numeric($poids)) {
@@ -31,13 +31,13 @@
                         $file = $uniqueName . "." . $extension;
                         move_uploaded_file($tmpName, './img/players/' . $file);
 
-                        $q = $db->prepare("INSERT INTO joueurs (nom, prenom, photo, num_License, date_naissance, taille, poids, statut, commentaire, poste) 
-                                                    VALUES(:nom,:prenom,:photo,:num_License,:date_naissance,:taille,:poids,:statut,:commentaire,:poste)");
+                        $q = $db->prepare("INSERT INTO joueurs (nom, prenom, photo, pseudo, date_naissance, taille, poids, statut, commentaire, poste) 
+                                                    VALUES(:nom,:prenom,:photo,:pseudo,:date_naissance,:taille,:poids,:statut,:commentaire,:poste)");
                         $q->execute([
                             'nom' => $nom,
                             'prenom' => $prenom,
                             'photo' => $file,
-                            'num_License' => $num_License,
+                            'pseudo' => $pseudo,
                             'date_naissance' => $date_naissance,
                             'taille' => $taille,
                             'poids' => $poids,
