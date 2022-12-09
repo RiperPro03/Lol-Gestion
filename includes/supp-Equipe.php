@@ -17,7 +17,19 @@
     }
 
     if (isset($_POST['reponse'])) {
-        $reponse = $_POST['reponse'];
+
+        extract($_POST);
+
+        if (!empty($_SESSION['authToken']) && $token == $_SESSION['authToken']) {
+            if (!(time() <= $_SESSION['authTokenExpire'])) {
+                header('Location:erreur401.php');
+                exit;
+            }
+        } else {
+            echo "Erreur le TOKEN d'acceès est invalide";
+            exit;
+        }
+
         if (strcmp($reponse,"Oui") == 0) {
             if(isset($_GET['id']) && !empty($_GET['id'])) {
                 $q = $db->prepare("DELETE FROM equipes WHERE id_Equipe = :id_Equipe");

@@ -13,7 +13,11 @@
 
             if ($result) {
                 if (password_verify($lpass, $result['password'])) {
-                    $_SESSION['user'] = $luser;
+                    $_SESSION['user'] = $result['utilisateur'];
+                    $token = openssl_random_pseudo_bytes(64);
+                    $token = bin2hex($token);
+                    $_SESSION['authToken'] = $token;
+                    $_SESSION['authTokenExpire'] = time() + 3600;
                     header('Location:index.php');
                 } else {
                     echo "MDP incorrect";

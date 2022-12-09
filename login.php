@@ -2,8 +2,11 @@
     require 'includes/db.php';
     global $db;
     session_start();
-    if (isset($_SESSION['user'])) {
-        header('Location:index.php');
+    if ((isset($_SESSION['authToken']))) {
+        if ((time() <= $_SESSION['authTokenExpire'])) {
+            header('Location:index.php');
+            exit;
+        }
     }
 ?>
 
@@ -24,6 +27,7 @@
         <div class="form">
             <h2>Connexion</h2>
             <form action="<?php print $_SERVER['PHP_SELF'];?>" method="post">
+
                 <div class="inputBox">
                     <input type="text" name="luser" required="required">
                     <span>Utilisateur</span>

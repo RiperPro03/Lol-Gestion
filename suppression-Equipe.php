@@ -22,6 +22,7 @@
             <p>Nom : <?= $equipe['nom'] ?></p>
             <p>Prefixe : <?= $equipe['prefixe'] ?></p>
             <form method="post">
+                <input type="hidden" name="token" value="<?=$_SESSION['authToken']?>">
                 <p>
                     <input type="submit" name="reponse" value="Oui" class="button">
                     <input type="submit" name="reponse" value="Annuler" class="button">

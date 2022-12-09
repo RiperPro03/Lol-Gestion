@@ -1,7 +1,10 @@
 <?php
     session_start();
-    if (isset($_SESSION['user'])) {
-        header('Location:index.php');
+    if ((isset($_SESSION['authToken']))) {
+        if ((time() <= $_SESSION['authTokenExpire'])) {
+            header('Location:index.php');
+            exit;
+        }
     }
 ?>
 
@@ -12,7 +15,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LoL Gestion | Erreur 403</title>
+    <title>LoL Gestion | Erreur 401</title>
     <link rel="stylesheet" href="css/erreur.css">
     <link rel="icon" href="vue-img.php?img=logo.png">
 </head>
@@ -32,7 +35,7 @@
         </div>
     </div>
     <div class="message">
-        <h1>403 - Accès non autorisé !</h1>
+        <h1>401 - Accès non autorisé !</h1>
         <p>Oh oh, Gandalf bloque le chemin !<br />Veuillez vous connecter <a href="login.php">ici</a></p>
     </div>
 </body>

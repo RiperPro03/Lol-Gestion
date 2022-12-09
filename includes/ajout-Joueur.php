@@ -3,10 +3,20 @@
 
         extract($_POST);
 
-        if(!empty($nom) && !empty($prenom) && !empty($pseudo) && !empty($date_naissance) && 
+        if (!empty($_SESSION['authToken']) && $token == $_SESSION['authToken']) {
+            if (!(time() <= $_SESSION['authTokenExpire'])) {
+                header('Location:erreur401.php');
+                exit;
+            }
+        } else {
+            echo "Erreur le TOKEN d'acceès est invalide";
+            exit;
+        }
+
+        if (!empty($nom) && !empty($prenom) && !empty($pseudo) && !empty($date_naissance) && 
             !empty($taille) && !empty($poids) && !empty($poste) && !empty($statut) && isset($_FILES['photo'])) {
 
-            if(is_numeric($taille) && is_numeric($poids)) {
+            if (is_numeric($taille) && is_numeric($poids)) {
 
                 $c = $db->prepare("SELECT id_Joueur FROM joueurs WHERE nom = :nom AND prenom = :prenom");
                 $c->execute([

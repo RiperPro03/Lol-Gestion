@@ -26,6 +26,8 @@
 
             <form action="<?php print $_SERVER['PHP_SELF']; ?>" method="post" enctype="multipart/form-data">
                 
+                <input type="hidden" name="token" value="<?=$_SESSION['authToken']?>">
+
                 <div class="inputBox">
                     <input type="text" name="nom" required="required">
                     <span>Nom</span>

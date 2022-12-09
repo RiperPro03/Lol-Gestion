@@ -1,10 +1,5 @@
 <?php
-require 'includes/db.php';
-global $db;
-session_start();
-if (!(isset($_SESSION['user']))) {
-    header('Location:login.php');
-}
+    require 'includes/header.php';
 ?>
 <!DOCTYPE html>
 <html lang="fr">

@@ -20,8 +20,18 @@
 
         extract($_POST);
 
+        if (!empty($_SESSION['authToken']) && $token == $_SESSION['authToken']) {
+            if (!(time() <= $_SESSION['authTokenExpire'])) {
+                header('Location:erreur401.php');
+                exit;
+            }
+        } else {
+            echo "Erreur le TOKEN d'acceès est invalide";
+            exit;
+        }
+
         if(!empty($nom) && !empty($prefixe)) {
-            if(strlen($nom) <= 50 && strlen($prefixe) <= 3) {
+            if(strlen($nom) <= 50 && strlen($prefixe) <= 4) {
                 $c = $db->prepare("SELECT id_Equipe FROM equipes WHERE nom = :nom AND prefixe = :prefixe AND id_Equipe != :id_Equipe");
                 $c->execute([
                     'nom' => $nom,
