@@ -31,7 +31,7 @@ if (!(isset($_SESSION['user']))) {
                 <td>Nom</td>
                 <td>Prénom</td>
                 <td>Photo</td>
-                <td>Numéro License</td>
+                <td>Pseudo</td>
                 <td>Date de naissance</td>
                 <td>Taille</td>
                 <td>Poids</td>
