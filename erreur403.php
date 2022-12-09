@@ -14,7 +14,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LoL Gestion | Erreur 403</title>
     <link rel="stylesheet" href="css/erreur.css">
-    <link rel="icon" href="img/logo/lol.jpg">
+    <link rel="icon" href="vue-img.php?img=logo.png">
 </head>
 
 <body>

@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LoL Gestion | Saisie Equipe</title>
     <link rel="stylesheet" href="css/form-saisie.css">
-    <link rel="icon" href="vue-img.php?img=lol.jpg">
+    <link rel="icon" href="vue-img.php?img=logo.png">
 </head>
 <body>
 <div class="container">
