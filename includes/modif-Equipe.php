@@ -21,7 +21,7 @@
         extract($_POST);
 
         if (!empty($_SESSION['authToken']) && $token == $_SESSION['authToken']) {
-            if (!(time() <= $_SESSION['authTokenExpire'])) {
+            if (time() > $_SESSION['authTokenExpire']) {
                 header('Location:login.php');
                 exit;
             }
