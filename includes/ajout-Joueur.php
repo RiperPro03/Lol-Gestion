@@ -5,7 +5,7 @@
 
         if (!empty($_SESSION['authToken']) && $token == $_SESSION['authToken']) {
             if (!(time() <= $_SESSION['authTokenExpire'])) {
-                header('Location:erreur401.php');
+                header('Location:login.php');
                 exit;
             }
         } else {
@@ -62,14 +62,14 @@
                         echo "Une erreur est survenue avec la photo";
                     }
                 } else {
-                    echo "Cette personne existe déjà ";
+                    echo "Ce Joueur existe déjà";
                 }
             } else {
                 echo "erreur la taille ou le poids ne sont pas valide";
             }
             
         } else {
-            echo "Veuillez erreur de saisie";
+            echo "Les champ doivent être rempli";
         }
     }
 ?>

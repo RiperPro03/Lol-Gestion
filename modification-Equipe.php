@@ -17,9 +17,7 @@
 <div class="container">
         <div class="card">
 
-            <?php require 'includes/modif-Equipe.php';
-                echo var_dump($equipe['nom']);
-            ?>
+            <?php require 'includes/modif-Equipe.php';?>
 
             <a href="index.php">HOME</a>
             <h3>Modification d'une équipe</h3>

@@ -22,7 +22,7 @@
 
         if (!empty($_SESSION['authToken']) && $token == $_SESSION['authToken']) {
             if (!(time() <= $_SESSION['authTokenExpire'])) {
-                header('Location:erreur401.php');
+                header('Location:login.php');
                 exit;
             }
         } else {

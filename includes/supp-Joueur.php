@@ -22,7 +22,7 @@
 
         if (!empty($_SESSION['authToken']) && $token == $_SESSION['authToken']) {
             if (!(time() <= $_SESSION['authTokenExpire'])) {
-                header('Location:erreur401.php');
+                header('Location:login.php');
                 exit;
             }
         } else {
@@ -40,6 +40,7 @@
                     echo "Le fichier a été supprimé avec succès.";
                 } else {
                     echo "Il y a eu une erreur lors de la suppression du fichier.";
+                    exit;
                 }
             }
         }

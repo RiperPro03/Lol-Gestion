@@ -57,7 +57,7 @@
                         <td><?= $joueur['poste'] ?></td>
                         <td><?= $joueur['statut'] ?></td>
                         <td><?= $joueur['commentaire'] ?></td>
-                        <td><a href="#?id=<?= $joueur['id_Joueur'] ?>"><i class="fa-solid fa-pen"></i></a></td>
+                        <td><a href="modification-Joueur.php?id=<?= $joueur['id_Joueur'] ?>"><i class="fa-solid fa-pen"></i></a></td>
                         <td><a href="suppression-Joueur.php?id=<?= $joueur['id_Joueur'] ?>"><i class="fa-solid fa-trash"></i></a></td>
                     </tr>
 
