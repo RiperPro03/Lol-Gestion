@@ -1,5 +1,5 @@
 <?php 
-    require 'includes/header.inc';
+    require 'includes/header.php';
     
 ?>
 
@@ -17,7 +17,7 @@
 <div class="container">
         <div class="card">
 
-            <?php require 'includes/modif-Equipe.inc'?>
+            <?php require 'includes/modif-Equipe.php'?>
 
             <a href="index.php">HOME</a>
             <h3>Modification d'une équipe</h3>

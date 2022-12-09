@@ -1,5 +1,5 @@
 <?php
-require 'includes/db.inc';
+require 'includes/db.php';
 global $db;
 session_start();
 if (!(isset($_SESSION['user']))) {
@@ -55,7 +55,7 @@ if (!(isset($_SESSION['user']))) {
                         <td><?= $joueur['nom'] ?></td>
                         <td><?= $joueur['prenom'] ?></td>
                         <td><?= "<img src='vue-img.php?img=" . $joueur['photo'] . "' width='100px' >" ?></td>
-                        <td><?= $joueur['num_License'] ?></td>
+                        <td><?= $joueur['pseudo'] ?></td>
                         <td><?= date('d-m-Y', strtotime($joueur['date_naissance'])); ?></td>
                         <td><?= $joueur['taille'] ?></td>
                         <td><?= $joueur['poids'] ?></td>

@@ -1,5 +1,5 @@
 <?php
-    require 'includes/header.inc';
+    require 'includes/header.php';
 ?>
 
 <!DOCTYPE html>
@@ -16,7 +16,7 @@
 <div class="container">
         <div class="card">
 
-            <?php require 'includes/ajout-Equipe.inc' ?>
+            <?php require 'includes/ajout-Equipe.php' ?>
 
             <a href="index.php">HOME</a>
             <h3>Saisie d'une équipe</h3>
