@@ -36,18 +36,18 @@
         }
 
         function get_carteJoueur(){
-            return 
+            return
             '<div class="carte">
-            <div class="infoJoueur">
-                <p>Pseudo : '.$this->get_pseudo().'</p>
-                <p>Nom : '.$this->get_nom().'</p>
-                <p>Prenom : '.$this->get_prenom().'</p>
-                <p>Poste : '.$this->get_poste().'</p>
-            </div>
-            <div class="CarteImage">
-                <img src="img\players\\'.$this->get_image().'">
-            </div>
-        </div>';
+                <div class="infoJoueur">
+                    <p>Pseudo : ' . $this->get_pseudo() . '</p>
+                    <p>Nom : ' . $this->get_nom() . '</p>
+                    <p>Prenom : ' . $this->get_prenom() . '</p>
+                    <p>Poste : ' . $this->get_poste() . '</p>
+                </div>
+                <div class="CarteImage">
+                    <img src="img\players\\' . $this->get_image() . '">
+                </div>
+            </div>';
         }
     }
 ?>
