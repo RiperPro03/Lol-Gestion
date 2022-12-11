@@ -4,18 +4,19 @@
     font-family: Avenir, sans-serif;
 }
 body{
-    background-color:#165286b7;
+    background-color:#041a2d;
+    color: #ffffff;
 }
 header {
     max-width: 1200px;
-    margin: auto;
-
-  
+    height: 60px;
+    margin: 0 auto;
+    position: sticky;
 }
+
 nav{
     width: 100%;
     margin: 0 auto;
-    background-color: white;
     position: sticky;
     top: 0px;
 }
@@ -34,12 +35,25 @@ nav ul li{
 nav a{
     display: block;
     text-decoration: none;
-    color: black;
+    color: #bfcbce;
     border-bottom: 2px solid transparent;
     padding: 10px 0px;
 }
 
 nav a:hover{
-    color: rgb(28, 10, 162);
+    color: #ffffff;
     border-bottom: 2px solid rgb(106, 0, 255);
 }
+
+.corps{
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+}
+
+.corps div{
+    max-width: 45%;
+    margin: 2.5%;
+}
+
+
