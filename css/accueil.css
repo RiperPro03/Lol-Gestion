@@ -51,9 +51,31 @@ nav a:hover{
     display: flex;
 }
 
-.corps div{
-    max-width: 45%;
+.listeJoueurs{
+    width: 45%;
+    margin: 2.5%;
+}
+
+.historique{
+    width: 45%;
     margin: 2.5%;
 }
 
 
+/*css des cartes de joueurs*/
+.carte{
+    width: auto;
+    background-color: #687578;
+    border-radius: 2em;
+    display: flex;
+    padding: 3%;
+}
+
+.infoJoueur{
+    width: 50%;
+}
+
+.CarteImage{
+    width: 50%;
+}
+/* fin du css des cartes de joueurs*/

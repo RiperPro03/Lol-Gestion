@@ -1,3 +1,7 @@
+<?php
+    require 'includes/CarteJoueur.php';
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -26,9 +30,11 @@
     </header>
     <div class="corps">
         <div class="listeJoueurs">
-            <p>test Lorem ipsum dolor sit, amet consectetur adipisicing elit. Enim delectus odio, tempora necessitatibus eveniet et beatae fuga sunt ipsam veniam! Nihil voluptatem unde quisquam voluptates eos dicta, laboriosam natus voluptas!</p>
+            <?php $joueur = new CarteJoueur('Sang-hyeok','Lee','Faker','Mid','637a7214430be5.13956557.png'); 
+            echo $joueur->get_carteJoueur();
+            ?>
         </div>
-        <div class="Historique">
+        <div class="historique">
             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quibusdam rerum accusamus ea pariatur, mollitia laboriosam explicabo? Nesciunt quos incidunt corporis optio nemo odio, id exercitationem aperiam vero sit voluptatibus perspiciatis.</p>
         </div>
     </div>
