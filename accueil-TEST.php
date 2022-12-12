@@ -13,6 +13,7 @@
 </head>
 <body>
     <header>
+        <img src="vue-img.php?img=logo.png" class="logo">
         <nav>
             <ul>
                <li> <a href="">Joueurs</a></li>
@@ -32,10 +33,14 @@
         <div class="listeJoueurs">
             <?php $joueur = new CarteJoueur('Sang-hyeok','Lee','Faker','Mid','637a7214430be5.13956557.png'); 
             echo $joueur->get_carteJoueur();
+            $joueur = new CarteJoueur('Heo', 'Su','ShowMaker','Mid','637a95e14c6109.56237078.png');
+            echo $joueur->get_carteJoueur();
             ?>
         </div>
         <div class="historique">
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quibusdam rerum accusamus ea pariatur, mollitia laboriosam explicabo? Nesciunt quos incidunt corporis optio nemo odio, id exercitationem aperiam vero sit voluptatibus perspiciatis.</p>
+            <div>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quibusdam rerum accusamus ea pariatur, mollitia laboriosam explicabo? Nesciunt quos incidunt corporis optio nemo odio, id exercitationem aperiam vero sit voluptatibus perspiciatis.</p>
+        </div>
         </div>
     </div>
 </body>

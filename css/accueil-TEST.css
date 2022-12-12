@@ -4,18 +4,20 @@
     font-family: Avenir, sans-serif;
 }
 body{
-    background-color:#041a2d;
+    background-color:#031e32;
     color: #ffffff;
 }
-header {
-    max-width: 1200px;
-    height: 60px;
-    margin: 0 auto;
-    position: sticky;
-}
 
+.logo{
+    height: 40px;
+}
+header {
+    display: flex;
+}
 nav{
+    height: 60px;
     width: 100%;
+    max-width: 1200px;
     margin: 0 auto;
     position: sticky;
     top: 0px;
@@ -42,7 +44,7 @@ nav a{
 
 nav a:hover{
     color: #ffffff;
-    border-bottom: 2px solid rgb(106, 0, 255);
+    border-bottom: 2px solid #947702;
 }
 
 .corps{
@@ -58,17 +60,28 @@ nav a:hover{
 
 .historique{
     width: 45%;
+    
     margin: 2.5%;
+}
+
+.historique div{
+    background-color: #687578;
+    border-radius: 20px;
+    padding: 2%;
 }
 
 
 /*css des cartes de joueurs*/
 .carte{
     width: auto;
-    background-color: #687578;
+    background-color: #3f0d0d;
+    border-color: #787003;
+    border-width: 5px;
+    border-style: double;
     border-radius: 2em;
     display: flex;
     padding: 3%;
+    margin-bottom: 5%;
 }
 
 .infoJoueur{
@@ -77,6 +90,11 @@ nav a:hover{
 
 .CarteImage {
     width: 30%;
+    border-top-left-radius: 30%;
+    border-top-right-radius: 30%;
+    border-bottom-left-radius: 5%;
+    border-bottom-right-radius: 5%;
+    background-color: #031337;
 }
 
 /* fin du css des cartes de joueurs*/
