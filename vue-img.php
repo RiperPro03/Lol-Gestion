@@ -10,7 +10,7 @@
             echo file_get_contents($chemin);
 
         } else {
-            $chemin = "img/logo/".$_GET['img'];
+            $chemin = "img/content/".$_GET['img'];
             if (file_exists($chemin)) {
                 echo file_get_contents($chemin);
             } else {
