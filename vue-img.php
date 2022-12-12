@@ -1,8 +1,9 @@
 <?php
+    /*
     session_start();
     if (!(isset($_SESSION['user']))) {
         header('Location:login.php');
-    }
+    }*/
 
     if(isset($_GET['img']) && !empty($_GET['img'])) {
         $chemin = "img/players/".$_GET['img'];

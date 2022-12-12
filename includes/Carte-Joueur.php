@@ -45,7 +45,7 @@
                     <p>Poste : ' . $this->get_poste() . '</p>
                 </div>
                 <div class="CarteImage">
-                    <img src="img\players\\' . $this->get_image() . '">
+                    <img src="vue-img.php?img=' . $this->get_image() . '"style="width:100%;">
                 </div>
             </div>';
         }
