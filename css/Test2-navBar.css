@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: Avenir, sans-serif;
 }
 
 :root{
@@ -12,7 +13,7 @@ body{
     min-height: 100vh;
     background-image: linear-gradient(130deg,#031e32,#022d3b,#031e32);
 }
-
+/* barre de navigation sur le coté gauche*/
 .navigation{
     position: fixed;
     inset: 0 0 0 0 ;
@@ -155,3 +156,4 @@ body{
     display: inline-flex;
     width: 25px;
 }
+/* fin de la barre de navigation*/

@@ -1,7 +1,3 @@
-<?php
-    require 'includes/Carte-Joueur.php';
-?>
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -12,6 +8,7 @@
     <link rel="stylesheet" href="css/Test2-navBar.css">
 </head>
 <body>
+    <!--debut de la barre de navigation -->
     <nav class="navigation">
         <div class="menuDeroulant"></div>
         <ul>
@@ -61,5 +58,10 @@
         }
         list.forEach((item) => item.addEventListener('click',activeLink));
     </script>
+    <!--fin de la barre de navigation -->
+    <!--debut de la partie centrale -->
+    <div class="corps">
+
+    </div>
 </body>
 </html>

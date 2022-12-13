@@ -1,75 +1,198 @@
 *{
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
     font-family: Avenir, sans-serif;
 }
+
+:root{
+    --bg : #031e32;
+}
+
 body{
-    background-color:#031e32;
-    color: #ffffff;
+    min-height: 100vh;
+    background-image: linear-gradient(130deg,#031e32,#022d3b,#031e32);
 }
-
-.logo{
-    height: 40px;
-}
-header {
+/* barre de navigation sur le coté gauche*/
+.navigation{
+    position: fixed;
+    inset: 0 0 0 0 ;
+    background: #fff;
+    width: 75px;
     display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+
 }
-nav{
-    height: 60px;
+
+.navigation.active{
+    width: 250px;
+
+}
+
+.menuDeroulant{
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    position: sticky;
-    top: 0px;
+    padding: 0 23px;
+    height: 60px;
+    border-bottom:1px solid #2f2f2f;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    cursor: pointer;
+}
+.menuDeroulant::before{
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 2px;
+    background: #333;
+    transform: translateY(-8px);
+    transition: 0.5s;
 }
 
-nav ul{
-    list-style-type: none;
+.navigation.active .menuDeroulant::before{
+    transform: translateY(0) rotate(45deg);
+    
 }
 
-nav ul li{
-    float: left;
-    width: 25%;
-    text-align: center;
+.menuDeroulant::after{
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 2px;
+    background: #333;
+    transform: translateY(8px);
+    box-shadow: 0 -8px 0 #333;
+    transition: 0.5s;
+}
+
+.navigation.active .menuDeroulant::after{
+    transform: translateY(0) rotate(-45deg);
+    box-shadow: 0 0 0;
+    
+}
+
+.navigation ul{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.navigation ul li {
+    list-style: none;
     position: relative;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+    height: 76px;
+    border-radius: 12px;
+    border: 8px solid transparent;
+    transition: 0.5s;
 }
 
-nav a{
-    display: block;
+.navigation.active ul li {
+    width: 85%;
+}
+
+.navigation ul li.active {
+    transform: translateX(30px);
+    background: var(--bg);
+}
+
+.navigation ul li a{
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    text-align: center;
     text-decoration: none;
-    color: #bfcbce;
-    border-bottom: 2px solid transparent;
-    padding: 10px 0px;
+    z-index: 1000;
 }
 
-nav a:hover{
-    color: #ffffff;
-    border-bottom: 2px solid #947702;
+
+
+.navigation ul li a .icone{
+    position: relative;
+    display: block;
+    height: 100%;
+    min-width: 60px;
+    border-radius: 10px;
+    background: #fff;
+    font-size: 1.75em;
+    line-height: 50px;
+    border: 6px solid transparent;
 }
 
+.navigation ul li.active a .icone{
+    background: var(--clr);
+}
+
+.navigation ul li.active a .texte{
+    color: #fff;
+}
+
+.navigation ul li a .texte{
+    position: relative;
+    padding: 0 15px;
+    color: #333;
+    display: flex;
+    align-items: center;
+    height: 60px;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.navigation.active ul li a .texte{
+    opacity: 1;
+    visibility: visible;
+}
+
+.navigation ul li a .icone div {
+    display: inline-flex;
+    width: 25px;
+}
+/* fin de la barre de navigation*/
+
+/*debut du contenu de la page*/
 .corps{
     max-width: 1200px;
     margin: 0 auto;
     display: flex;
 }
 
+.corps h1{
+    text-align: center;
+    margin: 5%;
+    color: #f0f8ff;
+}
+
 .listeJoueurs{
-    width: 45%;
-    margin: 2.5%;
+    width: 50%;
+    height: 100%;
+    margin-left: 2.5%;
+    border-right: 2px solid #f0f8ff7c;
 }
 
 .historique{
-    width: 45%;
-    
-    margin: 2.5%;
+    width: 50%;
+    height: 100%;
+    margin-right: 2.5%;
 }
 
 .historique div{
     background-color: #687578;
     border-radius: 20px;
     padding: 2%;
+    margin-bottom: 5%;
+    margin-left: 10%;
+    margin-right: 10%;
 }
-
+/*fin contenu de la page*/
 
 /*css des cartes de joueurs*/
 .carte{
@@ -82,6 +205,8 @@ nav a:hover{
     display: flex;
     padding: 3%;
     margin-bottom: 5%;
+    margin-left: 10%;
+    margin-right: 10%;
 }
 
 .infoJoueur{
