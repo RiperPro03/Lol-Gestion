@@ -75,6 +75,12 @@ body{
     
 }
 
+.navigation ul{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
 .icone {
     width: 20px;
 }
