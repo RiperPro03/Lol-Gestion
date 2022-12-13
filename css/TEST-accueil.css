@@ -213,6 +213,10 @@ body{
     width: 50%;
     color: #fff;
 }
+.infoJoueur p{
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
 
 .CarteImage {
     width: 30%;
