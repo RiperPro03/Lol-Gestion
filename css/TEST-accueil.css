@@ -86,6 +86,7 @@ nav a:hover{
 
 .infoJoueur{
     width: 50%;
+    color: #fff;
 }
 
 .CarteImage {
@@ -96,5 +97,6 @@ nav a:hover{
     border-bottom-right-radius: 5%;
     background-color: #031337;
 }
+
 
 /* fin du css des cartes de joueurs*/

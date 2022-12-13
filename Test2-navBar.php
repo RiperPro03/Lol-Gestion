@@ -1,3 +1,7 @@
+<?php
+    require 'includes/Carte-Joueur.php';
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
