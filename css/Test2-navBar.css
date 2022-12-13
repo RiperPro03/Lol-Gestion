@@ -82,5 +82,6 @@ body{
 }
 
 .icone {
+    display: inline-flex;
     width: 20px;
 }
