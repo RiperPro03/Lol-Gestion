@@ -72,6 +72,10 @@
             echo $joueur->get_carteJoueurAccueil();
             $joueur = new CarteJoueur('Heo', 'Su','ShowMaker','Mid','637a95e14c6109.56237078.png',5,12);
             echo $joueur->get_carteJoueurAccueil();
+            echo $joueur->get_carteJoueurAccueil();
+            echo $joueur->get_carteJoueurAccueil();
+            echo $joueur->get_carteJoueurAccueil();
+            echo $joueur->get_carteJoueurAccueil();
             ?>
         </div>
         <div class="historique">

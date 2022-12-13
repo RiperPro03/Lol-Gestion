@@ -11,10 +11,16 @@
     <title>LoL Gestion</title>
     <link rel="icon" href="vue-img.php?img=logo.png">
     <script src="https://kit.fontawesome.com/acf8d5192c.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./css/nav-bar.css">
     <link rel="stylesheet" href="./css/mvp.css">
 </head>
 
 <body>
+
+    <?php
+        require 'includes/nav-bar.php';
+    ?>
+
     <div>
         <h1>Vous êtes connecté en tant que : <?= $_SESSION['user']; ?></h1>
         <a href="logout.php">Déconnection</a>
