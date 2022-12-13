@@ -18,7 +18,7 @@
         <div class="menuDeroulant"></div>
         <ul>
             <li class="liste active">
-                <a href="#" style="--clr:#f44336;">
+                <a href="TEST-accueil.php" style="--clr:#f44336;">
                 <span class="icone"> <div><img src="vue-img.php?img=logo.png" style="width:100%;"></div></span>
                 <span class="texte"> Accueil</span>
                 </a>
@@ -68,15 +68,15 @@
     <div class="corps">
         <div class="listeJoueurs">
             <h1>Joueurs</h1>
-            <?php $joueur = new CarteJoueur('Sang-hyeok','Lee','Faker','Mid','637a7214430be5.13956557.png'); 
-            echo $joueur->get_carteJoueur();
-            $joueur = new CarteJoueur('Heo', 'Su','ShowMaker','Mid','637a95e14c6109.56237078.png');
-            echo $joueur->get_carteJoueur();
+            <?php $joueur = new CarteJoueur('Sang-hyeok','Lee','Faker','Mid','637a7214430be5.13956557.png',10,10); 
+            echo $joueur->get_carteJoueurAccueil();
+            $joueur = new CarteJoueur('Heo', 'Su','ShowMaker','Mid','637a95e14c6109.56237078.png',5,12);
+            echo $joueur->get_carteJoueurAccueil();
             ?>
         </div>
         <div class="historique">
             <h1>Anciens matchs</h1>
-            <div>
+            <div><a href=""></a>
                 <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quibusdam rerum accusamus ea pariatur, mollitia laboriosam explicabo? Nesciunt quos incidunt corporis optio nemo odio, id exercitationem aperiam vero sit voluptatibus perspiciatis.</p>
         </div>
         </div>

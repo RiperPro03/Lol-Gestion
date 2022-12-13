@@ -5,14 +5,17 @@
         private $pseudo;
         private $poste;
         private $image;
+        private $victoire;
+        private $nbSelection;
 
-        function __construct($nom, $prenom,$pseudo,$poste,$image) {
+        function __construct($nom, $prenom,$pseudo,$poste,$image,$victoire,$nbSelection) {
             $this->nom = $nom;
             $this->prenom = $prenom;
             $this->pseudo = $pseudo;
             $this->poste = $poste;
             $this->image = $image;
-            
+            $this->victoire = $victoire; 
+            $this->nbSelection = $nbSelection;
         }
 
         function get_nom() {
@@ -34,20 +37,37 @@
         function get_image() {
             return $this->image;
         }
+        function get_victoire(){
+            return $this->victoire;
+        }
+        function get_nbSelection(){
+            return $this->nbSelection;
+        }
 
-        function get_carteJoueur(){
+        function get_carteJoueurAccueil(){
             return
-            '<div class="carte">
-                <div class="infoJoueur">
-                    <p>Pseudo : ' . $this->get_pseudo() . '</p>
-                    <p>Nom : ' . $this->get_nom() . '</p>
-                    <p>Prenom : ' . $this->get_prenom() . '</p>
-                    <p>Poste : ' . $this->get_poste() . '</p>
+            '<a href=""><div class="carte">
+            <div class="contour">
+            </div>
+            <div class="boiteimage">
+                <div class="image">
+                    <img src="vue-img.php?img=' . $this->get_image() . '"style="width:100%;"> 
                 </div>
-                <div class="CarteImage">
-                    <img src="vue-img.php?img=' . $this->get_image() . '"style="width:100%;">
+                
+            </div>
+            <div class="boiteInfo">
+                <div class="details">
+                    <h2> ' . $this->get_pseudo() . ' <br><span> '.$this->get_prenom().' '.$this->get_nom().'</span></h2>
+                    <div class="infoJoueur">
+                        <h3> Poste<br> <span>'.$this->get_poste().'</span></h3>
+                        <h3> Victoire<br><span>'.$this->get_victoire().'</span></h3>                        
+                        <h3> Selection<br><span>'.$this->get_nbSelection().'</span>
+                    </div>
                 </div>
-            </div>';
+            </div>
+        </div>
+        </a>';
+        
         }
     }
 ?>
