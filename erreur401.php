@@ -2,7 +2,7 @@
     session_start();
     if ((isset($_SESSION['authToken']))) {
         if ((time() <= $_SESSION['authTokenExpire'])) {
-            header('Location:index.php');
+            header('Location:./');
             exit;
         }
     }
@@ -36,7 +36,7 @@
     </div>
     <div class="message">
         <h1>401 - Accès non autorisé !</h1>
-        <p>Oh oh, Gandalf bloque le chemin !<br />Veuillez vous connecter <a href="login.php">ici</a></p>
+        <p>Oh oh, Gandalf bloque le chemin !<br />Veuillez vous connecter <a href="login">ici</a></p>
     </div>
 </body>
 

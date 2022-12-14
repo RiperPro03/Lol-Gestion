@@ -46,13 +46,15 @@ article aside {
 }
 
 body {
-    background: var(--color-bg);
+
     color: var(--color-text);
     font-family: var(--font-family);
     line-height: var(--line-height);
     margin: 0;
     overflow-x: hidden;
     padding: 0;
+    min-height: 100vh;
+    background-image: linear-gradient(130deg,#031e32,#022d3b,#031e32);
 }
 
 footer,

@@ -4,7 +4,7 @@
     session_start();
     if ((isset($_SESSION['authToken']))) {
         if ((time() <= $_SESSION['authTokenExpire'])) {
-            header('Location:index.php');
+            header('Location:./');
             exit;
         }
     }
@@ -29,13 +29,13 @@
             <form action="<?php print $_SERVER['PHP_SELF'];?>" method="post">
 
                 <div class="inputBox">
-                    <input type="text" name="luser" required="required">
+                    <input type="text" name="luser" required="required" autocomplete="off">
                     <span>Utilisateur</span>
                     <i></i>
                 </div>
     
                 <div class="inputBox">
-                    <input type="password" name="lpass" required="required">
+                    <input type="password" name="lpass" required="required" autocomplete="off">
                     <span>Mot de passe</span>
                     <i></i>
                 </div>

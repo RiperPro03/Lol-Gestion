@@ -9,11 +9,11 @@
         if($nbc == 1) {
             $joueur = $q->fetch();
         } else {
-            header("Location:index.php");
+            header("Location:./");
         }
         
     } else {
-        header("Location:index.php");
+        header("Location:./");
     }
 
     if (isset($_POST['reponse'])) {
@@ -22,11 +22,12 @@
 
         if (!empty($_SESSION['authToken']) && $token == $_SESSION['authToken']) {
             if (time() > $_SESSION['authTokenExpire']) {
-                header('Location:login.php');
+                echo '<script>alert("Erreur le TOKEN d'.'acceès est expiré");</script>';
+                header('Location:login');
                 exit;
             }
         } else {
-            echo "Erreur le TOKEN d'acceès est invalide";
+            echo '<script>alert("Erreur le TOKEN d'.'acceès est invalide");</script>';
             exit;
         }
 
@@ -44,6 +45,6 @@
                 }
             }
         }
-        header("Location:index.php");
+        header("Location:./");
     }
 ?>

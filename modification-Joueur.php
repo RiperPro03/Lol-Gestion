@@ -21,7 +21,7 @@ require 'includes/header.php';
 
             <?php require 'includes/modif-Joueur.php'; ?>
 
-            <a href="index.php">HOME</a>
+            <a href="./">HOME</a>
             <h3>Saisie d'un joueur</h3>
 
             <form action="<?php print $_SERVER['PHP_SELF']; ?>" method="post" enctype="multipart/form-data">
@@ -31,31 +31,31 @@ require 'includes/header.php';
                 <?= "<img src='vue-img.php?img=" . $joueur['photo'] . "' width='100px' >" ?>
 
                 <div class="inputBox">
-                    <input type="text" name="nom" required="required" value=<?= $joueur['nom'] ?>>
+                    <input type="text" name="nom" required="required" autocomplete="off" value=<?= $joueur['nom'] ?>>
                     <span>Nom</span>
                 </div>
 
                 <div class="inputBox">
-                    <input type="text" name="prenom" required="required" value=<?= $joueur['prenom'] ?>>
+                    <input type="text" name="prenom" required="required" autocomplete="off" value=<?= $joueur['prenom'] ?>>
                     <span>Prenom</span>
                 </div>
 
                 <div class="inputBox">
-                    <input type="text" name="pseudo" required="required" value=<?= $joueur['pseudo'] ?>>
+                    <input type="text" name="pseudo" required="required" autocomplete="off" value=<?= $joueur['pseudo'] ?>>
                     <span>Pseudo</span>
                 </div>
 
                 <div class="inputBox">
-                    <input type="date" name="date_naissance" required="required" value=<?= $joueur['date_naissance'] ?>>
+                    <input type="date" name="date_naissance" required="required" autocomplete="off" value=<?= $joueur['date_naissance'] ?>>
                 </div>
 
                 <div class="inputBox">
-                    <input type="number" min="0" max="300" name="taille" required="required" value=<?= $joueur['taille'] ?>>
+                    <input type="number" min="0" max="300" name="taille" required="required" autocomplete="off" value=<?= $joueur['taille'] ?>>
                     <span>Taille</span>
                 </div>
 
                 <div class="inputBox">
-                    <input type="number" min="0" max="9999999999" name="poids" required="required" value=<?= $joueur['poids'] ?>>
+                    <input type="number" min="0" max="9999999999" name="poids" required="required" autocomplete="off" value=<?= $joueur['poids'] ?>>
                     <span>Poids</span>
                 </div>
 
@@ -81,7 +81,7 @@ require 'includes/header.php';
                 </div>
 
                 <div class="inputBox">
-                    <input type="text" name="commentaire" value=<?= $joueur['commentaire'] ?>>
+                    <input type="text" name="commentaire" autocomplete="off" value=<?= $joueur['commentaire'] ?>>
                     <span>Commentaire</span>
                 </div>
 

@@ -5,11 +5,12 @@
 
         if (!empty($_SESSION['authToken']) && $token == $_SESSION['authToken']) {
             if (time() > $_SESSION['authTokenExpire']) {
-                header('Location:login.php');
+                echo '<script>alert("Erreur le TOKEN d'.'acceès est expiré");</script>';
+                header('Location:login');
                 exit;
             }
         } else {
-            echo "Erreur le TOKEN d'acceès est invalide";
+            echo '<script>alert("Erreur le TOKEN d'.'acceès est invalide");</script>';
             exit;
         }
 
@@ -56,7 +57,7 @@
                             'poste' => $poste
                         ]);
 
-                        header('Location:index.php');
+                        header('Location:./');
 
                     } else {
                         echo "Une erreur est survenue avec la photo";

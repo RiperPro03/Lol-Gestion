@@ -4,7 +4,7 @@
     session_start();
     if (!(isset($_SESSION['authToken']))) {
         if (time() > $_SESSION['authTokenExpire']) {
-            header('Location:login.php');
+            header('Location:login');
             exit;
         }
     }

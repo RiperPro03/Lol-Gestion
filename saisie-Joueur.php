@@ -21,7 +21,7 @@
 
             <?php require 'includes/ajout-Joueur.php';?>
 
-            <a href="index.php">HOME</a>
+            <a href="./">HOME</a>
             <h3>Saisie d'un joueur</h3>
 
             <form action="<?php print $_SERVER['PHP_SELF']; ?>" method="post" enctype="multipart/form-data">
@@ -29,31 +29,31 @@
                 <input type="hidden" name="token" value="<?=$_SESSION['authToken']?>">
 
                 <div class="inputBox">
-                    <input type="text" name="nom" required="required">
+                    <input type="text" name="nom" required="required" autocomplete="off">
                     <span>Nom</span>
                 </div>
 
                 <div class="inputBox">
-                    <input type="text" name="prenom" required="required">
+                    <input type="text" name="prenom" required="required" autocomplete="off">
                     <span>Prenom</span>
                 </div>
 
                 <div class="inputBox">
-                    <input type="text" name="pseudo" required="required">
+                    <input type="text" name="pseudo" required="required" autocomplete="off">
                     <span>Pseudo</span>
                 </div>
 
                 <div class="inputBox">
-                    <input type="date" name="date_naissance" required="required">
+                    <input type="date" name="date_naissance" required="required" autocomplete="off">
                 </div>
 
                 <div class="inputBox">
-                    <input type="number" min="0" max="300" name="taille" required="required">
+                    <input type="number" min="0" max="300" name="taille" required="required" autocomplete="off">
                     <span>Taille</span>
                 </div>
 
                 <div class="inputBox">
-                    <input type="number" min="0" max="9999999999" name="poids" required="required">
+                    <input type="number" min="0" max="9999999999" name="poids" required="required" autocomplete="off">
                     <span>Poids</span>
                 </div>
 
@@ -80,7 +80,7 @@
                 </div>
 
                 <div class="inputBox">
-                    <input type="text" name="commentaire">
+                    <input type="text" name="commentaire" autocomplete="off">
                     <span>Commentaire</span>
                 </div>
 

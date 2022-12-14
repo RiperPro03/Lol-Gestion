@@ -18,7 +18,7 @@
 
             <?php require 'includes/ajout-Equipe.php' ?>
 
-            <a href="index.php">HOME</a>
+            <a href="./">HOME</a>
             <h3>Saisie d'une équipe</h3>
 
             <form action="<?php print $_SERVER['PHP_SELF']; ?>" method="post" enctype="multipart/form-data">
@@ -26,12 +26,12 @@
                 <input type="hidden" name="token" value="<?=$_SESSION['authToken']?>">
 
                 <div class="inputBox">
-                    <input type="text" max= 50 name="nom" required="required">
+                    <input type="text" max= 50 name="nom" required="required" autocomplete="off">
                     <span>Nom d'équipe</span>
                 </div>
 
                 <div class="inputBox">
-                    <input type="text" max=3 name="prefixe" required="required">
+                    <input type="text" max=3 name="prefixe" required="required" autocomplete="off">
                     <span>Préfixe</span>
                 </div>
 

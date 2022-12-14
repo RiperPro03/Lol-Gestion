@@ -12,7 +12,7 @@
     <link rel="icon" href="vue-img.php?img=logo.png">
     <script src="https://kit.fontawesome.com/acf8d5192c.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./css/nav-bar.css">
-    <link rel="stylesheet" href="./css/mvp.css">
+    
 </head>
 
 <body>
@@ -41,7 +41,7 @@
                 <td>Commentaire</td>
                 <td>Modifier</td>
                 <td>Supprimer</td>
-                <td><a href="saisie-Joueur.php">Ajouter <i class="fa-solid fa-plus"></i></a></td>
+                <td><a href="saisie-Joueur">Ajouter <i class="fa-solid fa-plus"></i></a></td>
             </tr>
             <?php
 
@@ -63,8 +63,8 @@
                         <td><?= $joueur['poste'] ?></td>
                         <td><?= $joueur['statut'] ?></td>
                         <td><?= $joueur['commentaire'] ?></td>
-                        <td><a href="modification-Joueur.php?id=<?= $joueur['id_Joueur'] ?>"><i class="fa-solid fa-pen"></i></a></td>
-                        <td><a href="suppression-Joueur.php?id=<?= $joueur['id_Joueur'] ?>"><i class="fa-solid fa-trash"></i></a></td>
+                        <td><a href="modification-Joueur?id=<?= $joueur['id_Joueur'] ?>"><i class="fa-solid fa-pen"></i></a></td>
+                        <td><a href="suppression-Joueur?id=<?= $joueur['id_Joueur'] ?>"><i class="fa-solid fa-trash"></i></a></td>
                     </tr>
 
             <?php
@@ -85,7 +85,7 @@
                 <td>Préfixe</td>
                 <td>Modifier</td>
                 <td>Supprimer</td>
-                <td><a href="saisie-Equipe.php">Ajouter <i class="fa-solid fa-plus"></i></a></td>
+                <td><a href="saisie-Equipe">Ajouter <i class="fa-solid fa-plus"></i></a></td>
             </tr>
             <?php
 
@@ -99,8 +99,8 @@
                     <tr>
                         <td><a href="#?id=<?= $equipe['id_Equipe'] ?>"><?= $equipe['nom'] ?></a></td>
                         <td><?= $equipe['prefixe'] ?></td>
-                        <td><a href="modification-Equipe.php?id=<?= $equipe['id_Equipe'] ?>"><i class="fa-solid fa-pen"></i></a></td>
-                        <td><a href="suppression-Equipe.php?id=<?= $equipe['id_Equipe'] ?>"><i class="fa-solid fa-trash"></i></a></td>
+                        <td><a href="modification-Equipe?id=<?= $equipe['id_Equipe'] ?>"><i class="fa-solid fa-pen"></i></a></td>
+                        <td><a href="suppression-Equipe?id=<?= $equipe['id_Equipe'] ?>"><i class="fa-solid fa-trash"></i></a></td>
                     </tr>
 
             <?php

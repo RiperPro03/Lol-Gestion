@@ -19,7 +19,7 @@
 
             <?php require 'includes/modif-Equipe.php';?>
 
-            <a href="index.php">HOME</a>
+            <a href="./">HOME</a>
             <h3>Modification d'une équipe</h3>
 
             <form method="post">
@@ -27,12 +27,12 @@
                 <input type="hidden" name="token" value="<?=$_SESSION['authToken']?>">
                 
                 <div class="inputBox">
-                    <input type="text" name="nom" required="required" value=<?= $equipe['nom'] ?>>
+                    <input type="text" name="nom" required="required" autocomplete="off" value=<?= $equipe['nom'] ?>>
                     <span>Nom d'équipe</span>
                 </div>
 
                 <div class="inputBox">
-                    <input type="text" max=4 name="prefixe" required="required" value=<?= $equipe['prefixe'] ?>>
+                    <input type="text" max=4 name="prefixe" required="required" autocomplete="off" value=<?= $equipe['prefixe'] ?>>
                     <span>Préfixe</span>
                 </div>
 

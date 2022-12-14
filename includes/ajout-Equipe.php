@@ -5,11 +5,12 @@
 
         if (!empty($_SESSION['authToken']) && $token == $_SESSION['authToken']) {
             if (time() > $_SESSION['authTokenExpire']) {
-                header('Location:login.php');
+                echo '<script>alert("Erreur le TOKEN d'.'acceès est expiré");</script>';
+                header('Location:login');
                 exit;
             }
         } else {
-            echo "Erreur le TOKEN d'acceès est invalide";
+            echo '<script>alert("Erreur le TOKEN d'.'acceès est invalide");</script>';
             exit;
         }
 
@@ -17,7 +18,7 @@
             if (strlen($nom) <= 50 && strlen($prefixe) <= 4) {
                 $c = $db->prepare("SELECT id_Equipe FROM equipes WHERE nom = :nom");
                 $c->execute([
-                    'nom' => $nom,
+                    'nom' => $nom
                 ]);
                 $nbUser = $c->rowCount();
 
@@ -29,7 +30,7 @@
                         'prefixe' => $prefixe
                     ]);
 
-                    header('Location:index.php');
+                    header('Location:./');
 
                 } else {
                     echo "Cette équipe existe déjà ";

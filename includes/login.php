@@ -18,7 +18,7 @@
                     $token = bin2hex($token);
                     $_SESSION['authToken'] = $token;
                     $_SESSION['authTokenExpire'] = time() + 3600;
-                    header('Location:index.php');
+                    header('Location:./');
                 } else {
                     echo "MDP incorrect";
                 }
