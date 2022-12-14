@@ -1,5 +1,7 @@
 <?php
 require 'includes/Carte-Joueur.php';
+require 'includes/Carte-Equipe.php';
+require 'includes/Carte-Match.php';
 ?>
 
 <!DOCTYPE html>
@@ -11,8 +13,11 @@ require 'includes/Carte-Joueur.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Accueil</title>
     <link rel="stylesheet" href="./css/TEST-accueil.css">
-    <link rel="stylesheet" href="./css//nav-bar.css">
+    <link rel="stylesheet" href="./css/nav-bar.css">
     <link rel="stylesheet" href="./css/TEST-carteJoueur.css">
+    <link rel="stylesheet" href="./css/TEST-carteEquipe.css">
+    <link rel="stylesheet" href="./css/TEST-carteMatch.css">
+    
 </head>
 
 <body>
@@ -36,9 +41,14 @@ require 'includes/Carte-Joueur.php';
         </div>
         <div class="historique">
             <h1>Anciens matchs</h1>
-            <div><a href=""></a>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quibusdam rerum accusamus ea pariatur, mollitia laboriosam explicabo? Nesciunt quos incidunt corporis optio nemo odio, id exercitationem aperiam vero sit voluptatibus perspiciatis.</p>
-            </div>
+            <?php
+                $equipe1 = new CarteEquipe('T1','SKT T1'); 
+                $equipe2 = new CarteEquipe('C9','Cloud 9'); 
+                $match =new CarteMatch('12/02/2021','15h30',$equipe1,$equipe2,'3 : 1');
+                echo $match->get_carteMatch();
+                $match =new CarteMatch('13/02/2022','14h',$equipe2,$equipe1,null);
+                echo $match->get_carteMatch();
+            ?>
         </div>
     </div>
 </body>

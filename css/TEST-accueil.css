@@ -30,27 +30,23 @@ body{
 .listeJoueurs{
     width: 50%;
     height: 100%;
-    margin-left: 2.5%;
+    justify-content: center;
     border-right: 2px solid #f0f8ff7c;
-}
-
-.carte{
-    margin-bottom: 5%;
-    transform: translateX(25%);
 }
 
 .historique{
     width: 50%;
     height: 100%;
-    margin-right: 2.5%;
+    justify-content: center;
 }
 
-.historique div{
-    background-color: #687578;
-    border-radius: 20px;
-    padding: 2%;
-    margin-bottom: 5%;
-    margin-left: 10%;
-    margin-right: 10%;
+.carteJoueur{
+    margin-left: auto;
+    margin-right: auto;
+}
+.carteMatch{
+    margin-left: auto;
+    margin-right: auto; 
+
 }
 /*fin contenu de la page*/

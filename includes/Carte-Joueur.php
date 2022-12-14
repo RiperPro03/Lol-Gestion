@@ -46,17 +46,17 @@
 
         function get_carteJoueurAccueil(){
             return
-            '<div class="carte">
-            <div class="contour">
+            '<div class="carteJoueur">
+            <div class="contourJoueur">
             </div>
-            <div class="boiteimage">
-                <div class="image">
+            <div class="boiteimageJoueur">
+                <div class="imageJoueur">
                     <img src="vue-img.php?img=' . $this->get_image() . '"style="width:100%;"> 
                 </div>
                 
             </div>
-            <div class="boiteInfo">
-                <div class="details">
+            <div class="boiteInfoJoueur">
+                <div class="detailsJoueur">
                     <h2> ' . $this->get_pseudo() . ' <br><span> '.$this->get_prenom().' '.$this->get_nom().'</span></h2>
                     <div class="infoJoueur">
                         <h3> Poste<br> <span>'.$this->get_poste().'</span></h3>

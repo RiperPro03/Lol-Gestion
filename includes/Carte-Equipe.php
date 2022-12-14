@@ -3,9 +3,10 @@
         private $nom;
         private $prefixe;
 
-        function __construct($nom, $prefixe) {
-            $this->nom = $nom;
+        function __construct($prefixe, $nom) {
             $this->prefixe = $prefixe;
+            $this->nom = $nom;
+            
         }
 
         function get_nom() {

@@ -1,35 +1,10 @@
-/*debut du css pour le corps*/
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Avenir, sans-serif;
-}
-
-:root{
-    --bg : #031e32;
-}
-
-body{
-    min-height: 100vh;
-    background-image: linear-gradient(130deg,#031e32,#022d3b,#031e32);
-}
-
-/*debut du contenu de la page*/
-.corps{
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-}
-/*fin du css pour le corps*/
-
-
 /*debut css carte d'un match*/
 .carteMatch{
     position: relative;
     width: 450px;
     height: 190px;
     background: #fff;
+    margin-bottom: 5%;
     transition: 0.5s;
     cursor: pointer;
 }
@@ -49,18 +24,9 @@ body{
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
-    width: 600px;
-    height: 120px;
-    background:linear-gradient(transparent,#96810b,#96810b,#96810b,transparent);
-    animation: animateMatch 4s linear infinite;
-}
-@keyframes animateMatch {
-    0%{
-        transform: translate(-50%, -50%) rotate(0deg);
-    }
-    100%{
-        transform: translate(-50%, -50%) rotate(360deg);
-    }
+    width: 100%;
+    height: 100%;
+    background:#96810b
 }
 
 .carteMatch .contourMatch::after{

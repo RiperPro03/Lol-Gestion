@@ -1,19 +1,20 @@
 
 /*debut css carte de joueur*/
-.carte{
+.carteJoueur{
     position: relative;
     width: 350px;
     height: 190px;
     background: #fff;
     transition: 0.5s;
+    margin-bottom: 5%;
     cursor: pointer;
 }
 
-.carte:hover{
+.carteJoueur:hover{
     height: 300px;
 }
 
-.carte .contour{
+.carteJoueur .contourJoueur{
     position: absolute;
     inset: 0;
     background: #000;
@@ -21,7 +22,7 @@
 }
 
 /*line du contour*/
-.carte .contour::before
+.carteJoueur .contourJoueur::before
 {
     content: '';
     position: absolute;
@@ -31,9 +32,9 @@
     width: 600px;
     height: 120px;
     background:linear-gradient(transparent,#45f3ff,#45f3ff,#45f3ff,transparent);
-    animation: animate 4s linear infinite;
+    animation: animateJoueur 4s linear infinite;
 }
-@keyframes animate {
+@keyframes animateJoueur {
     0%{
         transform: translate(-50%, -50%) rotate(0deg);
     }
@@ -42,14 +43,14 @@
     }
 }
 
-.carte .contour::after{
+.carteJoueur .contourJoueur::after{
     content: '';
     position: absolute;
     inset: 3px;
     background: #333;
 }
 
-.carte .boiteimage{
+.carteJoueur .boiteimageJoueur{
     position: absolute;
     top: -20px;
     left: 50%;
@@ -61,12 +62,12 @@
     z-index: 10;
     overflow: hidden;
 }
-.carte:hover .boiteimage{
+.carteJoueur:hover .boiteimageJoueur{
     width: 200px;
     height: 160px;
 }
 
-.carte .boiteimage::before{
+.carteJoueur .boiteimageJoueur::before{
     content: '';
     position: absolute;
     top :50%;
@@ -78,14 +79,14 @@
     transform: translate(-50%,-50%);
 }
 
-.carte .boiteimage::after{
+.carteJoueur .boiteimageJoueur::after{
     content: '';
     position: absolute;
     inset: 3px;
     background: #333;
 }
 
-.carte .boiteimage .image{
+.carteJoueur .boiteimageJoueur .imageJoueur{
     position: absolute;
     margin: 10px;
     z-index: 1;
@@ -93,18 +94,18 @@
     height: calc(100%-20px);
 }
 
-.carte .boiteInfo{
+.carteJoueur .boiteInfoJoueur{
     position: absolute;
     width: 100%;
     height: 100%;
-    display: flex;
+    display: inline-flex;
     justify-content: center;
     align-items: center;
     z-index: 1;
     overflow: hidden;
 }
 
-.carte .boiteInfo .details{
+.carteJoueur .boiteInfoJoueur .detailsJoueur{
     padding: 40px;
     text-align: center;
     width: 100%;
@@ -112,18 +113,40 @@
     transform: translateY(100px);
 }
 
-.carte:hover .boiteInfo .details{
+.carteJoueur:hover .boiteInfoJoueur .detailsJoueur {
     transform: translateY(80px);
 }
 
-.carte .boiteInfo .details h2{
+.carteJoueur .boiteInfoJoueur .detailsJoueur h2{
+    transform: translateY(-30px);
     font-size: 1.25em;
     font-weight: 600;
     color: #45f3ff;
     margin-right: 20%;
     margin-left: 20%;
 }
-.carte .boiteInfo .details h2 span{
+.carteJoueur .boiteInfoJoueur .detailsJoueur h2 span{
+    font-size: 0.75em;
+    font-weight: 500;
+    color: #ffffff;
+}
+
+.carteJoueur .boiteInfoJoueur .detailsJoueur .infoJoueur{
+    display: inline-flex;
+    margin-left: 2%;
+    margin-right: 2%;
+    justify-content: center;
+}
+
+.carteJoueur .boiteInfoJoueur .detailsJoueur h3{
+    text-align: center;
+    font-size: 1.25em;
+    font-weight: 600;
+    color: #45f3ff;
+    margin-left: 3%;
+    margin-right: 3%;
+}
+.carteJoueur .boiteInfoJoueur .detailsJoueur h3 span{
     font-size: 0.75em;
     font-weight: 500;
     color: #ffffff;
