@@ -51,11 +51,15 @@
     }
 
     let list = document.querySelectorAll('.liste');
+    let navLinks = document.querySelectorAll(".liste a");
+    var currentUrl = window.location.href;
+    list.forEach((item) => item.classList.remove('active'));
 
-    function activeLink() {
-        list.forEach((item) => item.classList.remove('active'));
-        this.classList.add('active');
+    for (var i = 0; i < list.length; i++) {
+        var item = navLinks[i];
+        if (item.href === currentUrl) {
+            list[i].classList.add("active");
+        }
     }
-    list.forEach((item) => item.addEventListener('click', activeLink));
 
 </script>

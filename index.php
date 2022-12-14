@@ -18,7 +18,7 @@
 <body>
 
     <?php
-        require 'includes/nav-bar.php';
+        require 'includes/nav-bar.html';
     ?>
 
     <div>
