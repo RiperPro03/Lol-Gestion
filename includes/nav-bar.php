@@ -22,23 +22,23 @@
                 <span class="icone">
                     <div><img src="vue-img.php?img=Team.png" style="width:100%;"> </div>
                 </span>
-                <span class="texte"> Creer une équipe</span>
+                <span class="texte"> Equipe</span>
             </a>
         </li>
         <li class="liste">
-            <a href="#" style="--clr:#0128ee;">
+            <a href="#" style="--clr:#be5fff;">
                 <span class="icone">
                     <div><img src="vue-img.php?img=Historique.png" style="width:100%;"></div>
                 </span>
-                <span class="texte"> Historique des matchs</span>
+                <span class="texte"> Matchs</span>
             </a>
         </li>
         <li class="liste">
-            <a href="#" style="--clr:#01ee05;">
+            <a href="TEST-accueil.php" style="--clr:#01ee05;">
                 <span class="icone">
-                    <div><img src="vue-img.php?img=Planning.png" style="width:100%;"></div>
+                    <div><img src="vue-img.php?img=Statistique.png" style="width:100%;"></div>
                 </span>
-                <span class="texte"> Planning</span>
+                <span class="texte"> Statistique</span>
             </a>
         </li>
     </ul>
@@ -57,4 +57,5 @@
         this.classList.add('active');
     }
     list.forEach((item) => item.addEventListener('click', activeLink));
+
 </script>
