@@ -35,7 +35,7 @@
                 </div>
                 <div class="boiteInfoMatch">
                     <div class="detailsMatch">
-                        <h2>Match<br><span> 18/02/2020</span></h2>
+                        <h2>Match<br><span> 18/02/2020</span> <span>18h30</span></h2>
                         <h2>Score<br><span> 3 : 1</span></h2>
                         </div>
                     </div>
