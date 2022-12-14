@@ -1,16 +1,4 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
 
-body{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: #333;
-    margin-top: 50px;
-}
 /*debut css carte de joueur*/
 .carte{
     position: relative;
@@ -132,17 +120,12 @@ body{
     font-size: 1.25em;
     font-weight: 600;
     color: #45f3ff;
+    margin-right: 20%;
+    margin-left: 20%;
 }
 .carte .boiteInfo .details h2 span{
     font-size: 0.75em;
     font-weight: 500;
-    color: #ffffff;
-}
-
-.carte .boiteInfo .details .infoJoueur{
-    display: flex;
-    justify-content: space-between;
-    margin: 20px 0;
     color: #ffffff;
 }
 /*fin css carte de joueur*/

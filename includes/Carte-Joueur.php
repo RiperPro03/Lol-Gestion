@@ -46,7 +46,7 @@
 
         function get_carteJoueurAccueil(){
             return
-            '<a href=""><div class="carte">
+            '<div class="carte">
             <div class="contour">
             </div>
             <div class="boiteimage">
@@ -66,7 +66,7 @@
                 </div>
             </div>
         </div>
-        </a>';
+        ';
         
         }
     }
