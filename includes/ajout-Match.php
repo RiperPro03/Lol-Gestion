@@ -15,7 +15,7 @@
         }
 
         if(!empty($date_match) && !empty($heure_match) && !empty($lieu) && !empty($equipe)) {
-            if (strlen($lieu) <= 50 && strlen($description_equipe) <= 50) {
+            if (strlen($lieu) <= 50 && strlen($description_match) <= 50) {
                 $c = $db->prepare("SELECT matchs.id_Match, equipes.id_Equipe FROM matchs, equipes 
                                             WHERE equipes.nom = :equipe
                                             AND matchs.date_match = :date_match
@@ -29,12 +29,12 @@
 
                 if ($nbUser == 0) {
 
-                    $q = $db->prepare("INSERT INTO matchs (date_match, heure_match, lieu, description_equipe, gagnant) VALUES(:date_match,:heure_match,:lieu,:description_equipe,:gagnant)");
+                    $q = $db->prepare("INSERT INTO matchs (date_match, heure_match, lieu, description_match, gagnant) VALUES(:date_match,:heure_match,:lieu,:description_match,:gagnant)");
                     $q->execute([
                         'date_match' => $date_match,
                         'heure_match' => $heure_match,
                         'lieu' => $lieu,
-                        'description_equipe' => $description_equipe,
+                        'description_match' => $description_match,
                         'gagnant' => $gagnant
                     ]);
                     $c = $db->prepare("SELECT matchs.id_Match, equipes.id_Equipe FROM matchs, equipes 
@@ -42,14 +42,14 @@
                                             AND matchs.date_match = :date_match
                                             AND matchs.heure_match = :heure_match
                                             AND matchs.lieu = :lieu
-                                            AND matchs.description_equipe = :description_equipe
+                                            AND matchs.description_match = :description_match
                                             AND matchs.gagnant = :gagnant");
                     $c->execute([
                         'equipe' => $equipe,
                         'date_match' => $date_match,
                         'heure_match' => $heure_match,
                         'lieu' => $lieu,
-                        'description_equipe' => $description_equipe,
+                        'description_match' => $description_match,
                         'gagnant' => $gagnant
                     ]);
                     $result = $c->fetch();
@@ -70,7 +70,7 @@
             }
             
         } else {
-            echo '<script>alert("Veuillez erreur de saisie");</script>';
+            echo '<script>alert("Veuiller remplir tout les champs");</script>';
         }
     }
 ?>

@@ -8,6 +8,7 @@
             exit;
         }
     }
+    require 'includes/login.php';
 ?>
 
 <!DOCTYPE html>
@@ -41,9 +42,6 @@
                 </div>
                 <input type="submit" value="Connexion" name="formlogin">
             </form>
-            <?php
-                require 'includes/login.php';
-            ?>
         </div>
     </div>
     

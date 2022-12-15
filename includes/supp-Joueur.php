@@ -40,7 +40,7 @@
                 if (unlink("./img/players/".$joueur['photo'])) {
                     echo "Le fichier a été supprimé avec succès.";
                 } else {
-                    echo "Il y a eu une erreur lors de la suppression du fichier.";
+                    echo '<script>alert("Il y a eu une erreur lors de la suppression du fichier");</script>';
                     exit;
                 }
             }

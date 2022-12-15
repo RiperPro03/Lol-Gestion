@@ -84,14 +84,14 @@
 
                     header('Location:./');
                 } else {
-                    echo "Ce Joueur existe déjà";
+                    echo '<script>alert("Ce Joueur existe déjà");</script>';
                 }
             } else {
-                echo "erreur la taille ou le poids ne sont pas valide";
+                echo '<script>alert("Erreur la taille ou le poids ne sont pas valide");</script>';
             }
         
         } else {
-            echo "Les champ doivent être rempli";
+            echo '<script>alert("Veuiller remplir tout les champs");</script>';
         }
     }
 ?>
