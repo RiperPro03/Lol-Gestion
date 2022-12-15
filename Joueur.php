@@ -1,3 +1,7 @@
+<?php
+    require 'includes/header.php';
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -8,6 +12,7 @@
     <title>Document</title>
     <link rel="icon" href="vue-img.php?img=logo.png">
     <link rel="stylesheet" href="./css/nav-bar.css">
+    <link rel="stylesheet" href="./css/TEST-accueil.css">
 </head>
 
 <body>

@@ -20,16 +20,7 @@
 
         extract($_POST);
 
-        if (!empty($_SESSION['authToken']) && $token == $_SESSION['authToken']) {
-            if (time() > $_SESSION['authTokenExpire']) {
-                echo '<script>alert("Erreur le TOKEN d'.'acceès est expiré");</script>';
-                header('Location:login');
-                exit;
-            }
-        } else {
-            echo '<script>alert("Erreur le TOKEN d'.'acceès est invalide");</script>';
-            exit;
-        }
+        include 'authToken-form.php';
 
         if (strcmp($reponse,"Oui") == 0) {
             if(isset($_GET['id']) && !empty($_GET['id'])) {

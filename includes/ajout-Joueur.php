@@ -3,16 +3,7 @@
 
         extract($_POST);
 
-        if (!empty($_SESSION['authToken']) && $token == $_SESSION['authToken']) {
-            if (time() > $_SESSION['authTokenExpire']) {
-                echo '<script>alert("Erreur le TOKEN d'.'acceès est expiré");</script>';
-                header('Location:login');
-                exit;
-            }
-        } else {
-            echo '<script>alert("Erreur le TOKEN d'.'acceès est invalide");</script>';
-            exit;
-        }
+        include 'authToken-form.php';
 
         if (!empty($nom) && !empty($prenom) && !empty($pseudo) && !empty($date_naissance) && 
             !empty($taille) && !empty($poids) && !empty($poste) && !empty($statut) && isset($_FILES['photo'])) {
