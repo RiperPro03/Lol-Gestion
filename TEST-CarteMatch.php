@@ -1,6 +1,6 @@
 <?php
     require 'includes/Carte-Equipe.php';
-    require 'includes/ajout-Match.php';
+    require 'includes/Carte-Match.php';
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -19,11 +19,13 @@
         require 'includes/nav-bar.html';
     ?>
     <div class="corps">
+        <div class="lienEntreTest">
+            <a href="./TEST-CarteJoueur.php"> test carte Joueur</a>
+            <a href="./TEST-CarteEquipe.php">test carte Equipe</a>
+        </div>
                     <?php
-                        $equipe = new CarteEquipe('SK Telecom T1','T1');
-                        echo $equipe->get_carteEquipe(); 
-                        $equipe2 = new CarteEquipe('SK Telecom T1','T1');
-                        echo $equipe2->get_carteEquipe();
+                        $equipe = new CarteEquipe('T1','SK Telecom T1');
+                        $equipe2 = $equipe;
                         $match = new CarteMatch('12/02/2022','15h',$equipe,$equipe2,'3 : 1');
                         echo $match->get_carteMatch();
                     ?>

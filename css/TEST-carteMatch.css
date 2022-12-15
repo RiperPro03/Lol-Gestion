@@ -13,3 +13,17 @@ body{
     min-height: 100vh;
     background-image: linear-gradient(130deg,#031e32,#022d3b,#031e32);
 }
+
+.corps{
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.lienEntreTest{
+    background: white;
+    color: black;
+    border-radius: 5%;
+    margin: auto;
+}
