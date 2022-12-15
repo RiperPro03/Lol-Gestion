@@ -11,7 +11,7 @@
     <title>Document</title>
     <link rel="icon" href="vue-img.php?img=logo.png">
     <link rel="stylesheet" href="./css/nav-bar.css">
-    <link rel="stylesheet" href="./css/TEST-accueil.css">
+    <link rel="stylesheet" href="./css/accueil.css">
 </head>
 <body>
     <?php
