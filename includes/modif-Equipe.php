@@ -51,14 +51,14 @@
 
                     header('Location:./');
                 } else {
-                    echo "Cette équipe existe déjà ";
+                    echo '<script>alert("Cette équipe existe déjà");</script>';
                 }
             } else {
-                echo "erreur le nom ou le prefixe sont trop long";
+                echo '<script>alert("Erreur le nom ou le prefixe sont trop long");</script>';
             }
             
         } else {
-            echo "Les champ doivent être rempli";
+            echo '<script>alert("Veuiller remplir tout les champs");</script>';
         }
     }
 ?>

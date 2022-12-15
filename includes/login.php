@@ -20,13 +20,13 @@
                     $_SESSION['authTokenExpire'] = time() + 3600;
                     header('Location:./');
                 } else {
-                    echo "MDP incorrect";
+                    echo '<script>alert("Mot de passe incorrect");</script>';
                 }
             } else {
-                echo "L'utilisateur : " . $luser . " n'existe pas";
+                echo '<script>alert("L'.'utilisateur : "' . $luser . '" n'.'existe pas");</script>';
             }
         } else {
-            echo "Veuiller remplir tout les champs";
+            echo '<script>alert("Veuiller remplir tout les champs");</script>';
         }
     }
 ?>
