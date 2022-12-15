@@ -16,10 +16,13 @@
     <?php
     require 'includes/nav-bar.html';
     ?>
-    <div class="corps">
+    <div class="corps"> 
         <h1>Joueurs</h1>
-        <div class="recherche">
-            
+        <div class="zoneRecherche">
+            <div class="BarreRecherche">
+                <input type="text" placeholder="Rechercher...">
+                <div class="recherche"></div>
+            </div>
         </div>
         <div class="Joueurs">
 
