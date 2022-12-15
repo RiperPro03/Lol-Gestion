@@ -24,7 +24,7 @@ require 'includes/header.php';
             <a href="./">HOME</a>
             <h3>Saisie d'un joueur</h3>
 
-            <form action="<?php print $_SERVER['PHP_SELF']; ?>" method="post" enctype="multipart/form-data">
+            <form method="post" enctype="multipart/form-data">
 
                 <input type="hidden" name="token" value="<?= $_SESSION['authToken'] ?>">
 
