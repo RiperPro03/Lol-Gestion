@@ -30,11 +30,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Accueil</title>
     <link rel="icon" href="vue-img.php?img=logo.png">
-    <link rel="stylesheet" href="./css/TEST-accueil.css">
+    <link rel="stylesheet" href="./css/accueil.css">
     <link rel="stylesheet" href="./css/nav-bar.css">
-    <link rel="stylesheet" href="./css/TEST-carteJoueur.css">
-    <link rel="stylesheet" href="./css/TEST-carteEquipe.css">
-    <link rel="stylesheet" href="./css/TEST-carteMatch.css">
+    <link rel="stylesheet" href="./css/carteJoueur.css">
+    <link rel="stylesheet" href="./css/carteEquipe.css">
+    <link rel="stylesheet" href="./css/carteMatch.css">
     
 </head>
 

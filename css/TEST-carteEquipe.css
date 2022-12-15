@@ -1,77 +1,15 @@
-/*debut css carte de l'équipe*/
-.carteEquipe{
-    position: relative;
-    width: 250px;
-    height: 100px;
-    background: #fff;
-    transition: 0.5s;
-    cursor: pointer;
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Avenir, sans-serif;
 }
 
-.carteEquipe .contourEquipe{
-    position: absolute;
-    inset: 0;
-    background: #000;
-    overflow: hidden;
+:root{
+    --bg : #031e32;
 }
 
-/*line du contour*/
-.carteEquipe .contourEquipe::before
-{
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    width: 600px;
-    height: 120px;
-    background:linear-gradient(transparent,#ff4545,#ff4545,#ff4545,transparent);
-    animation: animateEquipe 4s linear infinite;
+body{
+    min-height: 100vh;
+    background-image: linear-gradient(130deg,#031e32,#022d3b,#031e32);
 }
-@keyframes animateEquipe {
-    0%{
-        transform: translate(-50%, -50%) rotate(0deg);
-    }
-    100%{
-        transform: translate(-50%, -50%) rotate(360deg);
-    }
-}
-
-/*fin des line du contour*/
-
-.carteEquipe .contourEquipe::after{
-    content: '';
-    position: absolute;
-    inset: 3px;
-    background: #333;
-}
-
-.carteEquipe .boiteInfoEquipe{
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1;
-    overflow: hidden;
-}
-
-.carteEquipe .boiteInfoEquipe .detailsEquipe{
-    padding: 40px;
-    text-align: center;
-    width: 100%;
-    transition: 0.5s;
-}
-
-.carteEquipe .boiteInfoEquipe .detailsEquipe h2{
-    font-size: 1.25em;
-    font-weight: 600;
-    color: #ff4545;
-}
-.carteEquipe .boiteInfoEquipe .detailsEquipe h2 span{
-    font-size: 0.75em;
-    font-weight: 500;
-    color: #ffffff;
-}
-/*fin css carte d'équipe*/

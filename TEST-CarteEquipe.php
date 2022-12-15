@@ -10,6 +10,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="./css/nav-bar.css">
     <link rel="stylesheet" href="./css/TEST-carteEquipe.css">
+    <link rel="stylesheet" href="./css/carteEquipe.css">
 </head>
 <body>
     <?php
