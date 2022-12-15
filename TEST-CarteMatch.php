@@ -23,12 +23,12 @@
             <a href="./TEST-CarteJoueur.php"> test carte Joueur</a>
             <a href="./TEST-CarteEquipe.php">test carte Equipe</a>
         </div>
-                    <?php
-                        $equipe = new CarteEquipe('T1','SK Telecom T1');
-                        $equipe2 = $equipe;
-                        $match = new CarteMatch('12/02/2022','15h',$equipe,$equipe2,'3 : 1');
-                        echo $match->get_carteMatch();
-                    ?>
+            <?php
+                $equipe = new CarteEquipe('T1','SK Telecom T1');
+                $equipe2 = $equipe;
+                $match = new CarteMatch('12/02/2022','15h',$equipe,$equipe2,'3 : 1');
+                echo $match->get_carteMatch();
+            ?>
     </div>
 </body>
 </html>
