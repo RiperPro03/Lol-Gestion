@@ -7,6 +7,7 @@
     margin-bottom: 5%;
     transition: 0.5s;
     cursor: pointer;
+    overflow: hidden;
 }
 
 .carteMatch:hover{
@@ -59,6 +60,10 @@
     padding: 2px;
 }
 
+.carteEquipe .boiteInfoEquipe .detailsEquipe h2{
+    font-size: 1.0em;
+}
+
 .carteMatch .boiteInfoMatch{
     position: absolute;
     width: 100%;
@@ -71,19 +76,20 @@
 }
 
 .carteMatch .boiteInfoMatch .detailsMatch {
-    padding: 40px;
     text-align: center;
     width: 100%;
     transition: 0.5s;
     display: inline-flex;
     justify-content: space-around;
-    padding-top: 0px;
+    padding-bottom: 20px;
   }
 
 .carteMatch .boiteInfoMatch .detailsMatch h2{
     font-size: 1.25em;
     font-weight: 600;
     color: #45f3ff;
+    margin-left: auto;
+    margin-right: auto;
 }
 .carteMatch .boiteInfoMatch .detailsMatch h2 span{
     font-size: 0.75em;
@@ -92,18 +98,18 @@
 }
 
 
-.carteMatch .boiteInfoMatch .detailsMatch .optionMatch{
-    transform: translateY(-70px);
+.carteMatch .boiteInfoMatch .optionMatch{
+    display: flex;
+    width: 100%;
 }
 
-.carteMatch .boiteInfoMatch .detailsMatch .optionMatch .boutonMatch{
+.carteMatch .boiteInfoMatch .optionMatch .boutonMatch{
     text-decoration: none;
     background: #031e32;
     color: #45f3ff;
-    width: 100%;
     border-radius: 10px;
-    padding: 5%;
-    margin-left: 5%;
-    margin-right: 5%;
+    padding: 3%;
+    margin-left: auto;
+    margin-right: auto;
 }
 /*fin css carte de joueur*/

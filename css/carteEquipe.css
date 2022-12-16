@@ -6,10 +6,7 @@
     background: #fff;
     transition: 0.5s;
     cursor: pointer;
-}
-
-.carteEquipe:hover{
-    height: 150px;
+    overflow: hidden;
 }
 
 .carteEquipe .contourEquipe{
@@ -71,30 +68,27 @@
     flex-direction: column;
     transition: 0.5s;
     padding-bottom: 10px;
+    padding-top: 20px;
 }
 
 .carteEquipe .boiteInfoEquipe .detailsEquipe h2{
-    font-size: 1.25em;
+    font-size: 1.15em;
     font-weight: 600;
     color: #ff4545;
 }
-.carteEquipe .boiteInfoEquipe .detailsEquipe h2 span{
-    font-size: 0.75em;
-    font-weight: 500;
-    color: #ffffff;
+
+.carteEquipe .boiteInfoEquipe .optionEquipe{
+    display: flex;
+    width: 100%;
 }
 
-.carteJoueur .boiteInfoJoueur .detailsJoueur .optionEquipe{
-    transform: translatey(20px);
-}
-
-.carteJoueur .boiteInfoJoueur .detailsJoueur .optionEquipe .boutonEquipe{
+.carteEquipe .boiteInfoEquipe .optionEquipe .boutonEquipe{
     text-decoration: none;
     background: #031e32;
     color: #45f3ff;
     border-radius: 10px;
-    padding: 5%;
-    margin-left: 5%;
-    margin-right: 5%;
+    padding: 3%;
+    margin-left: auto;
+    margin-right: auto;
 }
 /*fin css carte d'équipe*/
