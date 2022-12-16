@@ -67,9 +67,9 @@
                 $equipe1 = new CarteEquipe('SKT T1'); 
                 $equipe2 = new CarteEquipe('Cloud 9'); 
                 $match =new CarteMatch('12/02/2021','15h30',$equipe1,$equipe2,'3 : 1');
-                echo $match->get_carteMatch();
+                echo $match->get_carteMatchAccueil();
                 $match =new CarteMatch('13/02/2022','14h',$equipe2,$equipe1,null);
-                echo $match->get_carteMatch();
+                echo $match->get_carteMatchAccueil();
             ?>
         </div>
     </div>
