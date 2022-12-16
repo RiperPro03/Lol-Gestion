@@ -28,6 +28,7 @@ body{
     width: 100%;
     margin: 5%;
     color: #f0f8ff;
+    margin-bottom: 2%;
 }
 
 /*barre de recherche*/
@@ -146,3 +147,17 @@ body{
     font-weight: bolder;
   }
 /* fin barre de recherche*/
+
+/*Debut liste de joueurs*/
+.listeJoueurs{
+  width: 100%;
+  display: inline-flex;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
+}
+
+.carteJoueur{
+  margin-bottom: 50px;
+}
+/*fin liste de joueurs*/

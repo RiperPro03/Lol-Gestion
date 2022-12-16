@@ -15,6 +15,7 @@
     <link rel="icon" href="vue-img.php?img=logo.png">
     <link rel="stylesheet" href="./css/nav-bar.css">
     <link rel="stylesheet" href="./css/TEST-joueur.css">
+    <link rel="stylesheet" href="./css/carteJoueur.css">
 </head>
 
 <body>
@@ -29,11 +30,10 @@
                 <div class="recherche"></div>
             </div>
         </div>
-        <div class="Joueurs">
+        <div class="listeJoueurs">
         <?php 
                 $q = $db->prepare('SELECT nom, prenom, pseudo, poste, photo FROM joueurs');
                 $q->execute();
-
                 if ($q->rowCount() > 0) {
                     while ($joueur = $q->fetch()) {
                         $joueur = new CarteJoueur($joueur['nom'], $joueur['prenom'], $joueur['pseudo'], $joueur['poste'], $joueur['photo'],0,0);
