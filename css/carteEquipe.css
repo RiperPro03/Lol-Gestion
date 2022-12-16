@@ -61,6 +61,7 @@
     align-items: center;
     z-index: 1;
     overflow: hidden;
+    flex-direction: column;
 }
 
 .carteEquipe .boiteInfoEquipe .detailsEquipe{
@@ -69,6 +70,7 @@
     width: 100%;
     flex-direction: column;
     transition: 0.5s;
+    padding-bottom: 10px;
 }
 
 .carteEquipe .boiteInfoEquipe .detailsEquipe h2{
