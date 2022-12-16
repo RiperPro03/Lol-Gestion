@@ -11,7 +11,7 @@
 }
 
 .carteJoueur:hover{
-    height: 300px;
+    height: 350px;
 }
 
 .carteJoueur .contourJoueur{
@@ -151,4 +151,19 @@
     font-weight: 500;
     color: #ffffff;
 }
+.carteJoueur .boiteInfoJoueur .detailsJoueur .option{
+    transform: translatey(20px);
+}
+
+.carteJoueur .boiteInfoJoueur .detailsJoueur .option .bouton{
+    text-decoration: none;
+    background: #031e32;
+    color: #45f3ff;
+    border-radius: 10px;
+    padding: 5%;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+
 /*fin css carte de joueur*/
