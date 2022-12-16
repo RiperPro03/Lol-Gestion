@@ -83,9 +83,9 @@
                         <h2>Match<br><span>'. $this->get_date().'</span> <span>'.$this->get_heure().'</span></h2>
                         <h2>Score<br><span>'. $this->get_score().'</span></h2>
                     </div>
-                    <div class="option">
-                        <a href="#" class="bouton"><i class="fa-solid fa-pen"></i></a>
-                        <a href="#2" class="bouton"><i class="fa-solid fa-trash"></i></a>
+                    <div class="optionMatch">
+                        <a href="#" class="boutonMatch"><i class="fa-solid fa-pen"></i></a>
+                        <a href="#2" class="boutonMatch"><i class="fa-solid fa-trash"></i></a>
                     </div>
                 </div>
             </div>';

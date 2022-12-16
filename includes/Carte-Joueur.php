@@ -89,9 +89,9 @@
                         <h3> Victoire<br><span>'.$this->get_victoire().'</span></h3>                        
                         <h3> Selection<br><span>'.$this->get_nbSelection().'</span>
                     </div>
-                    <div class="option">
-                        <a href="#" class="bouton"><i class="fa-solid fa-pen"></i></a>
-                        <a href="#2" class="bouton"><i class="fa-solid fa-trash"></i></a>
+                    <div class="optionJoueur">
+                        <a href="#" class="boutonJoueur"><i class="fa-solid fa-pen"></i></a>
+                        <a href="#2" class="boutonJoueur"><i class="fa-solid fa-trash"></i></a>
                     </div>
                 </div>
             </div>

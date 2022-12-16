@@ -151,11 +151,11 @@
     font-weight: 500;
     color: #ffffff;
 }
-.carteJoueur .boiteInfoJoueur .detailsJoueur .option{
+.carteJoueur .boiteInfoJoueur .detailsJoueur .optionJoueur{
     transform: translatey(20px);
 }
 
-.carteJoueur .boiteInfoJoueur .detailsJoueur .option .bouton{
+.carteJoueur .boiteInfoJoueur .detailsJoueur .optionJoueur .boutonJoueur{
     text-decoration: none;
     background: #031e32;
     color: #45f3ff;
