@@ -37,13 +37,13 @@ require 'includes/header.php';
                 <div class="box">
                     <span>Lieu</span>
                     <select name="lieu" required="required">
-                        <option value="Domicile">Actif</option>
-                        <option value="Extérieur">Blessé</option>
+                        <option value="Domicile">Domicile</option>
+                        <option value="Extérieur">Extérieur</option>
                     </select>
                 </div>
 
                 <div class="inputBox">
-                    <input type="text" name="description_equipe" autocomplete="off">
+                    <input type="text" name="description_match" autocomplete="off">
                     <span>Description</span>
                 </div>
 
@@ -73,6 +73,11 @@ require 'includes/header.php';
                         }
                         ?>
                     </datalist>
+                </div>
+
+                <div class="inputBox">
+                    <input type="text" name="equipe_adverse" required="required" autocomplete="off">
+                    <span>Equipe adverse</span>
                 </div>
 
                 <input type="submit" name="formsend" value="Ajouter" class="button">
