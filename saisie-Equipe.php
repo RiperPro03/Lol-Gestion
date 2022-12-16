@@ -21,7 +21,7 @@
             <a href="./">HOME</a>
             <h3>Saisie d'une équipe</h3>
 
-            <form action="<?php print $_SERVER['PHP_SELF']; ?>" method="post" enctype="multipart/form-data">
+            <form action="<?php print $_SERVER['PHP_SELF']; ?>" method="post">
                 
                 <input type="hidden" name="token" value="<?=$_SESSION['authToken']?>">
 
