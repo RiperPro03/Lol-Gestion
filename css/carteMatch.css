@@ -62,10 +62,10 @@
 .carteMatch .boiteInfoMatch{
     position: absolute;
     width: 100%;
-    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     z-index: 1;
     overflow: hidden;
 }
@@ -75,9 +75,9 @@
     text-align: center;
     width: 100%;
     transition: 0.5s;
-    transform: translateY(-70px);
     display: inline-flex;
     justify-content: space-around;
+    padding-top: 0px;
   }
 
 .carteMatch .boiteInfoMatch .detailsMatch h2{
@@ -91,28 +91,16 @@
     color: #ffffff;
 }
 
-.carteJoueur .boiteInfoJoueur .detailsJoueur .option{
-    transform: translatey(20px);
-}
-
-.carteJoueur .boiteInfoJoueur .detailsJoueur .option .bouton{
-    text-decoration: none;
-    background: #031e32;
-    color: #45f3ff;
-    border-radius: 10px;
-    padding: 5%;
-    margin-left: 5%;
-    margin-right: 5%;
-}
 
 .carteMatch .boiteInfoMatch .detailsMatch .optionMatch{
-    transform: translatey(20px);
+    transform: translateY(-70px);
 }
 
 .carteMatch .boiteInfoMatch .detailsMatch .optionMatch .boutonMatch{
     text-decoration: none;
     background: #031e32;
     color: #45f3ff;
+    width: 100%;
     border-radius: 10px;
     padding: 5%;
     margin-left: 5%;

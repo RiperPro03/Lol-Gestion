@@ -67,6 +67,7 @@
     padding: 40px;
     text-align: center;
     width: 100%;
+    flex-direction: column;
     transition: 0.5s;
 }
 
