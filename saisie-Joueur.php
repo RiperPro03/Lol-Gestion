@@ -60,7 +60,6 @@
                 <div class="box">
                     <span>Poste</span>
                     <select name="poste" required="required">
-                        <choice/>
                         <option value="Top">Top</option>
                         <option value="Jungle">Jungle</option>
                         <option value="Middle">Middle</option>

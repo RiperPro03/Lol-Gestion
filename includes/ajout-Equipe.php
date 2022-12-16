@@ -5,8 +5,8 @@
 
         include 'authToken-form.php';
 
-        if(!empty($nom) && !empty($prefixe)) {
-            if (strlen($nom) <= 50 && strlen($prefixe) <= 4) {
+        if(!empty($nom)) {
+            if (strlen($nom) <= 50) {
                 $c = $db->prepare("SELECT id_Equipe FROM equipes WHERE nom = :nom");
                 $c->execute([
                     'nom' => $nom
@@ -15,10 +15,9 @@
 
                 if ($nbUser == 0) {
 
-                    $q = $db->prepare("INSERT INTO equipes (nom, prefixe) VALUES(:nom,:prefixe)");
+                    $q = $db->prepare("INSERT INTO equipes (nom) VALUES(:nom)");
                     $q->execute([
                         'nom' => $nom,
-                        'prefixe' => $prefixe
                     ]);
 
                     header('Location:./');
@@ -27,7 +26,7 @@
                     echo '<script>alert("Cette équipe existe déjà");</script>';
                 }
             } else {
-                echo '<script>alert("Erreur le nom ou le prefixe sont trop long");</script>';
+                echo '<script>alert("Erreur le nom est trop long");</script>';
             }
             
         } else {

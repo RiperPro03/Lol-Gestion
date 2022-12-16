@@ -84,7 +84,6 @@ require 'includes/header.php';
             <table>
                 <tr class="item">
                     <td>Nom de l'équipe</td>
-                    <td>Préfixe</td>
                     <td>Modifier</td>
                     <td>Supprimer</td>
                     <td><a href="saisie-Equipe">Ajouter <i class="fa-solid fa-plus"></i></a></td>
@@ -100,7 +99,6 @@ require 'includes/header.php';
                 ?>
                         <tr>
                             <td><a href="#?id=<?= $equipe['id_Equipe'] ?>"><?= $equipe['nom'] ?></a></td>
-                            <td><?= $equipe['prefixe'] ?></td>
                             <td><a href="modification-Equipe?id=<?= $equipe['id_Equipe'] ?>"><i class="fa-solid fa-pen"></i></a></td>
                             <td><a href="suppression-Equipe?id=<?= $equipe['id_Equipe'] ?>"><i class="fa-solid fa-trash"></i></a></td>
                         </tr>
@@ -120,7 +118,6 @@ require 'includes/header.php';
             <table>
                 <tr class="item">
                     <td>Nom de l'équipe</td>
-                    <td>Préfixe</td>
                     <td>Modifier</td>
                     <td>Supprimer</td>
                     <td><a href="saisie-Equipe">Ajouter <i class="fa-solid fa-plus"></i></a></td>
@@ -136,7 +133,6 @@ require 'includes/header.php';
                 ?>
                         <tr>
                             <td><a href="#?id=<?= $equipe['id_Equipe'] ?>"><?= $equipe['nom'] ?></a></td>
-                            <td><?= $equipe['prefixe'] ?></td>
                             <td><a href="modification-Equipe?id=<?= $equipe['id_Equipe'] ?>"><i class="fa-solid fa-pen"></i></a></td>
                             <td><a href="suppression-Equipe?id=<?= $equipe['id_Equipe'] ?>"><i class="fa-solid fa-trash"></i></a></td>
                         </tr>
