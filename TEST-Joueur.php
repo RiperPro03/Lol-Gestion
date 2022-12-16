@@ -1,4 +1,9 @@
-
+<?php
+    require './includes/db.php';
+    require 'includes/Carte-Joueur.php';
+    
+    global $db;
+    ?>
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -23,8 +28,23 @@
                 <input type="text" placeholder="Rechercher...">
                 <div class="recherche"></div>
             </div>
+            <div class="zoneComboBox">
+            </div>
         </div>
         <div class="Joueurs">
+        <?php 
+                $q = $db->prepare('SELECT nom, prenom, pseudo, poste, photo FROM joueurs');
+                $q->execute();
+
+                if ($q->rowCount() > 0) {
+                    while ($joueur = $q->fetch()) {
+                        $joueur = new CarteJoueur($joueur['nom'], $joueur['prenom'], $joueur['pseudo'], $joueur['poste'], $joueur['photo'],0,0);
+                        echo $joueur->get_carteJoueurAccueil();
+                    }
+                } else {
+                    echo '<p>Aucun Joueur trouvé</p>';
+                }
+            ?>
 
         </div>
     </div>

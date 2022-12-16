@@ -89,7 +89,7 @@ body{
     transition: all 0.5s;
   }
   .BarreRecherche input {
-    font-family: "Inconsolata", monospace;
+    font-family: 'Courier New', monospace;
     position: absolute;
     margin: auto;
     top: 0;
