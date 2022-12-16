@@ -8,6 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TEST-CarteEquipe</title>
+    <script src="https://kit.fontawesome.com/acf8d5192c.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./css/nav-bar.css">
     <link rel="stylesheet" href="./css/TEST-carteJoueur.css">
     <link rel="stylesheet" href="./css/carteJoueur.css">
@@ -21,10 +22,13 @@
             <a href="./TEST-CarteEquipe.php"> test carte Equipe</a>
             <a href="./TEST-CarteMatch.php">test carte Match</a>
         </div>
+        
         <?php
             $image = '637a7214430be5.13956557.png';
             $joueur = new CarteJoueur('su','lee','Lebon','Bot',$image,'12','15');
             echo $joueur->get_carteJoueurAccueil(); 
+            echo $joueur->get_carteJoueur(); 
+
         ?>
     </div>
 </body>

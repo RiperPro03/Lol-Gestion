@@ -9,6 +9,10 @@
     cursor: pointer;
 }
 
+.carteMatch:hover{
+    height: 250px;
+}
+
 .carteMatch .contourMatch{
     position: absolute;
     inset: 0;
@@ -87,4 +91,31 @@
     color: #ffffff;
 }
 
+.carteJoueur .boiteInfoJoueur .detailsJoueur .option{
+    transform: translatey(20px);
+}
+
+.carteJoueur .boiteInfoJoueur .detailsJoueur .option .bouton{
+    text-decoration: none;
+    background: #031e32;
+    color: #45f3ff;
+    border-radius: 10px;
+    padding: 5%;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.carteMatch .boiteInfoMatch .detailsMatch .optionMatch{
+    transform: translatey(20px);
+}
+
+.carteMatch .boiteInfoMatch .detailsMatch .optionMatch .boutonMatch{
+    text-decoration: none;
+    background: #031e32;
+    color: #45f3ff;
+    border-radius: 10px;
+    padding: 5%;
+    margin-left: 5%;
+    margin-right: 5%;
+}
 /*fin css carte de joueur*/

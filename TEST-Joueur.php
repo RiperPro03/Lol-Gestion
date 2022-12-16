@@ -28,8 +28,6 @@
                 <input type="text" placeholder="Rechercher...">
                 <div class="recherche"></div>
             </div>
-            <div class="zoneComboBox">
-            </div>
         </div>
         <div class="Joueurs">
         <?php 
@@ -45,7 +43,6 @@
                     echo '<p>Aucun Joueur trouvé</p>';
                 }
             ?>
-
         </div>
     </div>
 </body>

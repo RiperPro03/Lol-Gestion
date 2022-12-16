@@ -8,6 +8,10 @@
     cursor: pointer;
 }
 
+.carteEquipe:hover{
+    height: 150px;
+}
+
 .carteEquipe .contourEquipe{
     position: absolute;
     inset: 0;
@@ -46,6 +50,8 @@
     background: #333;
 }
 
+
+
 .carteEquipe .boiteInfoEquipe{
     position: absolute;
     width: 100%;
@@ -73,5 +79,19 @@
     font-size: 0.75em;
     font-weight: 500;
     color: #ffffff;
+}
+
+.carteJoueur .boiteInfoJoueur .detailsJoueur .optionEquipe{
+    transform: translatey(20px);
+}
+
+.carteJoueur .boiteInfoJoueur .detailsJoueur .optionEquipe .boutonEquipe{
+    text-decoration: none;
+    background: #031e32;
+    color: #45f3ff;
+    border-radius: 10px;
+    padding: 5%;
+    margin-left: 5%;
+    margin-right: 5%;
 }
 /*fin css carte d'équipe*/
