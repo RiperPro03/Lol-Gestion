@@ -8,7 +8,8 @@
         $db = new PDO("mysql:host=". HOST . ";dbname=". DB_NAME, USER, PASS );
         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     } catch(PDOException $e) {
-        echo '<script>alert("'. $e .'");</script>';
+        echo '<script>alert("Erreur de connetion à la base de donneés");</script>';
+        exit;
     }
 
 ?>

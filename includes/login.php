@@ -23,7 +23,7 @@
                     echo '<script>alert("Mot de passe incorrect");</script>';
                 }
             } else {
-                echo '<script>alert("L'.'utilisateur : "' . $luser . '" n'.'existe pas");</script>';
+                echo '<script>alert("Utilisateur : ' . $luser . ' est Inconnue");</script>';
             }
         } else {
             echo '<script>alert("Veuiller remplir tout les champs");</script>';

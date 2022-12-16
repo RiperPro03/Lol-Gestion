@@ -1,7 +1,7 @@
 <?php
     if(isset($_GET['id']) && !empty($_GET['id'])) {
         $id = $_GET['id'];
-        $q = $db->prepare("SELECT nom, prefixe FROM equipes WHERE id_Equipe = :id_Equipe");
+        $q = $db->prepare("SELECT nom FROM equipes WHERE id_Equipe = :id_Equipe");
         $q->execute([
             'id_Equipe' => $id
         ]);
@@ -22,21 +22,19 @@
 
         include 'authToken-form.php';
 
-        if(!empty($nom) && !empty($prefixe)) {
-            if(strlen($nom) <= 50 && strlen($prefixe) <= 4) {
-                $c = $db->prepare("SELECT id_Equipe FROM equipes WHERE nom = :nom AND prefixe = :prefixe AND id_Equipe != :id_Equipe");
+        if(!empty($nom)) {
+            if(strlen($nom) <= 50) {
+                $c = $db->prepare("SELECT id_Equipe FROM equipes WHERE nom = :nom AND id_Equipe != :id_Equipe");
                 $c->execute([
                     'nom' => $nom,
-                    'prefixe' => $prefixe,
                     'id_Equipe' => $id
                 ]);
                 $nbUser = $c->rowCount();
 
                 if ($nbUser == 0) {
-                    $q = $db->prepare("UPDATE equipes set nom = :nom ,prefixe = :prefixe WHERE id_Equipe = :id_Equipe");
+                    $q = $db->prepare("UPDATE equipes set nom = :nom WHERE id_Equipe = :id_Equipe");
                     $q->execute([
                         'nom' => $nom,
-                        'prefixe' => $prefixe,
                         'id_Equipe' => $id
                     ]);
 
@@ -45,7 +43,7 @@
                     echo '<script>alert("Cette équipe existe déjà");</script>';
                 }
             } else {
-                echo '<script>alert("Erreur le nom ou le prefixe sont trop long");</script>';
+                echo '<script>alert("Erreur le nom est trop long");</script>';
             }
             
         } else {

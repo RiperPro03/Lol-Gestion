@@ -31,11 +31,6 @@
                     <span>Nom d'équipe</span>
                 </div>
 
-                <div class="inputBox">
-                    <input type="text" max=4 name="prefixe" required="required" autocomplete="off" value=<?= $equipe['prefixe'] ?>>
-                    <span>Préfixe</span>
-                </div>
-
                 <input type="submit" name="formsend" value="Envoyer" class="button">
             </form>
         </div>

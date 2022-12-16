@@ -34,9 +34,12 @@ require 'includes/header.php';
                     <input type="time" name="heure_match" required="required" autocomplete="off">
                 </div>
 
-                <div class="inputBox">
-                    <input type="text" name="lieu" required="required" autocomplete="off">
+                <div class="box">
                     <span>Lieu</span>
+                    <select name="lieu" required="required">
+                        <option value="Domicile">Actif</option>
+                        <option value="Extérieur">Blessé</option>
+                    </select>
                 </div>
 
                 <div class="inputBox">
