@@ -152,8 +152,6 @@ body{
 .listeJoueurs{
   width: 100%;
   display: inline-flex;
-  margin-left: auto;
-  margin-right: auto;
   justify-content: center;
 }
 
