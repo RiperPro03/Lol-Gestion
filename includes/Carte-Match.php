@@ -38,18 +38,18 @@
             return $this->equipe2;
         }
 
-        function get_carteMatch(){
+        function get_carteMatchAccueil(){
 
             return
             '
             <div class="carteMatch">
                 <div class="Equipe">
-                    '.$this->equipe1->get_carteEquipe()
+                    '.$this->equipe1->get_carteEquipeAccueil()
                     .'
                     <div class=" Versus">
                         <img src="vue-img.php?img=Versus.png" style="width:100%;">
                     </div>
-                    '.$this->equipe2->get_carteEquipe().'
+                    '.$this->equipe2->get_carteEquipeAccueil().'
                 </div>
                 <div class="contourMatch">
                 </div>
@@ -57,6 +57,35 @@
                     <div class="detailsMatch">
                         <h2>Match<br><span>'. $this->get_date().'</span> <span>'.$this->get_heure().'</span></h2>
                         <h2>Score<br><span>'. $this->get_score().'</span></h2>
+                    </div>
+                </div>
+            </div>';
+        
+        }
+
+        function get_carteMatch(){
+
+            return
+            '
+            <div class="carteMatch">
+                <div class="Equipe">
+                    '.$this->equipe1->get_carteEquipeAccueil()
+                    .'
+                    <div class=" Versus">
+                        <img src="vue-img.php?img=Versus.png" style="width:100%;">
+                    </div>
+                    '.$this->equipe2->get_carteEquipeAccueil().'
+                </div>
+                <div class="contourMatch">
+                </div>
+                <div class="boiteInfoMatch">
+                    <div class="detailsMatch">
+                        <h2>Match<br><span>'. $this->get_date().'</span> <span>'.$this->get_heure().'</span></h2>
+                        <h2>Score<br><span>'. $this->get_score().'</span></h2>
+                    </div>
+                    <div class="option">
+                        <a href="#" class="bouton"><i class="fa-solid fa-pen"></i></a>
+                        <a href="#2" class="bouton"><i class="fa-solid fa-trash"></i></a>
                     </div>
                 </div>
             </div>';
