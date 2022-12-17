@@ -166,6 +166,126 @@
     margin-left: 5%;
     margin-right: 5%;
 }
-
-
 /*fin css carte de joueur*/
+
+/*debut css carte de Joueur pour les details d'equipe*/
+
+.carteJoueurDetail{
+    position: relative;
+    width: 300px;
+    height: 130px;
+    transition: 0.5s;
+    margin-left: 25%;
+    margin-right: 25%;
+    margin: auto;
+    cursor: pointer;
+    display: inline-flex;
+}
+
+.carteJoueurDetail .contourJoueurDetail{
+    position: absolute;
+    inset: 0;
+    background: #000;
+    overflow: hidden;
+}
+
+/*line du contour*/
+.carteJoueurDetail .contourJoueurDetail::before
+{
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 120%;
+    height: 60px;
+    background:linear-gradient(transparent,#45f3ff,#45f3ff,#45f3ff,transparent);
+    animation: animateJoueurDetail 4s linear infinite;
+}
+@keyframes animateJoueurDetail {
+    0%{
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    100%{
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+.carteJoueurDetail .contourJoueurDetail::after{
+    content: '';
+    position: absolute;
+    inset: 3px;
+    background: #333;
+}
+
+.carteJoueurDetail .boiteimageJoueurDetail{
+    position: absolute;
+    width: 100px;
+    height: 80px;
+    background: #000;
+    transition: 0.5s;
+    z-index: 10;
+    overflow: hidden;
+    margin: 3%;
+    transform: translateY(20%);
+}
+
+.carteJoueurDetail .boiteimageJoueurDetail::before{
+    content: '';
+    position: absolute;
+    top :50%;
+    left:50%;
+    width: 500px;
+    height: 500px;
+    background:linear-gradient(transparent,#96810b,#96810b,#96810b,transparent);
+    transform: translate(-50%,-50%);
+}
+
+.carteJoueurDetail .boiteimageJoueurDetail::after{
+    content: '';
+    position: absolute;
+    inset: 3px;
+    background: #333;
+}
+
+.carteJoueurDetail .boiteimageJoueurDetail .imageJoueurDetail{
+    position: absolute;
+    margin: 10px;
+    z-index: 1;
+    width: calc(100%-20px);
+    height: calc(100%-20px);
+}
+
+.carteJoueurDetail .boiteInfoJoueurDetail{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    overflow: hidden;
+    transform: translateX(50%);
+    width: 65%;
+}
+
+.carteJoueurDetail .boiteInfoJoueurDetail .JoueurDetail{
+    padding: 40px;
+    text-align: center;
+    width: 100%;
+    transition: 0.5s;
+}
+.carteJoueurDetail .boiteInfoJoueurDetail .JoueurDetail h2{
+    font-size: 1.25em;
+    font-weight: 600;
+    color: #45f3ff;
+    margin-right: 20%;
+    margin-left: 20%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.carteJoueurDetail .boiteInfoJoueurDetail .JoueurDetail h2 span{
+    font-size: 0.75em;
+    font-weight: 500;
+    color: #ffffff;
+}
+
+
+/*fin css carte de Joueur pour les details d'equipe*/
