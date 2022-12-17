@@ -43,6 +43,7 @@
 
 .Equipe{
     display: inline-flex;
+    width: 100%;
 }
 .carteEquipe{
     z-index: 1;

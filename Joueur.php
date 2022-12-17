@@ -31,6 +31,7 @@
                     <div class="recherche"></div>
                 </div>
                 <div class="reload"><a href="./Joueur"><i class="fa-solid fa-rotate-right"></i></a></div>
+                <div class="ajout"><a href="./saisie-Joueur.php"><i class="fa-solid fa-user-plus"></i></a></div>
             </form>
             
         </div>
