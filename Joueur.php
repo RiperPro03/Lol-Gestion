@@ -41,7 +41,7 @@
             <?php
                 if (isset($_GET['search'])) {
                     if (empty($_GET['search'])) {
-                        $q = $db->prepare('SELECT nom, prenom, pseudo, poste, photo FROM joueurs');
+                        $q = $db->prepare('SELECT id_Joueur, nom, prenom, pseudo, poste, photo FROM joueurs');
                         $q->execute();
                     } else {
                         $recherche = htmlspecialchars($_GET['search']);
