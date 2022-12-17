@@ -45,7 +45,7 @@
                         $q->execute();
                     } else {
                         $recherche = htmlspecialchars($_GET['search']);
-                        $q = $db->prepare('SELECT nom, prenom, pseudo, poste, photo FROM joueurs 
+                        $q = $db->prepare('SELECT id_Joueur, nom, prenom, pseudo, poste, photo FROM joueurs 
                                             WHERE nom LIKE "%' . $recherche . '%" 
                                             OR prenom LIKE "%' . $recherche . '%" 
                                             OR pseudo LIKE "%' . $recherche . '%" 
