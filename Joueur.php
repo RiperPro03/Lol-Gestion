@@ -1,8 +1,6 @@
 <?php
     require 'includes/header.php';
     require 'includes/Carte-Joueur.php';
-
-    global $db;
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -11,7 +9,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TEST-joueurs</title>
+    <title>LoL Gestion | Joueur</title>
     <script src="https://kit.fontawesome.com/acf8d5192c.js" crossorigin="anonymous"></script>
     <link rel="icon" href="vue-img.php?img=logo.png">
     <link rel="stylesheet" href="./css/nav-bar.css">
