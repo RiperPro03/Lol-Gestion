@@ -31,7 +31,7 @@ body{
     margin-bottom: 2%;
 }
 
-/*barre de recherche*/
+/*Zone de recherche*/
 .zoneRecherche {
     position: relative;
     width: 100%;
@@ -45,7 +45,7 @@ body{
     width: 100%;
     height: 100%;
   }
-
+/*debut barre de recherche*/
   .BarreRecherche{
     height: 100%;
     width: 25%;
@@ -154,7 +154,8 @@ body{
     opacity: 0.5;
     font-weight: bolder;
   }
-
+  /*fin barre de recherche*/
+  /*debut btn recharge de la page */
   .reload{
     width: 4%;
     text-decoration: none;
@@ -171,7 +172,28 @@ body{
   .reload i{
     width: 100%;
   }
-/* fin barre de recherche*/
+  /*fin btn recharge de la page */
+
+  /*debut btn ajout de joueur */
+  .ajout{
+    width: 4%;
+    text-decoration: none;
+    color: white;
+    border-radius: 17px;
+    background: #dc143c;
+    box-shadow:  5px 5px 2px #b21031;
+    padding: 1%;
+    margin-left: 5%;
+    margin-right: 5%;
+    translate: 400px -10px;
+  }
+
+  .ajout i{
+    width: 100%;
+  }
+  /*fin btn ajout de joueur */
+
+/* fin zone de recherche*/
 
 /*Debut liste de joueurs*/
 .listeJoueurs{
@@ -183,5 +205,17 @@ body{
   margin-bottom: 50px;
   margin-left: auto;
   margin-right: auto;
+}
+
+.noResult{
+  width: 300px;
+  height: 100px;
+  margin-top: 5%;
+  font-size: 20px;
+  background: #00bfff64;
+  text-align: center;
+  color: #fff;
+  border-radius: 20px;
+  padding-top: 3%;
 }
 /*fin liste de joueurs*/

@@ -33,6 +33,7 @@ global $db;
                     <div class="recherche"></div>
                 </div>
                 <div class="reload"><a href="./TEST-Joueur.php"><i class="fa-solid fa-rotate-right"></i></a></div>
+                <div class="ajout"><a href="./saisie-Joueur.php"><i class="fa-solid fa-user-plus"></i></a></div>
             </form>
             
         </div>
@@ -64,7 +65,7 @@ global $db;
 
                     }
                 } else {
-                    echo '<p>Aucun Joueur trouvé</p>';
+                    echo '<div class="noResult"> <p >Aucun Joueur trouvé</p></div>';
                 }
             ?>
         </div>

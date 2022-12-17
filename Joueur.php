@@ -63,7 +63,7 @@
 
                     }
                 } else {
-                    echo '<p>Aucun Joueur trouvé</p>';
+                    echo '<div class="noResult"> <p >Aucun Joueur trouvé</p></div>';
                 }
             ?>
         </div>
