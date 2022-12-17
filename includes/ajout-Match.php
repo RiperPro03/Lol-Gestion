@@ -54,7 +54,8 @@
                         'id_Equipe' => $result['id_Equipe']
                     ]);
 
-                    header("Location: " . $_SERVER['HTTP_REFERER']);
+                    //header("Location: " . $_SERVER['HTTP_REFERER']);
+                    header("Location:./");
 
                 } else {
                     echo '<script>alert("Cette équipe a déjà un match prévue pour cette date et heure ");</script>';

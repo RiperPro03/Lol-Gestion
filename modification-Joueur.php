@@ -21,7 +21,7 @@ require 'includes/header.php';
 
             <?php require 'includes/modif-Joueur.php'; ?>
 
-            <a href="./">HOME</a>
+            <a href="javascript:history.back()">Retour</a>
             <h3>Saisie d'un joueur</h3>
 
             <form method="post" enctype="multipart/form-data">

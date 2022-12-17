@@ -19,7 +19,7 @@
 
             <?php require 'includes/modif-Equipe.php';?>
 
-            <a href="./">HOME</a>
+            <a href="javascript:history.back()">Retour</a>
             <h3>Modification d'une équipe</h3>
 
             <form method="post">

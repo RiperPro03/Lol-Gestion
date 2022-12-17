@@ -18,7 +18,7 @@
 
             <?php require 'includes/ajout-Equipe.php' ?>
 
-            <a href="./">HOME</a>
+            <a href="javascript:history.back()">Retour</a>
             <h3>Saisie d'une équipe</h3>
 
             <form action="<?php print $_SERVER['PHP_SELF']; ?>" method="post">

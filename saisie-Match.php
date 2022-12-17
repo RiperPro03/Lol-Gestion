@@ -19,7 +19,7 @@ require 'includes/header.php';
         <div class="card">
 
             <?php require 'includes/ajout-Match.php';?>
-            <a href="./">HOME</a>
+            <a href="javascript:history.back()">Retour</a>
             <h3>Saisie d'un match</h3>
 
             <form action="<?php print $_SERVER['PHP_SELF']; ?>" method="post" onsubmit="return validateForm()">

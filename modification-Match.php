@@ -21,7 +21,7 @@ require 'includes/header.php';
 
             <?php require 'includes/modif-Match.php'; ?>
 
-            <a href="./">HOME</a>
+            <a href="javascript:history.back()">Retour</a>
             <h3>Modification d'un match</h3>
 
             <form method="post" onsubmit="return validateForm()">
