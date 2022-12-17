@@ -53,14 +53,15 @@
                         $q->execute();
                     }
                 } else {
-                    $q = $db->prepare('SELECT nom, prenom, pseudo, poste, photo FROM joueurs');
+                    $q = $db->prepare('SELECT id_Joueur, nom, prenom, pseudo, poste, photo FROM joueurs');
                     $q->execute();
                 }
 
                 if ($q->rowCount() > 0) {
                     while ($joueur = $q->fetch()) {
-                        $joueur = new CarteJoueur($joueur['nom'], $joueur['prenom'], $joueur['pseudo'], $joueur['poste'], $joueur['photo'], 0, 0);
-                        echo $joueur->get_carteJoueur();
+                        $cartejoueur = new CarteJoueur($joueur['nom'], $joueur['prenom'], $joueur['pseudo'], $joueur['poste'], $joueur['photo'], 0, 0);
+                        $cartejoueur->setIdJoueur($joueur['id_Joueur']);
+                        echo $cartejoueur->get_carteJoueur();
 
                     }
                 } else {

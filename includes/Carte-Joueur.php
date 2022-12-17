@@ -7,6 +7,7 @@
         private $image;
         private $victoire;
         private $nbSelection;
+        private $idJoueur;
 
         function __construct($nom, $prenom,$pseudo,$poste,$image,$victoire,$nbSelection) {
             $this->nom = $nom;
@@ -90,14 +91,18 @@
                         <h3> Selection<br><span>'.$this->get_nbSelection().'</span>
                     </div>
                     <div class="optionJoueur">
-                        <a href="#" class="boutonJoueur"><i class="fa-solid fa-pen"></i></a>
-                        <a href="#2" class="boutonJoueur"><i class="fa-solid fa-trash"></i></a>
+                        <a href="modification-Joueur?id='. $this->idJoueur .'" class="boutonJoueur"><i class="fa-solid fa-pen"></i></a>
+                        <a href="suppression-Joueur?id='. $this->idJoueur .'" class="boutonJoueur"><i class="fa-solid fa-trash"></i></a>
                     </div>
                 </div>
             </div>
         </div>
         ';
         
+        }
+        
+        function setIdJoueur($id){
+            $this->idJoueur = $id;
         }
     }
 ?>
