@@ -51,12 +51,11 @@
                         $q = $db->prepare('SELECT m.date_match, m.heure_match, m.equipe_adverse, e.nom FROM matchs m, dispute d, equipes e 
                                             WHERE m.id_Match = d.id_Match 
                                             and d.id_Equipe = e.id_Equipe
-                                            and e.nom LIKE "%' . $recherche . '%" 
+                                            OR e.nom LIKE "%' . $recherche . '%" 
                                             OR m.date_match LIKE "%' . $recherche . '%" 
                                             OR m.heure_match LIKE "%' . $recherche . '%"
                                             OR m.equipe_adverse LIKE "%' . $recherche . '%" 
                                             OR e.nom LIKE "%' . $recherche . '%"');
-
                         $q->execute();
                     }
                 } else {
