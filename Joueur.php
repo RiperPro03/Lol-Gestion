@@ -27,7 +27,7 @@
         <h1>Joueurs</h1>
 
         <div class="zoneRecherche">
-            <form action="<?php print $_SERVER['PHP_SELF']; ?>" method="get">
+            <form method="post">
                 <div class="BarreRecherche">
                     <input type="search" name="search" placeholder="Rechercher un Joueur">
                     <div class="recherche"></div>
@@ -39,12 +39,12 @@
 
         <div class="listeJoueurs">
             <?php
-                if (isset($_GET['search'])) {
-                    if (empty($_GET['search'])) {
+                if (isset($_POST['search'])) {
+                    if (empty($_POST['search'])) {
                         $q = $db->prepare('SELECT id_Joueur, nom, prenom, pseudo, poste, photo FROM joueurs');
                         $q->execute();
                     } else {
-                        $recherche = htmlspecialchars($_GET['search']);
+                        $recherche = htmlspecialchars($_POST['search']);
                         $q = $db->prepare('SELECT id_Joueur, nom, prenom, pseudo, poste, photo FROM joueurs 
                                             WHERE nom LIKE "%' . $recherche . '%" 
                                             OR prenom LIKE "%' . $recherche . '%" 
