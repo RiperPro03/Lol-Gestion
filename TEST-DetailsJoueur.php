@@ -1,22 +1,3 @@
-<?php
-    require 'includes/header.php';
-    if(isset($_GET['id']) && !empty($_GET['id'])) {
-        $id = $_GET['id'];
-        $q = $db->prepare("SELECT * FROM joueurs WHERE id_Joueur = :id_Joueur");
-        $q->execute([
-            'id_Joueur' => $id
-        ]);
-        $nbc = $q->rowCount();
-        if($nbc == 1) {
-            $joueur = $q->fetch();
-        } else {
-            header("Location:./");
-        }
-        
-    } else {
-        header("Location:./");
-    }
-?>
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -25,15 +6,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/acf8d5192c.js" crossorigin="anonymous"></script>
-    <title>LoL Gestion | Détails Joueur</title>
+    <title>TEST-DetailsJoueur</title>
     <link rel="stylesheet" href="./css/nav-bar.css">
-    <link rel="stylesheet" href="./css/detailsJoueur.css">
+    <link rel="stylesheet" href="./css/TEST-detailsJoueur.css">
 </head>
 <body>
     <?php
         require 'includes/nav-bar.html';
     ?>
     <div class="corps">
+        <div class="lienEntreTest">
+            <a href="./TEST-DetailsEquipe.php"> test details Equipe</a>
+            <a href="./TEST-DetailsMatch.php">test details Match</a>
+        </div>
         <div class="boiteDetailsJoueur">
             <div class="contourDetails">
             </div>

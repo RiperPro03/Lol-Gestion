@@ -22,10 +22,11 @@ body{
     align-items: center;
 }
 
+
 /*css des boites de details*/
-.boiteDetailsMatch{
+.boiteDetailsJoueur{
     position: relative;
-    width: 80%;
+    width: 60%;
     height: 600px;
     background: #fff;
     transition: 0.5s;
@@ -35,7 +36,7 @@ body{
     flex-direction: column;
 }
 
-.boiteDetailsMatch .contourDetails{
+.boiteDetailsJoueur .contourDetails{
     position: absolute;
     inset: 0;
     background: #000;
@@ -43,7 +44,7 @@ body{
 }
 
 /*line du contour*/
-.boiteDetailsMatch .contourDetails::before
+.boiteDetailsJoueur .contourDetails::before
 {
     content: '';
     position: absolute;
@@ -57,14 +58,14 @@ body{
 
 /*fin des line du contour*/
 
-.boiteDetailsMatch .contourDetails::after{
+.boiteDetailsJoueur .contourDetails::after{
     content: '';
     position: absolute;
     inset: 3px;
     background: #333;
 }
 
-.boiteDetailsMatch .boiteTexte{
+.boiteDetailsJoueur .boiteTexte{
     position: absolute;
     width: 100%;
     display: flex;
@@ -75,7 +76,7 @@ body{
     flex-direction: column;
 }
 
-.boiteDetailsMatch .boiteTexte .titre{
+.boiteDetailsJoueur .boiteTexte .titre{
     padding: 40px;
     text-align: center;
     width: 100%;
@@ -85,55 +86,82 @@ body{
     padding-top: 20px;
 }
 
-.boiteDetailsMatch .boiteTexte .titre h2{
+.boiteDetailsJoueur .boiteTexte .titre h2{
     font-size: 1.15em;
     font-weight: 600;
     color: #fff;
 }
 
-.detailsInfoMatch{
+.detailsInfoJoueur{
     width: 100%;
     padding-left: 5%;
     padding-right: 5%;
 }
 
-.detailsInfoMatch p{
+.detailsInfoJoueur .contourImage{
+    width: 150px;
+    height: 120px;
+    transform: translateX(165%);
+    margin: 1%;
+    overflow: hidden;
+    z-index: 1;
+    background: #000;
+}
+
+.detailsInfoJoueur .contourImage::before{
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 130%;
+    height: 50px;
+    background:linear-gradient(transparent,#45f3ff,#45f3ff,#45f3ff,transparent);
+    animation: animateJoueur 4s linear infinite;
+}
+@keyframes animateJoueur {
+    0%{
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    100%{
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+.detailsInfoJoueur .contourImage::after{
+    content: '';
+    position: absolute;
+    inset: 3px;
+    background: #333;
+}
+
+.detailsInfoJoueur .contourImage .imageJoueur{
+    position: absolute;
+    margin: 10px;
+    z-index: 1;
+    width: calc(100%-20px);
+    height: calc(100%-20px);
+}
+
+.detailsInfoJoueur p{
     font-size: 1.15em;
     color: #45f3ff;
     margin: 2%;
 }
 
-.detailsInfoMatch p span{
+.detailsInfoJoueur p span{
     color: #fff;
 
 }
 
-.detailsInfoMatch .equipesMatch{
-    width: 100%;
-    display: inline-flex;
-    justify-content: center;
-}
-
-.detailsInfoMatch .equipesMatch .Versus{
-    height: 50px;
-    width: 50px;
-    z-index: 1;
-    transform: translateY(50%);
-    background: #e3e3e3;
-    border-radius: 3%;
-    padding: 2px;
-    margin-right: 5%;
-    margin-left: 5%;
-}
-
-.boiteDetailsMatch .optionDetails{
+.boiteDetailsJoueur .optionDetails{
     display: flex;
     width: 100%;
     z-index: 1;
     transform: translateY(520px);
 }
 
-.boiteDetailsMatch .optionDetails .boutonDetail{
+.boiteDetailsJoueur .optionDetails .boutonDetail{
     text-decoration: none;
     background: #031e32;
     color: #45f3ff;
