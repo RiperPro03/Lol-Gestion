@@ -20,7 +20,6 @@
         <div class="card">
             <p>Voulez vous suprimer l'équipe : </p>
             <p>Nom : <?= $equipe['nom'] ?></p>
-            <p>Prefixe : <?= $equipe['prefixe'] ?></p>
             <form method="post">
                 <input type="hidden" name="token" value="<?=$_SESSION['authToken']?>">
                 <p>

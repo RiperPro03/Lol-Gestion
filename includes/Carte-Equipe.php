@@ -2,6 +2,7 @@
     class CarteEquipe{
         private $nom;
         private $prefixe;
+        private $idEquipe;
 
         function __construct( $nom) {
             $this->nom = $nom;
@@ -38,11 +39,14 @@
                         <h2>'.$this->get_nom().'</h2>
                     </div>
                     <div class="optionEquipe">
-                        <a href="#" class="boutonEquipe"><i class="fa-solid fa-pen"></i></a>
-                        <a href="#2" class="boutonEquipe"><i class="fa-solid fa-trash"></i></a>
+                        <a href="modification-Equipe?id='. $this->idEquipe .'" class="boutonEquipe"><i class="fa-solid fa-pen"></i></a>
+                        <a href="suppression-Equipe?id='. $this->idEquipe .'" class="boutonEquipe"><i class="fa-solid fa-trash"></i></a>
                     </div>
                 </div>
             </div>';
+        }
+        function setIdEquipe($id){
+            $this->idEquipe = $id;
         }
     }
 ?>

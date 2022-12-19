@@ -6,7 +6,7 @@
         include 'authToken-form.php';
 
         if(!empty($date_match) && !empty($heure_match) && !empty($lieu) && !empty($equipe) && !empty($equipe_adverse)) {
-            if (strlen($lieu) <= 50 && strlen($description_match) <= 50 && strlen($equipe_adverse) <= 50) {
+            if (strlen($lieu) <= 50 && strlen($description_match) <= 50 && strlen($equipe_adverse) <= 50 && strlen($score) <= 5) {
                 $c = $db->prepare("SELECT matchs.id_Match, equipes.id_Equipe FROM matchs, equipes 
                                             WHERE equipes.nom = :equipe
                                             AND matchs.date_match = :date_match
@@ -20,13 +20,14 @@
 
                 if ($nbUser == 0) {
 
-                    $q = $db->prepare("INSERT INTO matchs (date_match, heure_match, lieu, description_match, gagnant, equipe_adverse) VALUES(:date_match,:heure_match,:lieu,:description_match,:gagnant,:equipe_adverse)");
+                    $q = $db->prepare("INSERT INTO matchs (date_match, heure_match, lieu, description_match, gagnant, score, equipe_adverse) VALUES(:date_match,:heure_match,:lieu,:description_match,:gagnant,:score,:equipe_adverse)");
                     $q->execute([
                         'date_match' => $date_match,
                         'heure_match' => $heure_match,
                         'lieu' => $lieu,
                         'description_match' => $description_match,
                         'gagnant' => $gagnant,
+                        'score' => $score,
                         'equipe_adverse' => $equipe_adverse
                     ]);
                     $c = $db->prepare("SELECT matchs.id_Match, equipes.id_Equipe FROM matchs, equipes 
@@ -36,6 +37,7 @@
                                             AND matchs.lieu = :lieu
                                             AND matchs.description_match = :description_match
                                             AND matchs.gagnant = :gagnant
+                                            AND matchs.score = :score
                                             AND matchs.equipe_adverse = :equipe_adverse");
                     $c->execute([
                         'equipe' => $equipe,
@@ -44,6 +46,7 @@
                         'lieu' => $lieu,
                         'description_match' => $description_match,
                         'gagnant' => $gagnant,
+                        'score' => $score,
                         'equipe_adverse' => $equipe_adverse
                     ]);
                     $result = $c->fetch();

@@ -40,22 +40,23 @@
             <?php
                 if (isset($_POST['search'])) {
                     if (empty($_POST['search'])) {
-                        $q = $db->prepare('SELECT nom FROM equipes');
+                        $q = $db->prepare('SELECT * FROM equipes');
                         $q->execute();
                     } else {
                         $recherche = htmlspecialchars($_POST['search']);
-                        $q = $db->prepare('SELECT nom FROM equipes
+                        $q = $db->prepare('SELECT * FROM equipes
                                             WHERE nom LIKE "%' . $recherche . '%"');
                         $q->execute();
                     }
                 } else {
-                    $q = $db->prepare('SELECT nom FROM equipes');
+                    $q = $db->prepare('SELECT * FROM equipes');
                     $q->execute();
                 }
 
                 if ($q->rowCount() > 0) {
                     while ($equipe = $q->fetch()) {
                         $carteEquipe = new CarteEquipe($equipe['nom']);
+                        $carteEquipe->setIdEquipe($equipe['id_Equipe']);
                         echo $carteEquipe->get_carteEquipe();
                     }
                 } else {

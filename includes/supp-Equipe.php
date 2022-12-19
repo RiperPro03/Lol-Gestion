@@ -1,7 +1,7 @@
 <?php
     if(isset($_GET['id']) && !empty($_GET['id'])) {
         $id = $_GET['id'];
-        $q = $db->prepare("SELECT nom, prefixe FROM equipes WHERE id_Equipe = :id_Equipe");
+        $q = $db->prepare("SELECT nom FROM equipes WHERE id_Equipe = :id_Equipe");
         $q->execute([
             'id_Equipe' => $id
         ]);

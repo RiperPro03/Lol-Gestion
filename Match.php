@@ -43,12 +43,12 @@
             //il manque le score du match
                 if (isset($_POST['search'])) {
                     if (empty($_POST['search'])) {
-                        $q = $db->prepare('SELECT m.date_match, m.heure_match, m.equipe_adverse, e.nom FROM matchs m, dispute d, equipes e WHERE m.id_Match = d.id_Match and d.id_Equipe = e.id_Equipe');
+                        $q = $db->prepare('SELECT m.id_Match, m.date_match, m.heure_match, m.equipe_adverse, e.nom FROM matchs m, dispute d, equipes e WHERE m.id_Match = d.id_Match and d.id_Equipe = e.id_Equipe');
                         $q->execute();
                     } else {
                         //probleme sur cette requete
                         $recherche = htmlspecialchars($_POST['search']);
-                        $q = $db->prepare('SELECT m.date_match, m.heure_match, m.equipe_adverse, e.nom FROM matchs m, dispute d, equipes e 
+                        $q = $db->prepare('SELECT m.id_Match, m.date_match, m.heure_match, m.equipe_adverse, e.nom FROM matchs m, dispute d, equipes e 
                                             WHERE m.id_Match = d.id_Match 
                                             and d.id_Equipe = e.id_Equipe
                                             OR e.nom LIKE "%' . $recherche . '%" 
@@ -59,7 +59,7 @@
                         $q->execute();
                     }
                 } else {
-                    $q = $db->prepare('SELECT m.date_match, m.heure_match, m.equipe_adverse, e.nom FROM matchs m, dispute d, equipes e WHERE m.id_Match = d.id_Match and d.id_Equipe = e.id_Equipe');
+                    $q = $db->prepare('SELECT m.id_Match, m.date_match, m.heure_match, m.equipe_adverse, e.nom FROM matchs m, dispute d, equipes e WHERE m.id_Match = d.id_Match and d.id_Equipe = e.id_Equipe');
                     $q->execute();
                 }
 
@@ -68,6 +68,7 @@
                         $equipe1 = new CarteEquipe($match['nom']);
                         $equipe2 = new CarteEquipe($match['equipe_adverse']);
                         $carteMatch = new CarteMatch($match['date_match'],$match['heure_match'],$equipe1,$equipe2,null);
+                        $carteMatch->setIdMatch($match['id_Match']);
                         echo $carteMatch->get_carteMatch();
 
                     }

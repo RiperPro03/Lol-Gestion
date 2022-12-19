@@ -5,6 +5,7 @@
         private $equipe1; 
         private $equipe2;
         private $score;
+        private $idMatch;
 
         function __construct($date,$heure,$equipe1,$equipe2,$score) {
             $this->date = $date;
@@ -55,7 +56,7 @@
                 </div>
                 <div class="boiteInfoMatch">
                     <div class="detailsMatch">
-                        <h2>Match<br><span>'. $this->get_date().'</span> <span>'.$this->get_heure().'</span></h2>
+                        <h2>Match<br><span>'. date("d/m/Y", strtotime($this->get_date())).'</span> <span>'.date('H:i', strtotime($this->get_heure())).'</span></h2>
                         <h2>Score<br><span>'. $this->get_score().'</span></h2>
                     </div>
                 </div>
@@ -80,16 +81,19 @@
                 </div>
                 <div class="boiteInfoMatch">
                     <div class="detailsMatch">
-                        <h2>Match<br><span>'. $this->get_date().'</span> <span>'.$this->get_heure().'</span></h2>
+                        <h2>Match<br><span>'. date("d/m/Y", strtotime($this->get_date())).'</span> <span>'.date('H:i', strtotime($this->get_heure())).'</span></h2>
                         <h2>Score<br><span>'. $this->get_score().'</span></h2>
                     </div>
                     <div class="optionMatch">
-                        <a href="#" class="boutonMatch"><i class="fa-solid fa-pen"></i></a>
-                        <a href="#2" class="boutonMatch"><i class="fa-solid fa-trash"></i></a>
+                        <a href="modification-Match?id='. $this->idMatch .'" class="boutonMatch"><i class="fa-solid fa-pen"></i></a>
+                        <a href="suppression-Match?id='. $this->idMatch .'" class="boutonMatch"><i class="fa-solid fa-trash"></i></a>
                     </div>
                 </div>
             </div>';
         
+        }
+        function setIdMatch($id){
+            $this->idMatch = $id;
         }
     }
 ?>

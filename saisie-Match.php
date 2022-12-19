@@ -48,6 +48,11 @@ require 'includes/header.php';
                 </div>
 
                 <div class="inputBox">
+                    <input type="text" name="score" autocomplete="off">
+                    <span>Score</span>
+                </div>
+
+                <div class="inputBox">
                     <input type="text" name="gagnant" autocomplete="off">
                     <span>Gagnant</span>
                 </div>

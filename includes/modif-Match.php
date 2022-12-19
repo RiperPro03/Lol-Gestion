@@ -49,7 +49,8 @@
                                                         heure_match = :heure_match, 
                                                         lieu = :lieu, 
                                                         description_match = :description_match, 
-                                                        gagnant = :gagnant, 
+                                                        gagnant = :gagnant,
+                                                        score = :score, 
                                                         equipe_adverse = :equipe_adverse 
                                                         WHERE id_Match = :id_Match");
                     $q->execute([
@@ -58,6 +59,7 @@
                         'lieu' => $lieu,
                         'description_match' => $description_match,
                         'gagnant' => $gagnant,
+                        'score' => $score,
                         'equipe_adverse' => $equipe_adverse,
                         'id_Match' => $id
                     ]);

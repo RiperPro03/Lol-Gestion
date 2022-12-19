@@ -1,11 +1,14 @@
 <?php
-    /*session_start();
-    if (!(isset($_SESSION['authToken']))) {
+    session_start();
+    if (!empty($_SESSION['authToken'])) {
         if (time() > $_SESSION['authTokenExpire']) {
-            header('Location:login');
+            header('Location:./login');
             exit;
         }
-    }*/
+    } else {
+        header('Location:./erreur401');
+        exit;
+    }
 
     if(isset($_GET['img']) && !empty($_GET['img'])) {
         $chemin = "img/players/".$_GET['img'];

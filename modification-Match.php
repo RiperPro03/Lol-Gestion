@@ -50,6 +50,11 @@ require 'includes/header.php';
                 </div>
 
                 <div class="inputBox">
+                    <input type="text" name="score" autocomplete="off" value=<?= $match['score']?>>
+                    <span>Score</span>
+                </div>
+
+                <div class="inputBox">
                     <input type="text" name="gagnant" autocomplete="off" value=<?= $match['gagnant']?>>
                     <span>Gagnant</span>
                 </div>
