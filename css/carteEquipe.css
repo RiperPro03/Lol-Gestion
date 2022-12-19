@@ -9,6 +9,10 @@
     overflow: hidden;
 }
 
+#nonClickable{
+    cursor: default;
+}
+
 .carteEquipe .contourEquipe{
     position: absolute;
     inset: 0;

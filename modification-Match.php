@@ -29,11 +29,11 @@ require 'includes/header.php';
                 <input type="hidden" name="token" value="<?= $_SESSION['authToken'] ?>">
 
                 <div class="inputBox">
-                    <input type="date" name="date_match" required="required" autocomplete="off" value=<?= $match['date_match']?>>
+                    <input type="date" name="date_match" required="required" autocomplete="off" value="<?= $match['date_match']?>">
                 </div>
 
                 <div class="inputBox">
-                    <input type="time" name="heure_match" required="required" autocomplete="off" value=<?= date('H:i', strtotime($match['heure_match']))?>>
+                    <input type="time" name="heure_match" required="required" autocomplete="off" value="<?= date('H:i', strtotime($match['heure_match']))?>">
                 </div>
 
                 <div class="box">
@@ -45,23 +45,23 @@ require 'includes/header.php';
                 </div>
 
                 <div class="inputBox">
-                    <input type="text" name="description_match" autocomplete="off" value=<?= $match['description_match']?>>
+                    <input type="text" name="description_match" autocomplete="off" value="<?= htmlspecialchars($match['description_match']);?>">
                     <span>Description</span>
                 </div>
 
                 <div class="inputBox">
-                    <input type="text" name="score" autocomplete="off" value=<?= $match['score']?>>
+                    <input type="text" name="score" autocomplete="off" value="<?= htmlspecialchars($match['score']);?>">
                     <span>Score</span>
                 </div>
 
                 <div class="inputBox">
-                    <input type="text" name="gagnant" autocomplete="off" value=<?= $match['gagnant']?>>
+                    <input type="text" name="gagnant" autocomplete="off" value="<?= htmlspecialchars($match['gagnant']);?>">
                     <span>Gagnant</span>
                 </div>
 
                 <div class="box">
                     <span>Equipe</span>
-                    <input list="list-equipe" id="inputE" type="text" name="equipe" required="required" autocomplete="off" value=<?= $nom_equipe['nom']?>>
+                    <input list="list-equipe" id="inputE" type="text" name="equipe" required="required" autocomplete="off" value="<?= htmlspecialchars($nom_equipe['nom']);?>">
                     <datalist id="list-equipe">
                         <?php
                         $q = $db->prepare('SELECT nom FROM equipes');
@@ -83,7 +83,7 @@ require 'includes/header.php';
                 </div>
 
                 <div class="inputBox">
-                    <input type="text" name="equipe_adverse" required="required" autocomplete="off" value=<?= $match['equipe_adverse']?>>
+                    <input type="text" name="equipe_adverse" required="required" autocomplete="off" value="<?= htmlspecialchars($match['equipe_adverse']);?>">
                     <span>Equipe adverse</span>
                 </div>
 

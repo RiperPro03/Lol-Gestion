@@ -27,7 +27,7 @@
                 <input type="hidden" name="token" value="<?=$_SESSION['authToken']?>">
                 
                 <div class="inputBox">
-                    <input type="text" name="nom" required="required" autocomplete="off" value=<?= $equipe['nom'] ?>>
+                    <input type="text" name="nom" required="required" autocomplete="off" value="<?= htmlspecialchars($equipe['nom']); ?>">
                     <span>Nom d'équipe</span>
                 </div>
 

@@ -30,7 +30,7 @@
         function get_carteEquipeAccueilNonClickable(){
             return
             '
-            <div class="carteEquipe">
+            <div class="carteEquipe" id="nonClickable">
                 <div class="contourEquipe">
                 </div>
                 <div class="boiteInfoEquipe">
