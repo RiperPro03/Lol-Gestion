@@ -47,7 +47,7 @@
 
         function get_carteJoueurAccueil(){
             return
-            '<div class="carteJoueur">
+            '<div class="carteJoueur" onclick="location.href=\'./details-Joueur?id='.$this->idJoueur.'\';">
             <div class="contourJoueur">
             </div>
             <div class="boiteimageJoueur">
@@ -92,7 +92,7 @@
 
         function get_carteJoueur(){
             return
-            '<div class="carteJoueur">
+            '<div class="carteJoueur" onclick="location.href=\'./details-Joueur?id='.$this->idJoueur.'\';">
                 <div class="contourJoueur">
                 </div>
                 <div class="boiteimageJoueur">

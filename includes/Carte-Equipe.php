@@ -1,7 +1,6 @@
 <?php
     class CarteEquipe{
         private $nom;
-        private $prefixe;
         private $idEquipe;
 
         function __construct( $nom) {
@@ -14,6 +13,21 @@
         }
 
         function get_carteEquipeAccueil(){
+            return
+            '
+            <div class="carteEquipe" onclick="location.href=\'./details-Equipe?id='.$this->idEquipe.'\';">
+                <div class="contourEquipe">
+                </div>
+                <div class="boiteInfoEquipe">
+                    <div class="detailsEquipe">
+                        <h2>'.$this->get_nom().'</h2>
+                    </div>
+                </div>
+            </div>';
+        
+        }
+
+        function get_carteEquipeAccueilNonClickable(){
             return
             '
             <div class="carteEquipe">
@@ -31,7 +45,7 @@
         function get_carteEquipe(){
             return
             '
-            <div class="carteEquipe">
+            <div class="carteEquipe" onclick="location.href=\'./details-Equipe?id='.$this->idEquipe.'\';">
                 <div class="contourEquipe">
                 </div>
                 <div class="boiteInfoEquipe">

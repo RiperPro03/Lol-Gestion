@@ -8,8 +8,14 @@
             'id_Match' => $id
         ]);
         $nbc = $q->rowCount();
+
         if($nbc == 1) {
-            $equipe = $q->fetch();
+            $match = $q->fetch();
+            $c = $db->prepare("SELECT * FROM equipes e INNER JOIN dispute d ON e.id_Equipe = d.id_Equipe WHERE d.id_Match = :id_Match");
+            $c->execute([
+                'id_Match' => $id
+            ]);
+            $my_equipe = $c->fetch();
         } else {
             header("Location:./");
         }
@@ -26,6 +32,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/acf8d5192c.js" crossorigin="anonymous"></script>
     <title>LoL Gestion | Détails Match</title>
+    <link rel="icon" href="vue-img.php?img=logo.png">
     <link rel="stylesheet" href="./css/nav-bar.css">
     <link rel="stylesheet" href="./css/detailsMatch.css">
     <link rel="stylesheet" href="./css/carteEquipe.css">
@@ -44,36 +51,38 @@
                 </div>
                 <div class="detailsInfoMatch">
                     <p>
-                        Date du match :<span> 12/02/2021</span>
+                        Date du match :<span> <?= date('d/m/Y', strtotime($match['date_match']))?></span>
                     </p>
                     <p>
-                        Heure du match : <span> 15h</span>
+                        Heure du match : <span> <?= date('H:i', strtotime($match['heure_match']))?></span>
                     </p>
                     <p>
-                        Lieu du match : <span> Toulouse Rangueil</span>
+                        Lieu du match : <span> <?= $match['lieu']?></span>
                     </p>
                     <p>
-                        Description du match :</br> <span>Match sérree entre les 2 equipes</span>
+                        Description du match :</br> <span><?= $match['description_match']?></span>
                     </p>
+                    <p> Gagnant : <span> <?= $match['gagnant']?></span></p>
+                    <p> Score : <span> <?= $match['score']?></span></p>
                     <p> Equipe : </p>
                     <div class="equipesMatch">
                         <?php
-                            $equipe = new CarteEquipe('SK Telecom T1');
-                            $equipe2 = $equipe;
+                            $equipe = new CarteEquipe($my_equipe['nom']);
+                            $equipe2 = new CarteEquipe($match['equipe_adverse']);
+                            $equipe->setIdEquipe($my_equipe['id_Equipe']);
                             echo $equipe->get_carteEquipeAccueil();
                             echo '<div class="Versus">
                             <img src="vue-img.php?img=Versus.png" style="width:100%;">
                                 </div>';
-                            echo $equipe2->get_carteEquipeAccueil();
+                            echo $equipe2->get_carteEquipeAccueilNonClickable();
                         ?>
                     </div>
-                    <p> Gagnant : <span> T1</span></p>
-                    <p> Score : <span> 3 : 0</span></p>
+                    
                 </div>
             </div>
             <div class="optionDetails">
-                <a href="#1" class="boutonDetail"><i class="fa-solid fa-pen"></i></a>
-                <a href="#2" class="boutonDetail"><i class="fa-solid fa-trash"></i></a>
+                <a href="modification-Match?id=<?= $match['id_Match'] ?>" class="boutonDetail"><i class="fa-solid fa-pen"></i></a>
+                <a href="suppression-Match?id=<?= $match['id_Match'] ?>" class="boutonDetail"><i class="fa-solid fa-trash"></i></a>
             </div>
         </div>
     </div>

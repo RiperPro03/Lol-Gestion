@@ -26,6 +26,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/acf8d5192c.js" crossorigin="anonymous"></script>
     <title>LoL Gestion | Détails Joueur</title>
+    <link rel="icon" href="vue-img.php?img=logo.png">
     <link rel="stylesheet" href="./css/nav-bar.css">
     <link rel="stylesheet" href="./css/detailsJoueur.css">
 </head>
@@ -43,28 +44,29 @@
                 </div>
                 <div class="detailsInfoJoueur">
                     <div class="contourImage">
-                        <div class="imageJoueur"><img src="vue-img.php?img=637a7214430be5.13956557.png "style="width:100%;"></div>
+                        <div class="imageJoueur"><?= "<img src='vue-img.php?img=" . $joueur['photo'] . "' style='width:100%;' >" ?></div>
                     </div>
                     <p>
-                        Pseudo :<span> Faker</span>
+                        Pseudo :<span> <?= $joueur['pseudo'] ?></span>
                     </p>
                     <p>
-                        nom : <span> Syuang</span>
+                        nom : <span> <?= $joueur['nom'] ?></span>
                     </p>
                     <p>
-                        Prenom : <span> Lee</span>
+                        Prenom : <span> <?= $joueur['prenom'] ?></span>
                     </p>
-                    <p> Date de naissance : <span>12/05/2003</span></p>
-                    <p>Taille : <span> 180 cm</span></p>
-                    <p>Poids : <span>80 Kg</span></p>
-                    <p>Statut :<span>Actif</span></p>
-                    <p>Commentaire Joueur :</br> <span> manque de teamplay</span></p>
+                    <p> Date de naissance : <span><?= date('d/m/Y', strtotime($joueur['date_naissance'])) ?></span></p>
+                    <p>Taille : <span> <?= $joueur['taille'] ?> cm</span></p>
+                    <p>Poids : <span><?= $joueur['poids'] ?> Kg</span></p>
+                    <p>Poste : <span><?= $joueur['poste'] ?></span></p>
+                    <p>Statut :<span><?= $joueur['statut'] ?></span></p>
+                    <p>Commentaire Joueur :</br> <span> <?= $joueur['commentaire'] ?></span></p>
                     <p><span></span></p>
                 </div>
             </div>
             <div class="optionDetails">
-                <a href="#1" class="boutonDetail"><i class="fa-solid fa-pen"></i></a>
-                <a href="#2" class="boutonDetail"><i class="fa-solid fa-trash"></i></a>
+                <a href="modification-Joueur?id=<?= $joueur['id_Joueur'] ?>" class="boutonDetail"><i class="fa-solid fa-pen"></i></a>
+                <a href="suppression-Joueur?id=<?= $joueur['id_Joueur'] ?>" class="boutonDetail"><i class="fa-solid fa-trash"></i></a>
             </div>
         </div>
     </div>

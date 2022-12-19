@@ -48,13 +48,14 @@
         <div class="listeJoueurs">
             <h1>TOP 5 | Joueurs</h1>
             <?php 
-                $q = $db->prepare('SELECT nom, prenom, pseudo, poste, photo FROM joueurs LIMIT 5');
+                $q = $db->prepare('SELECT id_Joueur, nom, prenom, pseudo, poste, photo FROM joueurs LIMIT 5');
                 $q->execute();
 
                 if ($q->rowCount() > 0) {
                     while ($joueur = $q->fetch()) {
-                        $joueur = new CarteJoueur($joueur['nom'], $joueur['prenom'], $joueur['pseudo'], $joueur['poste'], $joueur['photo'],0,0);
-                        echo $joueur->get_carteJoueurAccueil();
+                        $carteJoueur = new CarteJoueur($joueur['nom'], $joueur['prenom'], $joueur['pseudo'], $joueur['poste'], $joueur['photo'],0,0);
+                        $carteJoueur->setIdJoueur($joueur['id_Joueur']);
+                        echo $carteJoueur->get_carteJoueurAccueil();
                     }
                 } else {
                     echo '<div class="noResult"> <p >Aucun Match trouvé</p></div>';
@@ -72,6 +73,7 @@
                         $equipe1 = new CarteEquipe($match['nom']);
                         $equipe2 = new CarteEquipe($match['equipe_adverse']);
                         $carteMatch = new CarteMatch($match['date_match'],$match['heure_match'],$equipe1,$equipe2,null);
+                        $carteMatch->setIdMatch($match['id_Match']);
                         echo $carteMatch->get_carteMatchAccueil();
 
                     }

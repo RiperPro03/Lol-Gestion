@@ -43,7 +43,7 @@
 
             return
             '
-            <div class="carteMatch">
+            <div class="carteMatch" onclick="location.href=\'./details-Match?id='.$this->idMatch.'\';">
                 <div class="Equipe">
                     '.$this->equipe1->get_carteEquipeAccueil()
                     .'
@@ -68,7 +68,7 @@
 
             return
             '
-            <div class="carteMatch">
+            <div class="carteMatch" onclick="location.href=\'./details-Match?id='.$this->idMatch.'\';">
                 <div class="Equipe">
                     '.$this->equipe1->get_carteEquipeAccueil()
                     .'
