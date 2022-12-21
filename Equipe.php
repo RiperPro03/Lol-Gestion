@@ -27,7 +27,7 @@
         <div class="zoneRecherche">
             <form method="post">
                 <div class="BarreRecherche">
-                    <input type="search" name="search" placeholder="Rechercher un Joueur">
+                    <input type="search" name="search" placeholder="Rechercher une Equipe">
                     <div class="recherche"></div>
                 </div>
                 <div class="reload"><a href="./Equipe"><i class="fa-solid fa-rotate-right"></i></a></div>
