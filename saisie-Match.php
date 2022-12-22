@@ -98,8 +98,12 @@ require 'includes/header.php';
 
             for (var i = 0; i < datalist.options.length; i++) {
                 if (input.value == datalist.options[i].value) {
-                    isValid = true;
-                    break;
+                    if(input.value == 'Aucune équipe trouvé') {
+                        alert("Veuillez ajouté une équipe avant de l'ajouter à un match");
+                    } else {
+                        isValid = true;
+                        break;
+                    }
                 }
             }
 

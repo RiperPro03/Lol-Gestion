@@ -33,7 +33,7 @@ body{
 .boiteDetailsEquipe{
     position: relative;
     width: 60%;
-    height: 1700px;
+    height: 2000px;
     background: #fff;
     transition: 0.5s;
     overflow: hidden;

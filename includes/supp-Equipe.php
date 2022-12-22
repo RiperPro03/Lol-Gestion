@@ -1,7 +1,7 @@
 <?php
     if(isset($_GET['id']) && !empty($_GET['id'])) {
         $id = $_GET['id'];
-        $q = $db->prepare("SELECT nom FROM equipes WHERE id_Equipe = :id_Equipe");
+        $q = $db->prepare("SELECT id_Equipe, nom FROM equipes WHERE id_Equipe = :id_Equipe");
         $q->execute([
             'id_Equipe' => $id
         ]);
@@ -26,7 +26,11 @@
             if(isset($_GET['id']) && !empty($_GET['id'])) {
                 $q = $db->prepare("DELETE FROM equipes WHERE id_Equipe = :id_Equipe");
                 $q->execute([
-                    'id_Equipe' => $id
+                    'id_Equipe' => $equipe['id_Equipe']
+                ]);
+                $q = $db->prepare("DELETE FROM appartient WHERE id_Equipe = :id_Equipe");
+                $q->execute([
+                    'id_Equipe' => $equipe['id_Equipe']
                 ]);
             }
         }

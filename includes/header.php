@@ -6,7 +6,7 @@
         if (time() > $_SESSION['authTokenExpire']) {
             echo '<script>
                 alert("Votre session a expiré, veuillez vous reconnecter");
-                location.assign("./login");
+                location.assign("./logout");
             </script>';
             exit;
         }
