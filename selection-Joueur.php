@@ -25,7 +25,7 @@
         <input type="hidden" name="token" value="<?=$_SESSION['authToken']?>">
 
         <?php
-            $q = $db->prepare('SELECT j.id_Joueur, j.pseudo FROM joueurs j INNER JOIN appartient a ON j.id_Joueur = a.id_Joueur AND j.statut = :statut WHERE a.id_Equipe = :id_Equipe');
+            $q = $db->prepare('SELECT j.* FROM joueurs j INNER JOIN appartient a ON j.id_Joueur = a.id_Joueur AND j.statut = :statut WHERE a.id_Equipe = :id_Equipe');
             $q->execute([
                 'id_Equipe' => $equipe['id_Equipe'],
                 'statut' => 'actif'
@@ -39,7 +39,12 @@
                         'id_Joueur' => $joueur['id_Joueur']
                     ]);
                     $titulaire = $c->fetch();
-                    echo '<label>' . $joueur['pseudo'] . '</label>';
+                    echo "<img src='vue-img.php?img=" . $joueur['photo'] . "' style='width:50px;'> <br>";
+                    echo '<label>' . $joueur['pseudo'] . '</label> <br>';
+                    echo '<label>Taille : ' . $joueur['taille'] . '</label> <br>';
+                    echo '<label>Poids : ' . $joueur['poids'] . '</label> <br>';
+                    echo '<label>Poste : ' . $joueur['poste'] . '</label> <br>';
+                    echo '<label>Commentaire : ' . $joueur['commentaire'] . '</label> <br>';
                     if ($titulaire['titulaire'] == 1) {
                         echo '<input type="checkbox" name="Joueurs[]" value="' . $joueur['id_Joueur'] . '" checked> <br>';
                     } else {
