@@ -22,14 +22,19 @@ body{
     align-items: center;
 }
 
+.corps .titre{
+    color: #ffffff;
+    text-align: center;
+    width: 100%;
+    margin: 2%;
+}
+
 /*css des boites de statistique*/
 .boiteDetailsStat{
     position: relative;
     width: 80%;
-    height: 90%;
-    min-height: 600px;
+    height: 450px;
     background: #fff;
-    transition: 0.5s;
     margin-top: 50px;
     display: flex;
     flex-direction: column;
@@ -73,23 +78,49 @@ body{
     z-index: 1;
     flex-direction: column;
 }
-.boiteDetailsStat .boiteTexte .titre{
-    color: #ffffff;
-    text-align: center;
-    width: 100%;
-    margin: 2%;
-}
 
+/*Stat globale*/
 .boiteDetailsStat .boiteTexte .boiteStatGeneral{
     width: 100%;
+    padding: 3%;
 }
 
+.boiteDetailsStat .boiteTexte .boiteStatGeneral .statGeneral{
+    width: 100%;
+}
+.boiteDetailsStat .boiteTexte .boiteStatGeneral .statGeneral h2{
+    width: 100%;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 3%;
+}
+.boiteDetailsStat .boiteTexte .boiteStatGeneral .statGeneral p{
+    color: aqua;
+    text-align: center;
+    justify-content: space-between;
+    display: inline-flex;
+    margin-left: 6%;
+    margin-right: 6%;
+}
+
+.boiteDetailsStat .boiteTexte .boiteStatGeneral .statGeneral p span{
+    color: #fff;
+
+}
+
+/*fin stat globale*/
+/*stat pour chaque joueur*/
 .boiteDetailsStat .boiteTexte .boiteStatParJoueur{
     width: 100%;
     display: flex;
     justify-content: center;
     align-content: center;
     flex-direction: column;
+}
+.boiteDetailsStat .boiteTexte .boiteStatParJoueur .titreStatJ{
+    color: #fff;
+    text-align: center;
+    margin: 2%;
 }
 
 .boiteDetailsStat .boiteTexte .boiteStatParJoueur .bouton{
@@ -99,12 +130,15 @@ body{
 
 .boiteDetailsStat .boiteTexte .boiteStatParJoueur .bouton button{
     width: 20%;
-    text-align: center;
-    background: #022d3b;
-    color: #ad9508;
-    border-radius: 20px;
+    text-decoration: none;
+    color: white;
+    border: #dc143c;
+    border-radius: 17px;
+    background: #dc143c;
+    box-shadow:  5px 5px 2px #b21031;
+    padding: 1%;
 }
-
+/*popup de selection d'un joueur*/
 .popup{
     width: 80%;
     padding: 2.5%;
@@ -118,7 +152,7 @@ body{
     visibility: hidden;
     margin: auto;
     flex-direction: column;
-    transform: translateY(-100px);
+    transform: translateY(-350px);
 }
 
 .popup h2{
@@ -137,10 +171,13 @@ body{
 
 .popup button{
     width: 90%;
-    padding: 2%;
-    border-radius: 20px;
-    background-color: #031e32;
-    color: #ad9508;
+    text-decoration: none;
+    color: white;
+    border: #dc143c;
+    border-radius: 17px;
+    background: #dc143c;
+    box-shadow:  5px 5px 2px #b21031;
+    padding: 1%;
     margin: auto;
 }
 
@@ -149,4 +186,40 @@ body{
     height: auto;
 }
 
+.popupActive{
+    visibility: hidden;
+}
+/*fin du popup*/
+
+.boiteStatParJoueur .tableauStatJ{
+    margin: auto;
+    text-align: center;
+    width: 95%;
+}
+
+.boiteStatParJoueur .tableauStatJ table{
+    margin: auto;
+    text-align: center;
+    background: #ad9508;
+}
+
+.boiteStatParJoueur .tableauStatJ th{
+    color: #00ffff;
+    margin: auto;
+    background: #333;
+    width: 10%;
+    
+}
+
+.boiteStatParJoueur .tableauStatJ td{
+    color: #fff;
+    margin: auto;
+    background: #333;
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+
+
+
+/*fin stat pour chaque joueur*/
 /*fin css statistique*/

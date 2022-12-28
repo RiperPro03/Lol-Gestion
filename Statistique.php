@@ -20,15 +20,22 @@
     require 'includes/nav-bar.html';
     ?>
     <div class="corps">
+        <h2 class="titre">Statistique</h2>
         <div class="boiteDetailsStat">
             <div class="contourStat">
             </div>
             <div class="boiteTexte">
-                <h2 class="titre">Statistique</h2>
+                
                 <div class="boiteStatGeneral">
-
+                    <div class="statGeneral">
+                        <h2> Statistique Globale</h2>
+                        <p> Nombre de match: <span> 10 </span></p>
+                        <p> Nombre de victoire: <span> 5 ,50%</span></p>
+                        <p> Nombre de defaite: <span> 5 ,50%</span></p>
+                    </div>
                 </div>
                 <div class="boiteStatParJoueur">
+                    <h2 class="titreStatJ">Statistique par joueur</h2>
                     <div class="bouton">
                         <button type="submit"  onclick="openPopup()"> Joueurs</button>
                     </div>
@@ -51,18 +58,47 @@
                         </div>
                         <button type="button" onclick="closePopup()"> Fermer</button>
                     </div>
+                    <div class="tableauStatJ" id="tableauStatJ">
+                        <table>
+                            <tr>
+                                <th>Nom</th>
+                                <th>Prenom</th>
+                                <th>Pseudo</th>
+                                <th>Poste</th>
+                                <th>Nombre de selection</th>
+                                <th>Nombre de selection titulaire</th>
+                                <th>Nombre de selection Remplacant</th>
+                                <th>Ratio de victoire</th>
+                                <th>Note</th>
+                            </tr>
+                            <tr>
+                                <td>Lee</td>
+                                <td>syang</td>
+                                <td>Faker</td>
+                                <td>Mid</td>
+                                <td>15</td>
+                                <td>10</td>
+                                <td>5</td>
+                                <td>50%</td>
+                                <td>4.6</td>
+                            </tr>
+                        </table> 
+                    </div>
                 </div>
             </div>
         </div>
     </div>
     <script>
         let popup = document.getElementById("popup");
+        let tableau = document.getElementById("tableauStatJ");
 
         function openPopup() {
             popup.classList.add("open-popup");
+            tableau.classList.add("popupActive");
         }
         function closePopup() {
             popup.classList.remove("open-popup");
+            tableau.classList.remove("popupActive");
         }
     </script>
 </body>
