@@ -71,7 +71,6 @@
                                     $cartejoueur->setIdJoueur($joueur['id_Joueur']);
                                     $cartejoueur->setIdEquipe($equipe['id_Equipe']);
                                     echo $cartejoueur->get_carteJoueurPourDetails();
-                    
                                 }
                             } else {
                                 echo '<div class="noResult"> <p >Aucun Joueur trouvé</p></div>';

@@ -26,10 +26,10 @@ body{
 .boiteDetailsStat{
     position: relative;
     width: 80%;
-    height: 600px;
+    height: 90%;
+    min-height: 600px;
     background: #fff;
     transition: 0.5s;
-    overflow: hidden;
     margin-top: 50px;
     display: flex;
     flex-direction: column;
@@ -71,10 +71,9 @@ body{
     justify-content: center;
     align-items: center;
     z-index: 1;
-    overflow: hidden;
     flex-direction: column;
 }
-.boiteDetailsStat .boiteTexte h2{
+.boiteDetailsStat .boiteTexte .titre{
     color: #ffffff;
     text-align: center;
     width: 100%;
@@ -98,9 +97,18 @@ body{
     padding-left: 10%;
 }
 
+.boiteDetailsStat .boiteTexte .boiteStatParJoueur .bouton button{
+    width: 20%;
+    text-align: center;
+    background: #022d3b;
+    color: #ad9508;
+    border-radius: 20px;
+}
+
 .popup{
     width: 80%;
     padding: 2.5%;
+    height: 20px;
     border-radius: 20px;
     justify-content: center;
     align-content: center;
@@ -110,6 +118,21 @@ body{
     visibility: hidden;
     margin: auto;
     flex-direction: column;
+    transform: translateY(-100px);
+}
+
+.popup h2{
+    text-align: center;
+    color: #000;
+}
+.popup .listeJoueur{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.popup .listeJoueur .carteJoueurDetail{
+    margin-top: 1%;
+    margin-bottom: 1%;
 }
 
 .popup button{
@@ -123,6 +146,7 @@ body{
 
 .open-popup{
     visibility: visible;
+    height: auto;
 }
 
 /*fin css statistique*/
