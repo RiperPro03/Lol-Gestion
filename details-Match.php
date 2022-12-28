@@ -44,7 +44,7 @@
     <div class="corps">
         <div class="boutonRetour">
             <div class="retour">
-                <a href="" >
+                <a href="./Match.php" >
                     <img src="vue-img.php?img=turn-left.png" style="width: 100%;">
                 </a>
             </div>
