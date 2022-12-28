@@ -8,7 +8,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>LoL Gestion | Statistique</title>
     <link rel="icon" href="vue-img.php?img=logo.png">
     <link rel="stylesheet" href="./css/nav-bar.css">
     <link rel="stylesheet" href="./css/TEST-Statistique.css">
@@ -22,8 +22,29 @@
             <div class="contourStat">
             </div>
             <div class="boiteTexte">
+                <h2>Statistique</h2>
+                <div class="boiteStatGeneral">
+
+                </div>
+                <div class="boiteStatParJoueur">
+                    <div class="bouton"><button type="submit"  onclick="openPopup()"> Joueurs</button></div>
+                    <div class="popup" id="popup">
+                        <h2> Joueurs</h2>
+                        <button type="button" onclick="closePopup()"> Fermer</button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
+    <script>
+        let popup = document.getElementById("popup");
+
+        function openPopup() {
+            popup.classList.add("open-popup");
+        }
+        function closePopup() {
+            popup.classList.remove("open-popup");
+        }
+    </script>
 </body>
 </html>
