@@ -35,6 +35,13 @@
         require 'includes/nav-bar.html';
     ?>
     <div class="corps">
+        <div class="boutonRetour">
+            <div class="retour">
+                <a href="" >
+                    <img src="vue-img.php?img=turn-left.png" style="width: 100%;">
+                </a>
+            </div>
+        </div>
         <div class="boiteDetailsJoueur">
             <div class="contourDetails">
             </div>

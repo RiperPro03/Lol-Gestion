@@ -21,6 +21,22 @@ body{
     flex-direction: column;
     align-items: center;
 }
+/*bouton retour*/
+
+.boutonRetour {
+    width: 100%;
+    margin: 2%;
+  }
+.retour{
+    width: 4%;
+    text-decoration: none;
+    color: white;
+    border-radius: 17px;
+    background: #dc143c;
+    box-shadow:  5px 5px 2px #b21031;
+    padding: 1%;
+  }
+/*fin du bouton retour*/
 
 /*css des boites de details*/
 .boiteDetailsMatch{

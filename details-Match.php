@@ -42,6 +42,13 @@
         require 'includes/nav-bar.html';
     ?>
     <div class="corps">
+        <div class="boutonRetour">
+            <div class="retour">
+                <a href="" >
+                    <img src="vue-img.php?img=turn-left.png" style="width: 100%;">
+                </a>
+            </div>
+        </div>
         <div class="boiteDetailsMatch">
             <div class="contourDetails">
             </div>
@@ -72,7 +79,7 @@
                             $equipe->setIdEquipe($my_equipe['id_Equipe']);
                             echo $equipe->get_carteEquipeAccueil();
                             echo '<div class="Versus">
-                            <img src="vue-img.php?img=Versus.png" style="width:100%;">
+                                <img src="vue-img.php?img=Versus.png" style="width:100%;">
                                 </div>';
                             echo $equipe2->get_carteEquipeAccueilNonClickable();
                         ?>

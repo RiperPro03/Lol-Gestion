@@ -29,7 +29,7 @@
     <script src="https://kit.fontawesome.com/acf8d5192c.js" crossorigin="anonymous"></script>
     <link rel="icon" href="vue-img.php?img=logo.png">
     <link rel="stylesheet" href="./css/nav-bar.css">
-    <link rel="stylesheet" href="./css/TEST-detailsEquipe.css">
+    <link rel="stylesheet" href="./css/detailsEquipe.css">
     <link rel="stylesheet" href="./css/carteJoueur.css">
 </head>
 <body>
@@ -38,6 +38,13 @@
     ?>
 
     <div class="corps">
+        <div class="boutonRetour">
+            <div class="retour">
+                <a href="" >
+                    <img src="vue-img.php?img=turn-left.png" style="width: 100%;">
+                </a>
+            </div>
+        </div>
         <div class="boiteDetailsEquipe">
             <div class="contourDetails">
             </div>
