@@ -71,9 +71,9 @@
         ';
         
         }
-        function get_carteJoueurDetail(){
+        function get_carteJoueurStat(){
             return
-            '<div class="carteJoueurDetail">
+            '<div class="carteJoueurDetail onclick="location.href=\'./Statistique?id='.$this->idJoueur.'\';">
                 <div class="contourJoueurDetail">
                 </div>
                 <div class="boiteimageJoueurDetail">

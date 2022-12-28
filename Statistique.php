@@ -1,6 +1,19 @@
 <?php
     require 'includes/header.php';
     require 'includes/Carte-Joueur.php';
+    if(isset($_GET['id']) && !empty($_GET['id'])) {
+        $id = $_GET['id'];
+        $q = $db->prepare("SELECT * FROM joueurs WHERE id_Joueur = :id_Joueur");
+        $q->execute([
+            'id_Joueur' => $id
+        ]);
+        $nbc = $q->rowCount();
+        if($nbc == 1) {
+            $joueurStat = $q->fetch();
+        } else {
+            header("Location:./");
+        }
+    }
 ?>
 
 <!DOCTYPE html>
@@ -49,7 +62,7 @@
                                 while ($joueur = $q->fetch()) {
                                     $cartejoueur = new CarteJoueur($joueur['nom'], $joueur['prenom'], $joueur['pseudo'], $joueur['poste'], $joueur['photo'], 0, 0);
                                     $cartejoueur->setIdJoueur($joueur['id_Joueur']);
-                                    echo $cartejoueur->get_carteJoueurDetail();
+                                    echo $cartejoueur->get_carteJoueurStat();
                                 }
                             } else {
                                 echo '<div class="noResult"> <p >Aucun Joueur trouvé</p></div>';
@@ -72,15 +85,29 @@
                                 <th>Note</th>
                             </tr>
                             <tr>
-                                <td>Lee</td>
-                                <td>syang</td>
-                                <td>Faker</td>
-                                <td>Mid</td>
-                                <td>15</td>
-                                <td>10</td>
-                                <td>5</td>
-                                <td>50%</td>
-                                <td>4.6</td>
+                                <?php 
+                                    if(isset($joueurStat) && !empty($joueurStat)) {
+                                        echo '<td>'.$joueurStat['nom'].'</td>
+                                        <td>'.$joueurStat['prenom'].'</td>
+                                        <td>'.$joueurStat['pseudo'].'</td>
+                                        <td>'.$joueurStat['poste'].'</td>
+                                        <td>'.'15'.'</td>
+                                        <td>'.'10'.'</td>
+                                        <td>'.'5'.'</td>
+                                        <td>'.'50%'.'</td>
+                                        <td>'.'4.6'.'</td>';  
+                                    }else{
+                                        echo '
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>'; 
+                                    }?>
                             </tr>
                         </table> 
                     </div>

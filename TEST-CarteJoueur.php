@@ -28,7 +28,7 @@
             $joueur = new CarteJoueur('su','lee','Lebon','Bot',$image,'12','15');
             echo $joueur->get_carteJoueurAccueil(); 
             echo $joueur->get_carteJoueur(); 
-            echo $joueur->get_carteJoueurDetail()
+            echo $joueur->get_carteJoueurStat()
         ?>
     </div>
 </body>
