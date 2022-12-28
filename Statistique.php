@@ -11,11 +11,19 @@
     <title>Document</title>
     <link rel="icon" href="vue-img.php?img=logo.png">
     <link rel="stylesheet" href="./css/nav-bar.css">
-    <link rel="stylesheet" href="./css/accueil.css">
+    <link rel="stylesheet" href="./css/TEST-Statistique.css">
 </head>
 <body>
     <?php
     require 'includes/nav-bar.html';
     ?>
+    <div class="corps">
+        <div class="boiteDetailsStat">
+            <div class="contourStat">
+            </div>
+            <div class="boiteTexte">
+            </div>
+        </div>
+    </div>
 </body>
 </html>
