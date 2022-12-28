@@ -65,14 +65,14 @@
         <div class="historique">
             <h1>Matchs récents</h1>
             <?php
-                $q = $db->prepare('SELECT m.id_Match, m.date_match, m.heure_match, m.equipe_adverse, e.nom FROM matchs m, dispute d, equipes e WHERE m.id_Match = d.id_Match and d.id_Equipe = e.id_Equipe LIMIT 5');
+                $q = $db->prepare('SELECT m.id_Match, m.date_match, m.heure_match, m.equipe_adverse,m.score, e.nom FROM matchs m, dispute d, equipes e WHERE m.id_Match = d.id_Match and d.id_Equipe = e.id_Equipe LIMIT 5');
                 $q->execute();
 
                 if ($q->rowCount() > 0) {
                     while ($match = $q->fetch()) {
                         $equipe1 = new CarteEquipe($match['nom']);
                         $equipe2 = new CarteEquipe($match['equipe_adverse']);
-                        $carteMatch = new CarteMatch($match['date_match'],$match['heure_match'],$equipe1,$equipe2,null);
+                        $carteMatch = new CarteMatch($match['date_match'],$match['heure_match'],$equipe1,$equipe2,$match['score']);
                         $carteMatch->setIdMatch($match['id_Match']);
                         echo $carteMatch->get_carteMatchAccueil();
 
