@@ -155,6 +155,8 @@ body{
     margin: auto;
     flex-direction: column;
     transform: translateY(-350px);
+    opacity: 0;
+    transition: 1s;
 }
 
 .popup h2{
@@ -187,6 +189,8 @@ body{
 .open-popup{
     visibility: visible;
     height: auto;
+    opacity: 1;
+    
 }
 
 .popupActive{
