@@ -19,7 +19,7 @@
 
             <?php require 'includes/modif-Equipe.php';?>
 
-            <a href="javascript:history.back()">Retour</a>
+            
             <h3>Modification d'une équipe</h3>
 
             <form method="post">
@@ -30,7 +30,7 @@
                     <input type="text" name="nom" required="required" autocomplete="off" value="<?= htmlspecialchars($equipe['nom']); ?>">
                     <span>Nom d'équipe</span>
                 </div>
-
+                <a href="javascript:history.back()">Retour</a>
                 <input type="submit" name="formsend" value="Envoyer" class="button">
             </form>
         </div>

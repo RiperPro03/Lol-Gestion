@@ -86,7 +86,7 @@ require 'includes/header.php';
                     <input type="text" name="equipe_adverse" required="required" autocomplete="off" value="<?= htmlspecialchars($match['equipe_adverse']);?>">
                     <span>Equipe adverse</span>
                 </div>
-
+                <a href="javascript:history.back()">Retour</a>
                 <input type="submit" name="formsend" value="Envoyer" class="button">
             </form>
         </div>

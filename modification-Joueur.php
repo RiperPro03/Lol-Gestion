@@ -89,7 +89,7 @@ require 'includes/header.php';
                     <span>Photo</span>
                     <input type="file" name="photo">
                 </div>
-
+                <a href="javascript:history.back()">Retour</a>
                 <input type="submit" name="formsend" value="Envoyer" class="button">
             </form>
         </div>
