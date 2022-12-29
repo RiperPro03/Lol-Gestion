@@ -213,15 +213,17 @@ body{
 .boiteStatParJoueur .tableauStatJ th{
     color: #00ffff;
     margin: auto;
-    background: #333;
+    background: #1c1c1c;
     width: 10%;
+    padding-top: 1%;
+    padding-bottom: 1%;
     
 }
 
 .boiteStatParJoueur .tableauStatJ td{
     color: #fff;
     margin: auto;
-    background: #333;
+    background: #1c1c1c;
     padding-top: 1%;
     padding-bottom: 1%;
 }

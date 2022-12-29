@@ -41,8 +41,18 @@
                 
                 <div class="boiteStatGeneral">
                     <div class="statGeneral">
+                        <?php 
+                            $q = $db->prepare('SELECT count(id_Match) as nbMatch from matchs');
+                            $q->execute();
+                            if ($q->rowCount() > 0) {
+                                $nbMatch = $q->fetch();
+                            } else {
+                                $nbMatch['nbMatch'] = 0;
+                            }
+                        ?>
+
                         <h2> Statistique Globale</h2>
-                        <p> Nombre de match: <span> 10 </span></p>
+                        <p> Nombre de match: <span> <?= $nbMatch['nbMatch']?> </span></p>
                         <p> Nombre de victoire: <span> 5 ,50%</span></p>
                         <p> Nombre de defaite: <span> 5 ,50%</span></p>
                     </div>
