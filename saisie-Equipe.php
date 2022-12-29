@@ -17,8 +17,6 @@
         <div class="card">
 
             <?php require 'includes/ajout-Equipe.php' ?>
-
-            <a href="javascript:history.back()">Retour</a>
             <h3>Saisie d'une équipe</h3>
 
             <form action="<?php print $_SERVER['PHP_SELF']; ?>" method="post">
@@ -29,7 +27,7 @@
                     <input type="text" max= 50 name="nom" required="required" autocomplete="off">
                     <span>Nom d'équipe</span>
                 </div>
-
+                <a href="javascript:history.back()">Retour</a>
                 <input type="submit" name="formsend" value="Ajouter" class="button">
             </form>
         </div>

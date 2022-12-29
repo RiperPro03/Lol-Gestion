@@ -21,7 +21,7 @@
 
             <?php require 'includes/ajout-Joueur.php';?>
 
-            <a href="javascript:history.back()">Retour</a>
+            
             <h3>Saisie d'un joueur</h3>
 
             <form action="<?php print $_SERVER['PHP_SELF']; ?>" method="post" enctype="multipart/form-data">
@@ -87,7 +87,7 @@
                     <span>Photo</span>
                     <input type="file" name="photo" required="required">
                 </div>
-
+                <a href="javascript:history.back()">Retour</a>
                 <input type="submit" name="formsend" value="Ajouter" class="button">
             </form>
         </div>

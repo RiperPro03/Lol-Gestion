@@ -19,7 +19,7 @@ require 'includes/header.php';
         <div class="card">
 
             <?php require 'includes/ajout-Match.php';?>
-            <a href="javascript:history.back()">Retour</a>
+            
             <h3>Saisie d'un match</h3>
 
             <form action="<?php print $_SERVER['PHP_SELF']; ?>" method="post" onsubmit="return validateForm()">
@@ -84,7 +84,7 @@ require 'includes/header.php';
                     <input type="text" name="equipe_adverse" required="required" autocomplete="off">
                     <span>Equipe adverse</span>
                 </div>
-
+                <a href="javascript:history.back()">Retour</a>
                 <input type="submit" name="formsend" value="Ajouter" class="button">
             </form>
         </div>

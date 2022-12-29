@@ -40,7 +40,7 @@
     <div class="corps">
         <div class="boutonRetour">
             <div class="retour">
-                <a href="./Equipe.php" >
+                <a href="javascript:history.back()" >
                     <img src="vue-img.php?img=turn-left.png" style="width: 100%;">
                 </a>
             </div>
