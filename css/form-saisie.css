@@ -135,3 +135,7 @@ a:hover {
     filter: brightness(1.2);
     text-decoration: underline;
 }
+
+.checkTitulaire{
+    padding: 0.4rem 0.8rem;
+}

@@ -53,7 +53,14 @@
 
                 if ($q->rowCount() > 0) {
                     while ($joueur = $q->fetch()) {
-                        $carteJoueur = new CarteJoueur($joueur['nom'], $joueur['prenom'], $joueur['pseudo'], $joueur['poste'], $joueur['photo'],0,0);
+                        $c = $db->prepare('SELECT count(id_Joueur) as nbSelec FROM appartient where id_Joueur = :id_Joueur group by id_Joueur');
+                        $c->execute(['id_Joueur' => $joueur['id_Joueur']]);
+                        if ($c->rowCount() > 0) {
+                            $StatSelc = $c->fetch();
+                        }else{
+                            $StatSelc['nbSelec'] = 0;
+                        }
+                        $carteJoueur = new CarteJoueur($joueur['nom'], $joueur['prenom'], $joueur['pseudo'], $joueur['poste'], $joueur['photo'],0,$StatSelc['nbSelec']);
                         $carteJoueur->setIdJoueur($joueur['id_Joueur']);
                         echo $carteJoueur->get_carteJoueurAccueil();
                     }

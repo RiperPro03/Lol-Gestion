@@ -35,7 +35,7 @@
                     <input list="list-joueur" id="inputJ" type="text" name="pseudo_joueur" required="required" autocomplete="off" >
                     <datalist id="list-joueur">
                         <?php
-                        $q = $db->prepare('SELECT pseudo FROM joueurs WHERE pseudo NOT IN(SELECT pseudo FROM joueurs j INNER JOIN appartient a ON j.id_Joueur = a.id_Joueur WHERE a.id_Equipe = :id_Equipe)');
+                        $q = $db->prepare('SELECT pseudo FROM joueurs WHERE pseudo NOT IN(SELECT pseudo FROM joueurs j INNER JOIN appartient a ON j.id_Joueur = a.id_Joueur WHERE a.id_Equipe = :id_Equipe) and statut= \'Actif\'') ;
                         $q->execute([
                             'id_Equipe' => $equipe['id_Equipe']
                         ]);
@@ -52,6 +52,10 @@
                         }
                         ?>
                     </datalist>
+                </div>
+                <div class="checkTitulaire">
+                    <label for="titulaire">Titulaire</label>
+                    <input type="checkbox" name="titulaire" id="titulaire" value="1"><br>
                 </div>
                 <a href="javascript:history.back()">Retour</a>
                 <input type="submit" name="formsend" value="Ajouter" class="button">
