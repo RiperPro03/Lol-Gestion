@@ -49,7 +49,7 @@ body{
 .boiteDetailsEquipe{
     position: relative;
     width: 60%;
-    height: 2000px;
+    height: 1700px;
     background: #fff;
     transition: 0.5s;
     overflow: hidden;
@@ -131,7 +131,6 @@ body{
 
 .detailsInfoEquipe p span{
     color: #fff;
-
 }
 
 .boiteDetailsEquipe .optionDetails{
@@ -150,4 +149,6 @@ body{
     margin-left: auto;
     margin-right: auto;
 }
+
+
 /*fin css details Equipe*/

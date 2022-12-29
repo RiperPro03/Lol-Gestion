@@ -17,6 +17,7 @@
     } else {
         header("Location:./");
     }
+
 ?>
 
 <!DOCTYPE html>
@@ -56,32 +57,51 @@
                     <p>
                         Nom :<span> <?= htmlspecialchars($equipe['nom']); ?></span>
                     </p>
-                    <div class="ajout"><a href="./ajout-Joueur-Equipe?id=<?= $equipe['id_Equipe'] ?>"><i class="fa-solid fa-user-plus"></i></a></div>
                     
-                    <p> Joueurs :</p>
-                        <?php
-                            $q = $db->prepare('SELECT * FROM joueurs j INNER JOIN appartient a ON j.id_Joueur = a.id_Joueur WHERE a.id_Equipe = :id_Equipe');
-                            $q->execute([
-                                'id_Equipe' => $equipe['id_Equipe']
-                            ]);
-                    
-                            if ($q->rowCount() > 0) {
-                                while ($joueur = $q->fetch()) {
-                                    $cartejoueur = new CarteJoueur($joueur['nom'], $joueur['prenom'], $joueur['pseudo'], $joueur['poste'], $joueur['photo'], 0, 0);
-                                    $cartejoueur->setIdJoueur($joueur['id_Joueur']);
-                                    $cartejoueur->setIdEquipe($equipe['id_Equipe']);
-                                    echo $cartejoueur->get_carteJoueurPourDetails();
-                                }
-                            } else {
-                                echo '<div class="noResult"> <p >Aucun Joueur trouvé</p></div>';
+                    <p> Joueurs titulaire:</p>
+                    <?php
+                        $q = $db->prepare('SELECT * FROM joueurs j INNER JOIN appartient a ON j.id_Joueur = a.id_Joueur WHERE a.id_Equipe = :id_Equipe and a.titulaire = 1 ORDER BY FIELD(poste,\'Top\', \'Jungle\', \'Middle\', \'Bottom\', \'Support\')');
+                        $q->execute([
+                            'id_Equipe' => $equipe['id_Equipe']
+                        ]);
+                
+                        if ($q->rowCount() > 0) {
+                            while ($joueur = $q->fetch()) {
+                                $listeJoueurTitulaire[$joueur['poste']] = $joueur;
+                                $cartejoueur = new CarteJoueur($joueur['nom'], $joueur['prenom'], $joueur['pseudo'], $joueur['poste'], $joueur['photo'], 0, 0);
+                                $cartejoueur->setIdJoueur($joueur['id_Joueur']);
+                                $cartejoueur->setIdEquipe($equipe['id_Equipe']);
+                                echo '<div><p><span>'.$cartejoueur->get_poste().'</span></p>'.$cartejoueur->get_carteJoueurPourDetails().'</div>';
                             }
-                        ?>
-                    
+                        } else {
+                            echo '<div class="noResult"> <p><span>Aucun Joueur trouvé</span></p></div>';
+                        }
+                    ?>
+                    <p> Joueurs Remplaçant:</p>
+                    <?php
+                        $q = $db->prepare('SELECT * FROM joueurs j INNER JOIN appartient a ON j.id_Joueur = a.id_Joueur WHERE a.id_Equipe = :id_Equipe and a.titulaire != 1 ORDER BY FIELD(poste,\'Top\', \'Jungle\', \'Middle\', \'Bottom\', \'Support\')');
+                        $q->execute([
+                            'id_Equipe' => $equipe['id_Equipe']
+                        ]);
+                
+                        if ($q->rowCount() > 0) {
+                            while ($joueur = $q->fetch()) {
+                                $listeJoueurTitulaire[$joueur['poste']] = $joueur;
+                                $cartejoueur = new CarteJoueur($joueur['nom'], $joueur['prenom'], $joueur['pseudo'], $joueur['poste'], $joueur['photo'], 0, 0);
+                                $cartejoueur->setIdJoueur($joueur['id_Joueur']);
+                                $cartejoueur->setIdEquipe($equipe['id_Equipe']);
+                                echo '<div><p><span>'.$cartejoueur->get_poste().'</span></p>'.$cartejoueur->get_carteJoueurPourDetails().'</div>';
+                            }
+                        } else {
+                            echo '<div class="noResult"> <p><span>Aucun Remplaçant trouvé</span></p></div>';
+                        }
+                    ?>
                 </div>
             </div>
             <div class="optionDetails">
                 <a href="modification-Equipe?id=<?= $equipe['id_Equipe'] ?>" class="boutonDetail"><i class="fa-solid fa-pen"></i></a>
                 <a href="suppression-Equipe?id=<?= $equipe['id_Equipe'] ?>" class="boutonDetail"><i class="fa-solid fa-trash"></i></a>
+                <a href="./ajout-Joueur-Equipe?id=<?= $equipe['id_Equipe'] ?>" class="boutonDetail"><i class="fa-solid fa-user-plus"></i></a>
                 <a href="selection-Joueur?id=<?= $equipe['id_Equipe'] ?>" class="boutonDetail"><i class="fa-solid fa-users-gear"></i></a>
             </div>
         </div>

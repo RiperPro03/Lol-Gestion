@@ -126,6 +126,7 @@ body{
 .boiteDetailsStat .boiteTexte .boiteStatParJoueur .bouton{
     width: 100%;
     padding-left: 10%;
+    
 }
 
 .boiteDetailsStat .boiteTexte .boiteStatParJoueur .bouton button{
@@ -137,6 +138,7 @@ body{
     background: #dc143c;
     box-shadow:  5px 5px 2px #b21031;
     padding: 1%;
+    cursor: pointer;
 }
 /*popup de selection d'un joueur*/
 .popup{
@@ -179,6 +181,7 @@ body{
     box-shadow:  5px 5px 2px #b21031;
     padding: 1%;
     margin: auto;
+    cursor: pointer;
 }
 
 .open-popup{

@@ -20,7 +20,7 @@
 
             <?php require 'includes/ajout-Joueur-Equipe.php'?>
 
-            <a href="javascript:history.back()">Retour</a>
+            
             <h3>Ajouter un joueur dans l'équipe : <?= $equipe['nom']?></h3>
 
 
@@ -53,7 +53,7 @@
                         ?>
                     </datalist>
                 </div>
-
+                <a href="javascript:history.back()">Retour</a>
                 <input type="submit" name="formsend" value="Ajouter" class="button">
             </form>
         </div>
