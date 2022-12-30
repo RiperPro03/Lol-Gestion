@@ -1,0 +1,184 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+h1 {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: large;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #e3e3e3;
+    min-height: 100vh;
+}
+
+.card {
+    margin: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 400px;
+    width: 600px;
+    flex-direction: column;
+    gap: 35px;
+    border-radius: 15px;
+    background: #e3e3e3;
+    box-shadow: 16px 16px 32px #c8c8c8,-16px -16px 32px #fefefe;
+    padding: 3%;
+}
+
+
+/*debut css de la selection*/
+
+.card h2{
+    font-size: medium;
+    margin-bottom: 4%;
+}
+
+form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+}
+.box {
+    width: 40%;
+    padding: 0.4rem 0.8rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.boxCard{
+    width: 100%;
+}
+.Resultat{
+    margin-bottom: 5%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+.joueurEquipe{
+    width: 100%;
+}
+
+.notes{
+    display: flex;
+    justify-content: right;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+.notes input{
+    width: 10%;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+.bouton{
+    margin-top: 5%;
+    width: 100%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+.button {
+    height: 45px;
+    width: 120px;
+    margin-left: 15%;
+    border-radius: 5px;
+    border: 2px solid #000;
+    cursor: pointer;
+    background-color: transparent;
+    transition: 0.5s;
+    text-transform: uppercase;
+    font-size: 10px;
+    letter-spacing: 2px;
+    padding: 1%;
+}
+
+.button:hover {
+    background-color: #000;
+    color: white;
+}
+
+a {
+    color: #118bee;
+    display: inline-block;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+a:active {
+    filter: brightness(0.85);
+    text-decoration: underline;
+}
+
+a:hover {
+    filter: brightness(1.2);
+    text-decoration: underline;
+}
+
+.inputBox {
+    position: relative;
+    width: 250px;
+    padding: 15px;
+}
+
+.inputBox input {
+    width: 100%;
+    padding: 10px;
+    outline: none;
+    border: none;
+    color: #000;
+    font-size: 1em;
+    background: transparent;
+    border-left: 2px solid #000;
+    border-bottom: 2px solid #000;
+    transition: 0.1s;
+}
+
+.inputBox span {
+    margin-top: 5px;
+    position: absolute;
+    left: 0;
+    transform: translateY(-4px);
+    margin-left: 10px;
+    padding: 10px;
+    pointer-events: none;
+    font-size: 12px;
+    color: #000;
+    text-transform: uppercase;
+    transition: 0.5s;
+    letter-spacing: 3px;
+}
+
+.inputBox input:valid~span,
+.inputBox input:focus~span {
+    transform: translateX(113px) translateY(-15px);
+    font-size: 0.8em;
+    padding: 5px 10px;
+    background: #000;
+    letter-spacing: 0.2em;
+    color: #fff;
+    border: 2px;
+}
+
+.inputBox input:valid,
+.inputBox input:focus {
+    border: 2px solid #000;
+}
+
+.carteJoueurDetail{
+    margin-left:0;
+    margin-right: 0;
+}
+/*fin css de la selection*/
