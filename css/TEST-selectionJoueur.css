@@ -1,0 +1,102 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+h1 {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: large;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #e3e3e3;
+    min-height: 100vh;
+}
+
+.card {
+    margin: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 400px;
+    width: 400px;
+    flex-direction: column;
+    gap: 35px;
+    border-radius: 15px;
+    background: #e3e3e3;
+    box-shadow: 16px 16px 32px #c8c8c8,-16px -16px 32px #fefefe;
+    padding: 3%;
+}
+
+
+/*debut css de la selection*/
+
+.card h2{
+    font-size: medium;
+    margin-bottom: 4%;
+}
+
+form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.box {
+    width: 250px;
+    padding: 0.4rem 0.8rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.bouton{
+    margin-top: 5%;
+    width: 100%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+.button {
+    height: 45px;
+    width: 120px;
+    margin-left: 15%;
+    border-radius: 5px;
+    border: 2px solid #000;
+    cursor: pointer;
+    background-color: transparent;
+    transition: 0.5s;
+    text-transform: uppercase;
+    font-size: 10px;
+    letter-spacing: 2px;
+    padding: 1%;
+}
+
+.button:hover {
+    background-color: #000;
+    color: white;
+}
+
+a {
+    color: #118bee;
+    display: inline-block;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+a:active {
+    filter: brightness(0.85);
+    text-decoration: underline;
+}
+
+a:hover {
+    filter: brightness(1.2);
+    text-decoration: underline;
+}
+/*fin css de la selection*/
