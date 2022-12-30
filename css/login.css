@@ -12,8 +12,32 @@ body {
     align-items: center;
     min-height: 100vh;
     background:#022d3b;
+    flex-direction: column;
+}
+.titre{
+    width: 30%;
+    text-align: center;
+    margin-bottom: 50px;
+    font-family: Helvetica, sans-serif;
+    background: #00000031;
+    border-radius: 20px;
+    padding: 1%;
+    
 }
 
+.titre h1{
+    color: #c0a50c;
+    margin-bottom: 1%;
+}
+
+.titre h2{
+    color: #c0a50c;
+    display: flex;
+    flex-direction: column;
+}
+.titre h2 span{
+    margin: 1%;
+}
 .box {
     position: relative;
     width: 380px;

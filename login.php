@@ -22,6 +22,10 @@
     <link rel="icon" href="vue-img.php?img=logo.png">
 </head>
 <body>
+    <div class="titre">
+        <h1> Lol Gestion</h1>
+        <h2><span>Gestion d'équipe esport</span><span>League Of Legends</span></h2>
+    </div>
 <div class="card">
     
     <div class="box">
