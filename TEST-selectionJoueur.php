@@ -18,7 +18,7 @@
                 <div class="box">
                     <span>Top</span>
                     <input list="list-joueur" id="inputJ" type="text" name="pseudo_joueur" required="required" autocomplete="off">
-                    <datalist id="list-joueur">                                            
+                    <datalist id="Top">                                            
                         <option value="ShowMaker"></option>
                         <option value="Cabochard"></option>
                         <option value="Deft"></option>
@@ -33,7 +33,7 @@
                 <div class="box">
                     <span>Jungle</span>
                     <input list="list-joueur" id="inputJ" type="text" name="pseudo_joueur" required="required" autocomplete="off">
-                    <datalist id="list-joueur">                                            
+                    <datalist id="Jungle">                                            
                         <option value="ShowMaker"></option>
                         <option value="Cabochard"></option>
                         <option value="Deft"></option>
@@ -48,7 +48,7 @@
                 <div class="box">
                     <span>Middle</span>
                     <input list="list-joueur" id="inputJ" type="text" name="pseudo_joueur" required="required" autocomplete="off">
-                    <datalist id="list-joueur">                                            
+                    <datalist id="Middle">                                            
                         <option value="ShowMaker"></option>
                         <option value="Cabochard"></option>
                         <option value="Deft"></option>
@@ -63,7 +63,7 @@
                 <div class="box">
                     <span>Bottom</span>
                     <input list="list-joueur" id="inputJ" type="text" name="pseudo_joueur" required="required" autocomplete="off">
-                    <datalist id="list-joueur">                                            
+                    <datalist id="Bottom">                                            
                         <option value="ShowMaker"></option>
                         <option value="Cabochard"></option>
                         <option value="Deft"></option>
@@ -78,7 +78,7 @@
                 <div class="box">
                     <span>Support</span>
                     <input list="list-joueur" id="inputJ" type="text" name="pseudo_joueur" required="required" autocomplete="off">
-                    <datalist id="list-joueur">                                            
+                    <datalist id="Support">                                            
                         <option value="ShowMaker"></option>
                         <option value="Cabochard"></option>
                         <option value="Deft"></option>
