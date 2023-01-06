@@ -27,7 +27,25 @@
         <div class="zoneRecherche">
             <form method="post">
                 <div class="BarreRecherche">
-                    <input type="search" name="search" placeholder="Rechercher une Equipe">
+                    <input list="list-equipe" id="inputE" type="search" name="search" placeholder="Rechercher une Equipe" autocomplete="off">
+                    <datalist id="list-equipe">
+                        <?php
+                        $q = $db->prepare('SELECT nom FROM equipes');
+                        $q->execute();
+
+
+                        if ($q->rowCount() > 0) {
+                            while ($equipe = $q->fetch()) {
+                        ?>
+                                <?= "<option value='" . $equipe['nom'] . "'>" ?>
+
+                        <?php
+                            }
+                        } else {
+                            echo "<option value='Aucune équipe trouvé'>";
+                        }
+                        ?>
+                    </datalist>
                     <div class="recherche"></div>
                 </div>
                 <div class="reload"><a href="./Equipe"><i class="fa-solid fa-rotate-right"></i></a></div>

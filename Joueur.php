@@ -27,7 +27,25 @@
         <div class="zoneRecherche">
             <form method="post">
                 <div class="BarreRecherche">
-                    <input type="search" name="search" placeholder="Rechercher un Joueur">
+                    <input list="list-equipe" id="inputE" type="search" name="search" placeholder="Rechercher un Joueur" autocomplete="off">
+                    <datalist id="list-equipe">
+                        <?php
+                        $q = $db->prepare('SELECT pseudo FROM joueurs');
+                        $q->execute();
+
+
+                        if ($q->rowCount() > 0) {
+                            while ($joueur = $q->fetch()) {
+                        ?>
+                                <?= "<option value='" . $joueur['pseudo'] . "'>" ?>
+
+                        <?php
+                            }
+                        } else {
+                            echo "<option value='Aucun joueur trouvé'>";
+                        }
+                        ?>
+                    </datalist>
                     <div class="recherche"></div>
                 </div>
                 <div class="reload"><a href="./Joueur"><i class="fa-solid fa-rotate-right"></i></a></div>
