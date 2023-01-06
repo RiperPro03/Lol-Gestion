@@ -66,6 +66,7 @@ require 'includes/header.php';
                         <option value="Middle" <?php if ($joueur['poste'] == "Middle") echo "selected"; ?>>Middle</option>
                         <option value="Bottom" <?php if ($joueur['poste'] == "Bottom") echo "selected"; ?>>Bottom</option>
                         <option value="Support" <?php if ($joueur['poste'] == "Support") echo "selected"; ?>>Support</option>
+                        <option value="Tout" <?php if ($joueur['poste'] == "Tout") echo "selected"; ?>>Tout</option>
                     </select>
                 </div>
 

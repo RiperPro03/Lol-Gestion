@@ -65,6 +65,7 @@
                         <option value="Middle">Middle</option>
                         <option value="Bottom">Bottom</option>
                         <option value="Support">Support</option>
+                        <option value="Tout">Tout</option>
                     </select>
                 </div>
 
