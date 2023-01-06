@@ -1,0 +1,140 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+h3 {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #e3e3e3;
+    min-height: 100vh;
+}
+
+.card {
+    margin: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 350px;
+    width: 400px;
+    flex-direction: column;
+    gap: 35px;
+    border-radius: 15px;
+    background: #e3e3e3;
+    box-shadow: 16px 16px 32px #c8c8c8,-16px -16px 32px #fefefe;
+    padding: 3%;
+}
+
+.card .carteJoueurDetail{
+    margin: auto;
+}
+.inputBox {
+    position: relative;
+    width: 250px;
+    padding: 15px;
+}
+
+.inputBox input {
+    width: 100%;
+    padding: 10px;
+    outline: none;
+    border: none;
+    color: #000;
+    font-size: 1em;
+    background: transparent;
+    border-left: 2px solid #000;
+    border-bottom: 2px solid #000;
+    transition: 0.1s;
+}
+
+.inputBox span {
+    margin-top: 5px;
+    position: absolute;
+    left: 0;
+    transform: translateY(-4px);
+    margin-left: 10px;
+    padding: 10px;
+    pointer-events: none;
+    font-size: 12px;
+    color: #000;
+    text-transform: uppercase;
+    transition: 0.5s;
+    letter-spacing: 3px;
+}
+
+.inputBox input:valid~span,
+.inputBox input:focus~span {
+    transform: translateX(113px) translateY(-15px);
+    font-size: 0.8em;
+    padding: 5px 10px;
+    background: #000;
+    letter-spacing: 0.2em;
+    color: #fff;
+    border: 2px;
+}
+
+.inputBox input:valid,
+.inputBox input:focus {
+    border: 2px solid #000;
+}
+
+.button {
+    height: 45px;
+    width: 100px;
+    margin-left: 25%;
+    border-radius: 5px;
+    border: 2px solid #000;
+    cursor: pointer;
+    background-color: transparent;
+    transition: 0.5s;
+    text-transform: uppercase;
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+.button:hover {
+    background-color: #000;
+    color: white;
+}
+
+
+.box {
+    width: 250px;
+    padding: 0.4rem 0.8rem;
+}
+
+select {
+    display: block;
+    font-size: inherit;
+    max-width: 500px;
+    border: 1px solid #e9e9e9;
+    border-radius: var(5px);
+    margin-bottom: 1rem;
+    padding: 0.4rem 0.8rem;
+}
+
+a {
+    color: #118bee;
+    display: inline-block;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+a:active {
+    filter: brightness(0.85);
+    text-decoration: underline;
+}
+
+a:hover {
+    filter: brightness(1.2);
+    text-decoration: underline;
+}

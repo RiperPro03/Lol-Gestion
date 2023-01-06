@@ -20,7 +20,7 @@
             
             <h3>Saisie d'une équipe</h3>
 
-            <form action="./TEST-selectionJoueur.php" method="get">
+            <form action="./selectionJoueur.php" method="get">
                 
                 <input type="hidden" name="token" value="<?=$_SESSION['authToken']?>">
 
