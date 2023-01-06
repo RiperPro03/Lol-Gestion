@@ -9,7 +9,7 @@ require 'includes/header.php';
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LoL Gestion | Saisie Match</title>
+    <title>LoL Gestion | Saisie match</title>
     <link rel="stylesheet" href="css/form-saisie.css">
     <link rel="icon" href="vue-img.php?img=logo.png">
 </head>
@@ -41,27 +41,9 @@ require 'includes/header.php';
                         <option value="Extérieur">Extérieur</option>
                     </select>
                 </div>
-                <div class="box">
+                <div class="inputBox">
+                    <input type="text" name="equipe" value="<?=$_GET["nomEquipe"]?>" required="required" autocomplete="off">
                     <span>Equipe</span>
-                    <input list="list-equipe" id="inputE" type="text" name="equipe" required="required" autocomplete="off">
-                    <datalist id="list-equipe">
-                        <?php
-                        $q = $db->prepare('SELECT nom FROM equipes');
-                        $q->execute();
-
-
-                        if ($q->rowCount() > 0) {
-                            while ($equipe = $q->fetch()) {
-                        ?>
-                                <?= "<option value='" . $equipe['nom'] . "'>" ?>
-
-                        <?php
-                            }
-                        } else {
-                            echo "<option value='Aucune équipe trouvé'>";
-                        }
-                        ?>
-                    </datalist>
                 </div>
 
                 <div class="inputBox">
