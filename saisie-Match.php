@@ -41,22 +41,6 @@ require 'includes/header.php';
                         <option value="Extérieur">Extérieur</option>
                     </select>
                 </div>
-
-                <div class="inputBox">
-                    <input type="text" name="description_match" autocomplete="off">
-                    <span>Description</span>
-                </div>
-
-                <div class="inputBox">
-                    <input type="text" name="score" autocomplete="off">
-                    <span>Score</span>
-                </div>
-
-                <div class="inputBox">
-                    <input type="text" name="gagnant" autocomplete="off">
-                    <span>Gagnant</span>
-                </div>
-
                 <div class="box">
                     <span>Equipe</span>
                     <input list="list-equipe" id="inputE" type="text" name="equipe" required="required" autocomplete="off">
