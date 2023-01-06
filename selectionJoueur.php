@@ -6,14 +6,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/acf8d5192c.js" crossorigin="anonymous"></script>
-    <title>TEST-DetailsJoueur</title>
-    <link rel="stylesheet" href="./css/TEST-selectionJoueur.css">
+    <title> LoL Gestion | selection joueur equipe match</title>
+    <link rel="stylesheet" href="./css/selectionJoueur.css">
 </head>
 <body>
     <div class="container">
         <div class="card">
             <h1>Ajout des joueurs dans l'équipe: </h1>
-            <form action="">
+            <form action="./saisie-Match.php" method="get">
                 <h2>Ajout des Joueur titulaires:</h2>
                 <div class="box">
                     <span>Top</span>
@@ -90,6 +90,7 @@
                         <option value="Flakked"></option>
                     </datalist>
                 </div>
+                <input type="hidden" name="nomEquipe" value="<?=$_GET["nomEquipe"]?>">
                 <div class="bouton">
                     <a href="javascript:history.back()">Retour</a>
                     <input type="submit" name="formsend" value="Remplaçant" class="button">
