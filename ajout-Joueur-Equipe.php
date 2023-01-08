@@ -21,7 +21,7 @@
             <?php require 'includes/ajout-Joueur-Equipe.php'?>
 
             
-            <h3>Ajouter un joueur dans l'équipe : <?= $equipe['nom']?></h3>
+            <h3>Ajouter un joueur dans l'équipe</h3>
 
 
             <form method="post" onsubmit="return validateForm()">
@@ -35,9 +35,13 @@
                     <input list="list-joueur" id="inputJ" type="text" name="pseudo_joueur" required="required" autocomplete="off" >
                     <datalist id="list-joueur">
                         <?php
-                        $q = $db->prepare('SELECT pseudo FROM joueurs WHERE pseudo NOT IN(SELECT pseudo FROM joueurs j INNER JOIN appartient a ON j.id_Joueur = a.id_Joueur WHERE a.id_Equipe = :id_Equipe) and statut= \'Actif\'') ;
+                        $q = $db->prepare('SELECT pseudo FROM joueurs WHERE pseudo 
+                                            NOT IN(SELECT pseudo FROM joueurs j 
+                                                    JOIN participe p ON p.id_joueur = j.id_Joueur 
+                                                    JOIN matchs m ON m.id_Match = p.id_match WHERE m.id_Match = :id_Match) 
+                                            and statut= \'Actif\'') ;
                         $q->execute([
-                            'id_Equipe' => $equipe['id_Equipe']
+                            'id_Match' => $match['id_Match']
                         ]);
 
                         if ($q->rowCount() > 0) {
@@ -52,10 +56,6 @@
                         }
                         ?>
                     </datalist>
-                </div>
-                <div class="checkTitulaire">
-                    <label for="titulaire">Titulaire</label>
-                    <input type="checkbox" name="titulaire" id="titulaire" value="1"><br>
                 </div>
                 <a href="javascript:history.back()">Retour</a>
                 <input type="submit" name="formsend" value="Ajouter" class="button">

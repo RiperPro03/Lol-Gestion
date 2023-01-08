@@ -76,7 +76,7 @@
 
                 if ($q->rowCount() > 0) {
                     while ($joueur = $q->fetch()) {
-                        $c = $db->prepare('SELECT count(id_Joueur) as nbSelec FROM appartient where id_Joueur = :id_Joueur group by id_Joueur');
+                        $c = $db->prepare('SELECT count(id_Joueur) as nbSelec FROM participe where id_Joueur = :id_Joueur group by id_Joueur');
                         $c->execute(['id_Joueur' => $joueur['id_Joueur']]);
                         if ($c->rowCount() > 0) {
                             $StatSelc = $c->fetch();

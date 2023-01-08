@@ -1,7 +1,7 @@
 <?php
     class CarteEquipe{
         private $nom;
-        private $idEquipe;
+        private $idMatch;
 
         function __construct( $nom) {
             $this->nom = $nom;
@@ -15,7 +15,7 @@
         function get_carteEquipeAccueil(){
             return
             '
-            <div class="carteEquipe" onclick="location.href=\'./details-Equipe?id='.$this->idEquipe.'\';">
+            <div class="carteEquipe" onclick="location.href=\'./details-Equipe?id='.$this->idMatch.'\';">
                 <div class="contourEquipe">
                 </div>
                 <div class="boiteInfoEquipe">
@@ -42,10 +42,10 @@
         
         }
 
-        function get_carteEquipe(){
+        /*function get_carteEquipe(){
             return
             '
-            <div class="carteEquipe" onclick="location.href=\'./details-Equipe?id='.$this->idEquipe.'\';">
+            <div class="carteEquipe" onclick="location.href=\'./details-Equipe?id='.$this->idMatch.'\';">
                 <div class="contourEquipe">
                 </div>
                 <div class="boiteInfoEquipe">
@@ -53,14 +53,14 @@
                         <h2>'.$this->get_nom().'</h2>
                     </div>
                     <div class="optionEquipe">
-                        <a href="modification-Equipe?id='. $this->idEquipe .'" class="boutonEquipe"><i class="fa-solid fa-pen"></i></a>
-                        <a href="suppression-Equipe?id='. $this->idEquipe .'" class="boutonEquipe"><i class="fa-solid fa-trash"></i></a>
+                        <a href="modification-Equipe?id='. $this->idMatch .'" class="boutonEquipe"><i class="fa-solid fa-pen"></i></a>
+                        <a href="suppression-Equipe?id='. $this->idMatch .'" class="boutonEquipe"><i class="fa-solid fa-trash"></i></a>
                     </div>
                 </div>
             </div>';
-        }
-        function setIdEquipe($id){
-            $this->idEquipe = $id;
+        }*/
+        function setIdMatch($id){
+            $this->idMatch = $id;
         }
     }
 ?>

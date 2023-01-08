@@ -29,11 +29,11 @@
         <div class="zoneRecherche">
             <form method="post">
                 <div class="BarreRecherche">
-                    <input type="search" name="search" placeholder="Rechercher un Match">
+                    <input type="search" name="search" placeholder="Rechercher un Match" autocomplete="off">
                     <div class="recherche"></div>
                 </div>
                 <div class="reload"><a href="./Match"><i class="fa-solid fa-rotate-right"></i></a></div>
-                <div class="ajout"><a href="./saisie-Equipe.php"><i class="fa-solid fa-user-plus"></i></a></div>
+                <div class="ajout"><a href="./saisie-Match.php"><i class="fa-solid fa-user-plus"></i></a></div>
             </form>
             
         </div>
@@ -43,29 +43,24 @@
             //il manque le score du match
                 if (isset($_POST['search'])) {
                     if (empty($_POST['search'])) {
-                        $q = $db->prepare('SELECT m.id_Match, m.date_match, m.heure_match, m.equipe_adverse,m.score, e.nom FROM matchs m, dispute d, equipes e WHERE m.id_Match = d.id_Match and d.id_Equipe = e.id_Equipe');
+                        $q = $db->prepare('SELECT id_Match, date_match, heure_match, equipe_adverse, score FROM matchs');
                         $q->execute();
                     } else {
-                        //probleme sur cette requete
                         $recherche = htmlspecialchars($_POST['search']);
-                        $q = $db->prepare('SELECT m.id_Match, m.date_match, m.heure_match, m.equipe_adverse,m.score, e.nom FROM matchs m, dispute d, equipes e 
-                                            WHERE m.id_Match = d.id_Match 
-                                            and d.id_Equipe = e.id_Equipe
-                                            OR e.nom LIKE "%' . $recherche . '%" 
-                                            OR m.date_match LIKE "%' . $recherche . '%" 
-                                            OR m.heure_match LIKE "%' . $recherche . '%"
-                                            OR m.equipe_adverse LIKE "%' . $recherche . '%" 
-                                            OR e.nom LIKE "%' . $recherche . '%"');
+                        $q = $db->prepare('SELECT id_Match, date_match, heure_match, equipe_adverse, score FROM matchs
+                                            WHERE date_match LIKE "%' . $recherche . '%" 
+                                            OR heure_match LIKE "%' . $recherche . '%"
+                                            OR equipe_adverse LIKE "%' . $recherche . '%"');
                         $q->execute();
                     }
                 } else {
-                    $q = $db->prepare('SELECT m.id_Match, m.date_match, m.heure_match, m.equipe_adverse,m.score, e.nom FROM matchs m, dispute d, equipes e WHERE m.id_Match = d.id_Match and d.id_Equipe = e.id_Equipe');
+                    $q = $db->prepare('SELECT id_Match, date_match, heure_match, equipe_adverse, score FROM matchs');
                     $q->execute();
                 }
 
                 if ($q->rowCount() > 0) {
                     while ($match = $q->fetch()) {
-                        $equipe1 = new CarteEquipe($match['nom']);
+                        $equipe1 = new CarteEquipe("Mon Equipe");
                         $equipe2 = new CarteEquipe($match['equipe_adverse']);
                         $carteMatch = new CarteMatch($match['date_match'],$match['heure_match'],$equipe1,$equipe2,$match['score']);
                         $carteMatch->setIdMatch($match['id_Match']);

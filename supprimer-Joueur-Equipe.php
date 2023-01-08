@@ -18,7 +18,7 @@
 <body>
     <div class="container">
         <div class="card">
-            <p>Voulez vous suprimer le Joueur de l'équipe : <?= $equipe['nom']?></p>
+            <p>Voulez vous suprimer le Joueur de l'équipe ?</p>
             <p>Nom : <?= $joueur['nom'] ?></p>
             <p>Prenom : <?= $joueur['prenom'] ?></p>
             <p><?= "<img src='vue-img.php?img=".$joueur['photo']."' width='80px' >"?></p>

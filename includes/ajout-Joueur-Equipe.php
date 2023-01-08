@@ -1,13 +1,13 @@
 <?php
     if(isset($_GET['id']) && !empty($_GET['id'])) {
         $id = $_GET['id'];
-        $q = $db->prepare("SELECT * FROM equipes WHERE id_Equipe = :id_Equipe");
+        $q = $db->prepare("SELECT * FROM matchs WHERE id_Match = :id_Match");
         $q->execute([
-            'id_Equipe' => $id
+            'id_Match' => $id
         ]);
         $nbc = $q->rowCount();
         if($nbc == 1) {
-            $equipe = $q->fetch();
+            $match = $q->fetch();
         } else {
             header("Location:./");
         }
@@ -32,19 +32,23 @@
 
                 if ($nbUser == 1) {
                     $joueur = $c->fetch();
-                    $q = $db->prepare('SELECT * FROM joueurs j INNER JOIN appartient a ON j.id_Joueur = a.id_Joueur WHERE a.id_Equipe = :id_Equipe');
+                    $q = $db->prepare('SELECT j.id_Joueur
+                                        FROM joueurs j 
+                                        JOIN participe p ON p.id_joueur = j.id_Joueur 
+                                        JOIN matchs m ON m.id_Match = p.id_match 
+                                        WHERE m.id_Match = :id_Match');
                     $q->execute([
-                        'id_Equipe' => $equipe['id_Equipe']
+                        'id_Match' => $match['id_Match']
                     ]);
                     $nbJoueur = $q->rowCount();
                     if ($nbJoueur < 7) {
-                        $q = $db->prepare("INSERT INTO appartient (id_Joueur,id_Equipe) VALUES(:id_Joueur,:id_Equipe)");
+                        $q = $db->prepare("INSERT INTO participe (id_Joueur,id_Match) VALUES(:id_Joueur,:id_Equipe)");
                         $q->execute([
                             'id_Joueur' => $joueur['id_Joueur'],
-                            'id_Equipe' => $equipe['id_Equipe']
+                            'id_Equipe' => $match['id_Match']
                         ]);
 
-                        header('Location:./details-Equipe?id='.$equipe['id_Equipe'].'');
+                        header('Location:./details-Equipe?id='.$match['id_Match'].'');
                     } else {
                         echo '<script>alert("Cette équipe est déjà complète");</script>';
                     }

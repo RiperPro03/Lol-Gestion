@@ -1,23 +1,18 @@
 <?php
-    if(isset($_GET['idJ']) && !empty($_GET['idJ']) && isset($_GET['idE']) && !empty($_GET['idE'])) {
+    if(isset($_GET['idJ']) && !empty($_GET['idJ']) && isset($_GET['idM']) && !empty($_GET['idM'])) {
         $id_J = $_GET['idJ'];
-        $id_E = $_GET['idE'];
-        $q = $db->prepare("SELECT id_Joueur, id_Equipe FROM appartient WHERE id_Joueur = :id_Joueur AND id_Equipe = :id_Equipe");
+        $id_M = $_GET['idM'];
+        $q = $db->prepare("SELECT id_Joueur, id_Match FROM participe WHERE id_Joueur = :id_Joueur AND id_Match = :id_Match");
         $q->execute([
             'id_Joueur' => $id_J,
-            'id_Equipe' => $id_E
+            'id_Match' => $id_M
         ]);
         $nbc = $q->rowCount();
         if($nbc == 1) {
-            $appartient = $q->fetch();
-            $c = $db->prepare("SELECT id_Equipe, nom FROM equipes WHERE id_Equipe = :id_Equipe");
-            $c->execute([
-                'id_Equipe' => $appartient['id_Equipe']
-            ]);
-            $equipe = $c->fetch();
+            $participe = $q->fetch();
             $c = $db->prepare("SELECT nom, prenom, photo FROM joueurs WHERE id_Joueur = :id_Joueur");
             $c->execute([
-                'id_Joueur' => $appartient['id_Joueur']
+                'id_Joueur' => $participe['id_Joueur']
             ]);
             $joueur = $c->fetch();
             
@@ -36,12 +31,12 @@
         include 'authToken-form.php';
 
         if (strcmp($reponse,"Oui") == 0) {
-            $q = $db->prepare("DELETE FROM appartient WHERE id_Joueur = :id_Joueur AND id_Equipe = :id_Equipe");
+            $q = $db->prepare("DELETE FROM participe WHERE id_Joueur = :id_Joueur AND id_Match = :id_Match");
             $q->execute([
-                'id_Joueur' => $appartient['id_Joueur'],
-                'id_Equipe' => $appartient['id_Equipe']
+                'id_Joueur' => $participe['id_Joueur'],
+                'id_Match' => $participe['id_Match']
             ]);
         }
-        header('Location:./details-Equipe?id='.$equipe['id_Equipe'].'');
+        header('Location:./details-Equipe?id='.$match['id_Match'].'');
     }
 ?>

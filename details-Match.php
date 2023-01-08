@@ -11,11 +11,6 @@
 
         if($nbc == 1) {
             $match = $q->fetch();
-            $c = $db->prepare("SELECT * FROM equipes e INNER JOIN dispute d ON e.id_Equipe = d.id_Equipe WHERE d.id_Match = :id_Match");
-            $c->execute([
-                'id_Match' => $id
-            ]);
-            $my_equipe = $c->fetch();
         } else {
             header("Location:./");
         }
@@ -74,9 +69,9 @@
                     <p> Equipe : </p>
                     <div class="equipesMatch">
                         <?php
-                            $equipe = new CarteEquipe($my_equipe['nom']);
+                            $equipe = new CarteEquipe("Mon Equipe");
                             $equipe2 = new CarteEquipe($match['equipe_adverse']);
-                            $equipe->setIdEquipe($my_equipe['id_Equipe']);
+                            $equipe->setIdMatch($match['id_Match']);
                             echo $equipe->get_carteEquipeAccueil();
                             echo '<div class="Versus">
                                 <img src="vue-img.php?img=Versus.png" style="width:100%;">
@@ -89,6 +84,7 @@
             </div>
             <div class="optionDetails">
                 <a href="modification-Match?id=<?= $match['id_Match'] ?>" class="boutonDetail"><i class="fa-solid fa-pen"></i></a>
+                <a href="./details-Equipe.php?id=<?= $match['id_Match'] ?>" class="boutonDetail"><i class="fa-solid fa-people-group"></i></a>
                 <a href="suppression-Match?id=<?= $match['id_Match'] ?>" class="boutonDetail"><i class="fa-solid fa-trash"></i></a>
             </div>
         </div>

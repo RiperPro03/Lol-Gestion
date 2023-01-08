@@ -53,7 +53,7 @@
 
                 if ($q->rowCount() > 0) {
                     while ($joueur = $q->fetch()) {
-                        $c = $db->prepare('SELECT count(id_Joueur) as nbSelec FROM appartient where id_Joueur = :id_Joueur group by id_Joueur');
+                        $c = $db->prepare('SELECT count(id_Joueur) as nbSelec FROM participe where id_Joueur = :id_Joueur group by id_Joueur');
                         $c->execute(['id_Joueur' => $joueur['id_Joueur']]);
                         if ($c->rowCount() > 0) {
                             $StatSelc = $c->fetch();
@@ -72,12 +72,12 @@
         <div class="historique">
             <h1>Matchs récents</h1>
             <?php
-                $q = $db->prepare('SELECT m.id_Match, m.date_match, m.heure_match, m.equipe_adverse,m.score, e.nom FROM matchs m, dispute d, equipes e WHERE m.id_Match = d.id_Match and d.id_Equipe = e.id_Equipe LIMIT 5');
+                $q = $db->prepare('SELECT id_Match, date_match, heure_match, equipe_adverse, score FROM matchs m LIMIT 5');
                 $q->execute();
 
                 if ($q->rowCount() > 0) {
                     while ($match = $q->fetch()) {
-                        $equipe1 = new CarteEquipe($match['nom']);
+                        $equipe1 = new CarteEquipe("Mon équipe");
                         $equipe2 = new CarteEquipe($match['equipe_adverse']);
                         $carteMatch = new CarteMatch($match['date_match'],$match['heure_match'],$equipe1,$equipe2,$match['score']);
                         $carteMatch->setIdMatch($match['id_Match']);

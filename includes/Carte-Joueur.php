@@ -8,7 +8,7 @@
         private $victoire;
         private $nbSelection;
         private $idJoueur;
-        private $idEquipe;
+        private $idMatch;
 
         function __construct($nom, $prenom,$pseudo,$poste,$image,$victoire,$nbSelection) {
             $this->nom = $nom;
@@ -107,7 +107,7 @@
                         <h2> ' . $this->get_pseudo() . ' <br><span> '.$this->get_prenom().' '.$this->get_nom().'</span></h2>
                     </div>
                     <div class="optionJoueur">
-                            <a href="supprimer-Joueur-Equipe?idJ='. $this->idJoueur .'&idE='. $this->idEquipe .'" class="boutonJoueur"><i class="fa-solid fa-trash"></i></a>
+                            <a href="supprimer-Joueur-Equipe?idJ='. $this->idJoueur .'&idE='. $this->idMatch .'" class="boutonJoueur"><i class="fa-solid fa-trash"></i></a>
                     </div>
                 </div>
             </div>
@@ -160,7 +160,7 @@
                         <h2> ' . $this->get_pseudo() . ' <br><span> '.$this->get_prenom().' '.$this->get_nom().'</span></h2>
                     </div>
                     <div class="optionJoueur">
-                            <a href="supprimer-Joueur-Equipe?idJ='. $this->idJoueur .'&idE='. $this->idEquipe .'" class="boutonJoueur"><i class="fa-solid fa-trash"></i></a>
+                            <a href="supprimer-Joueur-Equipe?idJ='. $this->idJoueur .'&idM='. $this->idMatch .'" class="boutonJoueur"><i class="fa-solid fa-trash"></i></a>
                     </div>
                 </div>
             </div>
@@ -171,8 +171,8 @@
         function setIdJoueur($id){
             $this->idJoueur = $id;
         }
-        function setIdEquipe($id){
-            $this->idEquipe = $id;
+        function setIdMatch($id){
+            $this->idMatch = $id;
         }
     }
 ?>

@@ -3,13 +3,13 @@
     require 'includes/Carte-Joueur.php';
     if(isset($_GET['id']) && !empty($_GET['id'])) {
         $id = $_GET['id'];
-        $q = $db->prepare("SELECT * FROM equipes WHERE id_Equipe = :id_Equipe");
+        $q = $db->prepare("SELECT id_Match FROM matchs WHERE id_Match = :id_Match");
         $q->execute([
-            'id_Equipe' => $id
+            'id_Match' => $id
         ]);
         $nbc = $q->rowCount();
         if($nbc == 1) {
-            $equipe = $q->fetch();
+            $match = $q->fetch();
         } else {
             header("Location:./");
         }
@@ -54,15 +54,21 @@
                     <h2>Details Equipe</h2>
                 </div>
                 <div class="detailsInfoEquipe">
-                    <p>
-                        Nom :<span> <?= htmlspecialchars($equipe['nom']); ?></span>
-                    </p>
                     
                     <p> Joueurs titulaire:</p>
                     <?php
-                        $q = $db->prepare('SELECT * FROM joueurs j INNER JOIN appartient a ON j.id_Joueur = a.id_Joueur WHERE a.id_Equipe = :id_Equipe and a.titulaire = 1 ORDER BY FIELD(poste,\'Top\', \'Jungle\', \'Middle\', \'Bottom\', \'Support\')');
+                        
+                        $q = $db->prepare('SELECT j.*
+                                            FROM joueurs j 
+                                            JOIN participe p ON p.id_joueur = j.id_Joueur 
+                                            JOIN matchs m ON m.id_Match = p.id_match 
+                                            WHERE m.id_Match = :id_Match
+                                            AND p.titulaire = :titulaire
+                                            ORDER BY FIELD(poste,\'Top\', \'Jungle\', \'Middle\', \'Bottom\', \'Support\')
+                                            ');
                         $q->execute([
-                            'id_Equipe' => $equipe['id_Equipe']
+                            'id_Match' => $match['id_Match'],
+                            'titulaire' => 1
                         ]);
                 
                         if ($q->rowCount() > 0) {
@@ -70,7 +76,7 @@
                                 $listeJoueurTitulaire[$joueur['poste']] = $joueur;
                                 $cartejoueur = new CarteJoueur($joueur['nom'], $joueur['prenom'], $joueur['pseudo'], $joueur['poste'], $joueur['photo'], 0, 0);
                                 $cartejoueur->setIdJoueur($joueur['id_Joueur']);
-                                $cartejoueur->setIdEquipe($equipe['id_Equipe']);
+                                $cartejoueur->setIdMatch($match['id_Match']);
                                 echo '<div><p><span>'.$cartejoueur->get_poste().'</span></p>'.$cartejoueur->get_carteJoueurPourDetails().'</div>';
                             }
                         } else {
@@ -79,9 +85,17 @@
                     ?>
                     <p> Joueurs Remplaçant:</p>
                     <?php
-                        $q = $db->prepare('SELECT * FROM joueurs j INNER JOIN appartient a ON j.id_Joueur = a.id_Joueur WHERE a.id_Equipe = :id_Equipe and a.titulaire != 1 ORDER BY FIELD(poste,\'Top\', \'Jungle\', \'Middle\', \'Bottom\', \'Support\')');
+                        $q = $db->prepare('SELECT j.*
+                                            FROM joueurs j 
+                                            JOIN participe p ON p.id_joueur = j.id_Joueur 
+                                            JOIN matchs m ON m.id_Match = p.id_match 
+                                            WHERE m.id_Match = :id_Match
+                                            AND p.titulaire != :titulaire
+                                            ORDER BY FIELD(poste,\'Top\', \'Jungle\', \'Middle\', \'Bottom\', \'Support\')
+                        ');
                         $q->execute([
-                            'id_Equipe' => $equipe['id_Equipe']
+                            'id_Match' => $match['id_Match'],
+                            'titulaire' => 1
                         ]);
                 
                         if ($q->rowCount() > 0) {
@@ -89,7 +103,7 @@
                                 $listeJoueurTitulaire[$joueur['poste']] = $joueur;
                                 $cartejoueur = new CarteJoueur($joueur['nom'], $joueur['prenom'], $joueur['pseudo'], $joueur['poste'], $joueur['photo'], 0, 0);
                                 $cartejoueur->setIdJoueur($joueur['id_Joueur']);
-                                $cartejoueur->setIdEquipe($equipe['id_Equipe']);
+                                $cartejoueur->setIdMatch($match['id_Match']);
                                 echo '<div><p><span>'.$cartejoueur->get_poste().'</span></p>'.$cartejoueur->get_carteJoueurPourDetails().'</div>';
                             }
                         } else {
@@ -99,10 +113,8 @@
                 </div>
             </div>
             <div class="optionDetails">
-                <a href="modification-Equipe?id=<?= $equipe['id_Equipe'] ?>" class="boutonDetail"><i class="fa-solid fa-pen"></i></a>
-                <a href="suppression-Equipe?id=<?= $equipe['id_Equipe'] ?>" class="boutonDetail"><i class="fa-solid fa-trash"></i></a>
-                <a href="./ajout-Joueur-Equipe?id=<?= $equipe['id_Equipe'] ?>" class="boutonDetail"><i class="fa-solid fa-user-plus"></i></a>
-                <a href="selection-Joueur?id=<?= $equipe['id_Equipe'] ?>" class="boutonDetail"><i class="fa-solid fa-users-gear"></i></a>
+                <a href="./ajout-Joueur-Equipe?id=<?= $match['id_Match'] ?>" class="boutonDetail"><i class="fa-solid fa-user-plus"></i></a>
+                <a href="selection-Joueur?id=<?= $match['id_Match'] ?>" class="boutonDetail"><i class="fa-solid fa-users-gear"></i></a>
             </div>
         </div>
     </div>

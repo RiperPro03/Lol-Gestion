@@ -24,30 +24,30 @@
         <div class="card">
             <h3>Sélection des joueurs</h3>
             <div class="ajout">
-                <a href="./ajout-Joueur-Equipe?id=<?= $equipe['id_Equipe'] ?>"><i class="fa-solid fa-user-plus"></i></a>
+                <a href="./ajout-Joueur-Equipe?id=<?= $match['id_Match'] ?>"><i class="fa-solid fa-user-plus"></i></a>
             </div>
             <form method="post">
 
                 <input type="hidden" name="token" value="<?=$_SESSION['authToken']?>">
 
                 <?php
-                    $q = $db->prepare('SELECT j.* FROM joueurs j INNER JOIN appartient a ON j.id_Joueur = a.id_Joueur AND j.statut = :statut WHERE a.id_Equipe = :id_Equipe');
+                    $q = $db->prepare('SELECT j.* FROM joueurs j INNER JOIN participe p ON j.id_Joueur = p.id_Joueur AND j.statut = :statut WHERE p.id_Match = :id_Match');
                      $q->execute([
-                        'id_Equipe' => $equipe['id_Equipe'],
+                        'id_Match' => $match['id_Match'],
                         'statut' => 'actif'
                     ]);
                 
                     if ($q->rowCount() > 0) {
                         while ($joueur = $q->fetch()) {
-                            $c = $db->prepare('SELECT titulaire FROM appartient WHERE id_Equipe = :id_Equipe AND id_Joueur = :id_Joueur');
+                            $c = $db->prepare('SELECT titulaire FROM participe WHERE id_Match = :id_Match AND id_Joueur = :id_Joueur');
                             $c->execute([
-                                'id_Equipe' => $equipe['id_Equipe'],
+                                'id_Match' => $match['id_Match'],
                                 'id_Joueur' => $joueur['id_Joueur']
                             ]);
                             $titulaire = $c->fetch();
                             $carteJoueur = new CarteJoueur($joueur['nom'], $joueur['prenom'], $joueur['pseudo'], $joueur['poste'], $joueur['photo'], 0, 0);
                             $carteJoueur->setIdJoueur($joueur['id_Joueur']);
-                            $carteJoueur->setIdEquipe($equipe['id_Equipe']);
+                            $carteJoueur->setIdMatch($match['id_Match']);
                             echo $carteJoueur->get_carteJoueurSelection();
                             if ($titulaire['titulaire'] == 1) {
                                 echo '<input type="checkbox" name="Joueurs[]" value="' . $joueur['id_Joueur'] . '" checked> <br>';

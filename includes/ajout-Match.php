@@ -7,6 +7,7 @@
 
         if(!empty($date_match) && !empty($heure_match) && !empty($lieu) && !empty($equipe) && !empty($equipe_adverse)) {
             if (strlen($lieu) <= 50 && strlen($description_match) <= 50 && strlen($equipe_adverse) <= 50 && strlen($score) <= 5) {
+                //PAS MIS A JOUR
                 $c = $db->prepare("SELECT matchs.id_Match, equipes.id_Equipe FROM matchs, equipes 
                                             WHERE equipes.nom = :equipe
                                             AND matchs.date_match = :date_match
@@ -50,7 +51,7 @@
                         'equipe_adverse' => $equipe_adverse
                     ]);
                     $result = $c->fetch();
-
+                    //PAS MIS A JOUR
                     $q = $db->prepare("INSERT INTO dispute (id_Match, id_Equipe) VALUES(:id_Match,:id_Equipe)");
                     $q->execute([
                         'id_Match' => $result['id_Match'],
