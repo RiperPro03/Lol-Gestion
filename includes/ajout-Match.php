@@ -5,15 +5,13 @@
 
         include 'authToken-form.php';
 
-        if(!empty($date_match) && !empty($heure_match) && !empty($lieu) && !empty($equipe) && !empty($equipe_adverse)) {
-            if (strlen($lieu) <= 50 && strlen($description_match) <= 50 && strlen($equipe_adverse) <= 50 && strlen($score) <= 5) {
-                //PAS MIS A JOUR
-                $c = $db->prepare("SELECT matchs.id_Match, equipes.id_Equipe FROM matchs, equipes 
-                                            WHERE equipes.nom = :equipe
-                                            AND matchs.date_match = :date_match
+        if(!empty($date_match) && !empty($heure_match) && !empty($lieu) && !empty($equipe_adverse)) {
+            if (strlen($lieu) <= 50 && strlen($equipe_adverse) <= 50) {
+
+                $c = $db->prepare("SELECT matchs.id_Match FROM matchs 
+                                            WHERE matchs.date_match = :date_match
                                             AND matchs.heure_match = :heure_match");
                 $c->execute([
-                    'equipe' => $equipe,
                     'date_match' => $date_match,
                     'heure_match' => $heure_match,
                 ]);
@@ -26,36 +24,10 @@
                         'date_match' => $date_match,
                         'heure_match' => $heure_match,
                         'lieu' => $lieu,
-                        'description_match' => $description_match,
-                        'gagnant' => $gagnant,
-                        'score' => $score,
+                        'description_match' => '',
+                        'gagnant' => '',
+                        'score' => '',
                         'equipe_adverse' => $equipe_adverse
-                    ]);
-                    $c = $db->prepare("SELECT matchs.id_Match, equipes.id_Equipe FROM matchs, equipes 
-                                            WHERE equipes.nom = :equipe
-                                            AND matchs.date_match = :date_match
-                                            AND matchs.heure_match = :heure_match
-                                            AND matchs.lieu = :lieu
-                                            AND matchs.description_match = :description_match
-                                            AND matchs.gagnant = :gagnant
-                                            AND matchs.score = :score
-                                            AND matchs.equipe_adverse = :equipe_adverse");
-                    $c->execute([
-                        'equipe' => $equipe,
-                        'date_match' => $date_match,
-                        'heure_match' => $heure_match,
-                        'lieu' => $lieu,
-                        'description_match' => $description_match,
-                        'gagnant' => $gagnant,
-                        'score' => $score,
-                        'equipe_adverse' => $equipe_adverse
-                    ]);
-                    $result = $c->fetch();
-                    //PAS MIS A JOUR
-                    $q = $db->prepare("INSERT INTO dispute (id_Match, id_Equipe) VALUES(:id_Match,:id_Equipe)");
-                    $q->execute([
-                        'id_Match' => $result['id_Match'],
-                        'id_Equipe' => $result['id_Equipe']
                     ]);
 
                     //header("Location: " . $_SERVER['HTTP_REFERER']);

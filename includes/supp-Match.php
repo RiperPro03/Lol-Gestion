@@ -24,7 +24,7 @@
 
         if (strcmp($reponse,"Oui") == 0) {
             if(isset($_GET['id']) && !empty($_GET['id'])) {
-                $q = $db->prepare("DELETE FROM dispute WHERE id_Match = :id_Match");
+                $q = $db->prepare("DELETE FROM participe WHERE id_Match = :id_Match");
                 $q->execute([
                     'id_Match' => $id
                 ]);

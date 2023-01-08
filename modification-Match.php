@@ -58,29 +58,6 @@ require 'includes/header.php';
                     <span>Gagnant</span>
                 </div>
 
-                <div class="box">
-                    <span>Equipe</span>
-                    <input list="list-equipe" id="inputE" type="text" name="equipe" required="required" autocomplete="off" value="<?= htmlspecialchars($nom_equipe['nom']);?>">
-                    <datalist id="list-equipe">
-                        <?php
-                        $q = $db->prepare('SELECT nom FROM equipes');
-                        $q->execute();
-
-
-                        if ($q->rowCount() > 0) {
-                            while ($equipe = $q->fetch()) {
-                        ?>
-                                <?= "<option value='" . $equipe['nom'] . "'>" ?>
-
-                        <?php
-                            }
-                        } else {
-                            echo "<option value='Aucune équipe trouvé'>";
-                        }
-                        ?>
-                    </datalist>
-                </div>
-
                 <div class="inputBox">
                     <input type="text" name="equipe_adverse" required="required" autocomplete="off" value="<?= htmlspecialchars($match['equipe_adverse']);?>">
                     <span>Equipe adverse</span>
@@ -90,29 +67,6 @@ require 'includes/header.php';
             </form>
         </div>
     </div>
-    
-    <script>
-        function validateForm() {
-            var input = document.getElementById("inputE");
-            var datalist = document.getElementById("list-equipe");
-            var isValid = false;
-
-            for (var i = 0; i < datalist.options.length; i++) {
-                if (input.value == datalist.options[i].value) {
-                    isValid = true;
-                    break;
-                }
-            }
-
-            if (!isValid) {
-                alert("Veuillez sélectionner une équipe valide dans la liste");
-            }
-
-            return isValid;
-        }
-    </script>
-
-
 </body>
 
 </html>

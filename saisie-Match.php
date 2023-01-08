@@ -41,10 +41,6 @@ require 'includes/header.php';
                         <option value="Extérieur">Extérieur</option>
                     </select>
                 </div>
-                <div class="inputBox">
-                    <input type="text" name="equipe" value="<?=$_GET["nomEquipe"]?>" required="required" autocomplete="off">
-                    <span>Equipe</span>
-                </div>
 
                 <div class="inputBox">
                     <input type="text" name="equipe_adverse" required="required" autocomplete="off">
@@ -55,31 +51,6 @@ require 'includes/header.php';
             </form>
         </div>
     </div>
-
-    <script>
-        function validateForm() {
-            var input = document.getElementById("inputE");
-            var datalist = document.getElementById("list-equipe");
-            var isValid = false;
-
-            for (var i = 0; i < datalist.options.length; i++) {
-                if (input.value == datalist.options[i].value) {
-                    if(input.value == 'Aucune équipe trouvé') {
-                        alert("Veuillez ajouté une équipe avant de l'ajouter à un match");
-                    } else {
-                        isValid = true;
-                        break;
-                    }
-                }
-            }
-
-            if (!isValid) {
-                alert("Veuillez sélectionner une équipe valide dans la liste");
-            }
-
-            return isValid;
-        }
-    </script>
 </body>
 
 </html>
