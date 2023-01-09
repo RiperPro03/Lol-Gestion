@@ -2,6 +2,7 @@
     class CarteEquipe{
         private $nom;
         private $idMatch;
+        private $isGagnant;
 
         function __construct( $nom) {
             $this->nom = $nom;
@@ -13,10 +14,15 @@
         }
 
         function get_carteEquipeAccueil(){
-            return
+
+            $str = '<div class="carteEquipe" onclick="location.href=\'./details-Equipe?id='.$this->idMatch.'\';">';
+            if ($this->isGagnant == 1) {
+                $str .= '<div class="contourEquipe" id="victoire">';
+            } else {
+                $str .= '<div class="contourEquipe">';
+            }
+            return $str .
             '
-            <div class="carteEquipe" onclick="location.href=\'./details-Equipe?id='.$this->idMatch.'\';">
-                <div class="contourEquipe">
                 </div>
                 <div class="boiteInfoEquipe">
                     <div class="detailsEquipe">
@@ -28,10 +34,15 @@
         }
 
         function get_carteEquipeAccueilNonClickable(){
-            return
+
+            $str = '<div class="carteEquipe" id="nonClickable">';
+            if ($this->isGagnant == 1) {
+                $str .= '<div class="contourEquipe" id="victoire">';
+            } else {
+                $str .= '<div class="contourEquipe">';
+            }
+            return $str .
             '
-            <div class="carteEquipe" id="nonClickable">
-                <div class="contourEquipe">
                 </div>
                 <div class="boiteInfoEquipe">
                     <div class="detailsEquipe">
@@ -61,6 +72,10 @@
         }*/
         function setIdMatch($id){
             $this->idMatch = $id;
+        }
+
+        function isGagnant($isGagnant){
+            $this->isGagnant = $isGagnant;
         }
     }
 ?>

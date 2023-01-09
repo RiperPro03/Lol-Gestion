@@ -45,12 +45,12 @@
             '
             <div class="carteMatch" onclick="location.href=\'./details-Match?id='.$this->idMatch.'\';">
                 <div class="Equipe">
-                    '.$this->equipe1->get_carteEquipeAccueil()
+                    '.$this->equipe1
                     .'
                     <div class=" Versus">
                         <img src="vue-img.php?img=Versus.png" style="width:100%;">
                     </div>
-                    '.$this->equipe2->get_carteEquipeAccueil().'
+                    '.$this->equipe2.'
                 </div>
                 <div class="contourMatch">
                 </div>
@@ -70,12 +70,12 @@
             '
             <div class="carteMatch" onclick="location.href=\'./details-Match?id='.$this->idMatch.'\';">
                 <div class="Equipe">
-                    '.$this->equipe1->get_carteEquipeAccueil()
+                    '.$this->equipe1
                     .'
                     <div class=" Versus">
                         <img src="vue-img.php?img=Versus.png" style="width:100%;">
                     </div>
-                    '.$this->equipe2->get_carteEquipeAccueil().'
+                    '.$this->equipe2.'
                 </div>
                 <div class="contourMatch">
                 </div>

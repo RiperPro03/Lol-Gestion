@@ -53,9 +53,12 @@ require 'includes/header.php';
                     <span>Score</span>
                 </div>
 
-                <div class="inputBox">
-                    <input type="text" name="gagnant" autocomplete="off" value="<?= htmlspecialchars($match['gagnant']);?>">
+                <div class="box">
                     <span>Gagnant</span>
+                    <select name="gagnant" required="required">
+                        <option value="<?= htmlspecialchars($match['equipe_adverse']);?>" <?php if ($match['gagnant'] == htmlspecialchars($match['equipe_adverse'])) echo "selected"; ?>><?= htmlspecialchars($match['equipe_adverse']);?></option>
+                        <option value="Mon équipe" <?php if ($match['gagnant'] == "Mon équipe") echo "selected"; ?>>Mon équipe</option>
+                    </select>
                 </div>
 
                 <div class="inputBox">

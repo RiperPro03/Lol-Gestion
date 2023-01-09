@@ -1,4 +1,8 @@
 /*debut css carte de l'équipe*/
+
+:root {
+    --Couleur-Contour: #ff4545;
+}
 .carteEquipe{
     position: relative;
     width: 250px;
@@ -30,7 +34,7 @@
     transform: translate(-50%,-50%);
     width: 600px;
     height: 120px;
-    background:linear-gradient(transparent,#ff4545,#ff4545,#ff4545,transparent);
+    background:linear-gradient(transparent,var(--Couleur-Contour),var(--Couleur-Contour),var(--Couleur-Contour),transparent);
     animation: animateEquipe 4s linear infinite;
 }
 @keyframes animateEquipe {
@@ -40,6 +44,10 @@
     100%{
         transform: translate(-50%, -50%) rotate(360deg);
     }
+}
+
+#victoire {
+    --Couleur-Contour: #00ff00;
 }
 
 /*fin des line du contour*/
