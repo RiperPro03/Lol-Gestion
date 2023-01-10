@@ -72,6 +72,11 @@
                             $equipe = new CarteEquipe("Mon Equipe");
                             $equipe2 = new CarteEquipe($match['equipe_adverse']);
                             $equipe->setIdMatch($match['id_Match']);
+                            if ($match['gagnant'] == "Mon équipe") {
+                                $equipe->isGagnant(1);
+                            } else if ($match['gagnant'] == $match['equipe_adverse']) {
+                                $equipe2->isGagnant(1);
+                            }
                             echo $equipe->get_carteEquipeAccueil();
                             echo '<div class="Versus">
                                 <img src="vue-img.php?img=Versus.png" style="width:100%;">
