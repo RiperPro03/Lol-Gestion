@@ -22,6 +22,7 @@
             <p>Date : <?= date('d/m/Y', strtotime($match['date_match'])) ?></p>
             <p>Heure : <?= date('H:i', strtotime($match['heure_match'])) ?></p>
             <p>Lieu : <?= $match['lieu'] ?></p>
+            <p>Equipe adverse : <?= $match['equipe_adverse'] ?></p>
             <form method="post">
                 <input type="hidden" name="token" value="<?=$_SESSION['authToken']?>">
                 <p>

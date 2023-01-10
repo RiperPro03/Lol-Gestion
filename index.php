@@ -73,8 +73,7 @@
             <h1>Matchs récents</h1>
             <?php
                 $q = $db->prepare('SELECT id_Match, date_match, heure_match, equipe_adverse, score, gagnant 
-                                    FROM matchs m 
-                                    WHERE date_match < NOW() OR (date_match = NOW() AND heure_match < NOW())
+                                    FROM matchs m
                                     ORDER BY date_match DESC, heure_match DESC 
                                     LIMIT 5');
                 $q->execute();

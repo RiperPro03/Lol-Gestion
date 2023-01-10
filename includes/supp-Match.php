@@ -1,7 +1,7 @@
 <?php
     if(isset($_GET['id']) && !empty($_GET['id'])) {
         $id = $_GET['id'];
-        $q = $db->prepare("SELECT date_match, heure_match, lieu FROM matchs WHERE id_Match  = :id_Match ");
+        $q = $db->prepare("SELECT date_match, heure_match, lieu, equipe_adverse FROM matchs WHERE id_Match  = :id_Match ");
         $q->execute([
             'id_Match' => $id
         ]);
