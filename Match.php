@@ -43,11 +43,11 @@
             //il manque le score du match
                 if (isset($_POST['search'])) {
                     if (empty($_POST['search'])) {
-                        $q = $db->prepare('SELECT id_Match, date_match, heure_match, equipe_adverse, score FROM matchs');
+                        $q = $db->prepare('SELECT id_Match, date_match, heure_match, equipe_adverse, score, gagnant FROM matchs');
                         $q->execute();
                     } else {
                         $recherche = htmlspecialchars($_POST['search']);
-                        $q = $db->prepare('SELECT id_Match, date_match, heure_match, equipe_adverse, score FROM matchs
+                        $q = $db->prepare('SELECT id_Match, date_match, heure_match, equipe_adverse, score, gagnant FROM matchs
                                             WHERE date_match LIKE "%' . $recherche . '%" 
                                             OR heure_match LIKE "%' . $recherche . '%"
                                             OR equipe_adverse LIKE "%' . $recherche . '%"');

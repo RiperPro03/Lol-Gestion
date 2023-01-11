@@ -31,25 +31,30 @@ require 'includes/header.php';
                 <div class="boiteStatGeneral">
                     <div class="statGeneral">
                         <?php
-                        $q = $db->prepare('SELECT count(id_Match) as nbMatch from matchs');
-                        $q->execute();
-                        if ($q->rowCount() > 0) {
-                            $nbMatch = $q->fetch();
-                        } else {
-                            $nbMatch['nbMatch'] = 0;
-                        }
+                            $q = $db->prepare('SELECT COUNT(id_Match) AS nb_match,
+                                                SUM(CASE WHEN gagnant = "Mon équipe" THEN 1 ELSE 0 END) AS nb_victoire,
+                                                COUNT(id_Match) - SUM(CASE WHEN gagnant = "Mon équipe" THEN 1 ELSE 0 END) AS nb_defaite
+                                                FROM matchs');
+                            $q->execute();
+                            $StatMatch = $q->fetch();
+                            if ($StatMatch['nb_victoire'] == 0) {
+                                $StatMatch['nb_victoire'] = 0;
+                            }
+                            if ($StatMatch['nb_defaite'] == 0) {
+                                $StatMatch['nb_defaite'] = 0;
+                            }
                         ?>
 
                         <h2> Statistique Globale</h2>
-                        <p> Nombre de match: <span> <?= $nbMatch['nbMatch'] ?> </span></p>
-                        <p> Nombre de victoire: <span> 5 ,50%</span></p>
-                        <p> Nombre de defaite: <span> 5 ,50%</span></p>
+                        <p> Nombre de match: <span> <?= $StatMatch['nb_match'] ?> </span></p>
+                        <p> Nombre de victoire: <span> <?= $StatMatch['nb_victoire'] ?></span></p>
+                        <p> Nombre de defaite: <span> <?= $StatMatch['nb_defaite'] ?></span></p>
                     </div>
                 </div>
                 <div class="boiteStatParJoueur">
                     <h2 class="titreStatJ">Statistique par joueur</h2>
 
-                    <form method="post">
+                    <form method="get">
                         <input type="search" name="search" placeholder="Rechercher un Joueur" autocomplete="off">
                         <input type="submit" value="Rechercher">
                         <a href="./Statistique"><i class="fa-solid fa-rotate-right"></i></a>
@@ -66,18 +71,18 @@ require 'includes/header.php';
                                 <th>Poste</th>
                                 <th>Statut</th>
                                 <th>Nombre de selection</th>
-                                <th>Nombre de selection titulaire</th>
-                                <th>Nombre de selection Remplacant</th>
+                                <th>Selection titulaire</th>
+                                <th>Selection Remplacant</th>
                                 <th>Ratio de victoire</th>
                                 <th>Moyenne Note</th>
                             </tr>
                             <?php
-                                if (isset($_POST['search'])) {
-                                    if (empty($_POST['search'])) {
+                                if (isset($_GET['search'])) {
+                                    if (empty($_GET['search'])) {
                                         $q = $db->prepare('SELECT id_Joueur, nom, prenom, photo, pseudo, poste, statut FROM joueurs');
                                         $q->execute();
                                     } else {
-                                        $recherche = htmlspecialchars($_POST['search']);
+                                        $recherche = htmlspecialchars($_GET['search']);
                                         $q = $db->prepare('SELECT id_Joueur, nom, prenom, photo, pseudo, poste, statut FROM joueurs 
                                                             WHERE nom LIKE "%' . $recherche . '%" 
                                                             OR prenom LIKE "%' . $recherche . '%" 
@@ -90,6 +95,26 @@ require 'includes/header.php';
 
                                 if ($q->rowCount() > 0) {
                                     while ($joueur = $q->fetch()) {
+
+                                        $c = $db->prepare('SELECT p.id_Joueur, 
+                                                                COUNT(p.id_Joueur) AS nb_Selection,
+                                                                SUM(p.titulaire) AS nb_Titulaire,
+                                                                SUM(CASE WHEN p.titulaire = 0 THEN 1 ELSE 0 END) AS nb_Remplacant,
+                                                                AVG(p.evaluation) AS moyenne_Note,
+                                                                ROUND(SUM(CASE WHEN m.gagnant = "Mon équipe" THEN 1 ELSE 0 END) / COUNT(p.id_Joueur) * 100, 2) AS nb_victoire
+                                                                FROM participe p, matchs m
+                                                                WHERE p.id_Match = m.id_Match
+                                                                AND p.id_Joueur = :id_Joueur');
+                                        $c->execute(array(
+                                            'id_Joueur' => $joueur['id_Joueur']
+                                        ));
+                                        $Stat = $c->fetch();
+                                        if ($Stat['nb_victoire'] == 0) {
+                                            $Stat['nb_victoire'] = 0;
+                                        }
+                                        if ($Stat['moyenne_Note'] == 0) {
+                                            $Stat['moyenne_Note'] = 0;
+                                        }
                                 ?>
                                         <tr>
                                             <td><?= $joueur['nom'] ?></td>
@@ -98,11 +123,11 @@ require 'includes/header.php';
                                             <td><a href="./details-Joueur?id=<?= $joueur['id_Joueur'] ?>"><?= $joueur['pseudo'] ?></a></td>
                                             <td><?= $joueur['poste'] ?></td>
                                             <td><?= $joueur['statut'] ?></td>
-                                            <td><?= "0" ?></td>
-                                            <td><?= "0" ?></td>
-                                            <td><?= "0" ?></td>
-                                            <td><?= "0" ?></td>
-                                            <td><?= "0" ?></td>
+                                            <td><?= $Stat['nb_Selection'] ?></td>
+                                            <td><?= $Stat['nb_Titulaire'] ?></td>
+                                            <td><?= $Stat['nb_Remplacant'] ?></td>
+                                            <td><?= $Stat['nb_victoire'] ?>%</td>
+                                            <td><?= $Stat['moyenne_Note'] ?>/5</td>
                                         </tr>
 
                             <?php

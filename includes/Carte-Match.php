@@ -48,7 +48,7 @@
                     '.$this->equipe1
                     .'
                     <div class=" Versus">
-                        <img src="vue-img.php?img=Versus.png" style="width:100%;">
+                        <img src="vue-img.php?img=Versus.png" alt="Image Versus" style="width:100%;">
                     </div>
                     '.$this->equipe2.'
                 </div>
@@ -73,7 +73,7 @@
                     '.$this->equipe1
                     .'
                     <div class=" Versus">
-                        <img src="vue-img.php?img=Versus.png" style="width:100%;">
+                        <img src="vue-img.php?img=Versus.png" alt="Image Versus" style="width:100%;">
                     </div>
                     '.$this->equipe2.'
                 </div>

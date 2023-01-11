@@ -53,7 +53,7 @@
             </div>
             <div class="boiteimageJoueur">
                 <div class="imageJoueur">
-                    <img src="vue-img.php?img=' . $this->get_image() . '"style="width:100%;"> 
+                    <img src="vue-img.php?img=' . $this->get_image() . '" alt="Image du Joueur" style="width:100%;"> 
                 </div>
                 
             </div>
@@ -78,7 +78,7 @@
                 </div>
                 <div class="boiteimageJoueurDetail">
                     <div class="imageJoueurDetail">
-                        <img src="vue-img.php?img=' . $this->get_image() . '"style="width:100%;"> 
+                        <img src="vue-img.php?img=' . $this->get_image() . '" alt="Image du Joueur" style="width:100%;"> 
                     </div>
                 
                 </div>
@@ -98,7 +98,7 @@
                 </div>
                 <div class="boiteimageJoueurDetail">
                     <div class="imageJoueurDetail">
-                        <img src="vue-img.php?img=' . $this->get_image() . '"style="width:100%;"> 
+                        <img src="vue-img.php?img=' . $this->get_image() . '" alt="Image du Joueur" style="width:100%;"> 
                     </div>
                 
                 </div>
@@ -121,7 +121,7 @@
                 </div>
                 <div class="boiteimageJoueur">
                     <div class="imageJoueur">
-                        <img src="vue-img.php?img=' . $this->get_image() . '"style="width:100%;"> 
+                        <img src="vue-img.php?img=' . $this->get_image() . '" alt="Image du Joueur" style="width:100%;"> 
                     </div>
                 
                 </div>
@@ -151,7 +151,7 @@
                 </div>
                 <div class="boiteimageJoueurDetail">
                     <div class="imageJoueurDetail">
-                        <img src="vue-img.php?img=' . $this->get_image() . '"style="width:100%;"> 
+                        <img src="vue-img.php?img=' . $this->get_image() . '" alt="Image du Joueur" style="width:100%;"> 
                     </div>
                 
                 </div>
