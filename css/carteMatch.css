@@ -10,7 +10,7 @@
     overflow: hidden;
 }
 
-.carteMatch:hover{
+#details:hover{
     height: 250px;
 }
 
