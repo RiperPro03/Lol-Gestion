@@ -32,8 +32,8 @@ require 'includes/header.php';
                     <div class="statGeneral">
                         <?php
                             $q = $db->prepare('SELECT COUNT(id_Match) AS nb_match,
-                                                SUM(CASE WHEN gagnant = "Mon équipe" THEN 1 ELSE 0 END) AS nb_victoire,
-                                                COUNT(id_Match) - SUM(CASE WHEN gagnant = "Mon équipe" THEN 1 ELSE 0 END) AS nb_defaite
+                                                SUM(CASE WHEN gagnant = "My Team" THEN 1 ELSE 0 END) AS nb_victoire,
+                                                COUNT(id_Match) - SUM(CASE WHEN gagnant = "My Team" THEN 1 ELSE 0 END) AS nb_defaite
                                                 FROM matchs');
                             $q->execute();
                             $StatMatch = $q->fetch();
@@ -96,12 +96,11 @@ require 'includes/header.php';
                                 if ($q->rowCount() > 0) {
                                     while ($joueur = $q->fetch()) {
 
-                                        $c = $db->prepare('SELECT p.id_Joueur, 
-                                                                COUNT(p.id_Joueur) AS nb_Selection,
+                                        $c = $db->prepare('SELECT COUNT(p.id_Joueur) AS nb_Selection,
                                                                 SUM(p.titulaire) AS nb_Titulaire,
                                                                 SUM(CASE WHEN p.titulaire = 0 THEN 1 ELSE 0 END) AS nb_Remplacant,
                                                                 AVG(p.evaluation) AS moyenne_Note,
-                                                                ROUND(SUM(CASE WHEN m.gagnant = "Mon équipe" THEN 1 ELSE 0 END) / COUNT(p.id_Joueur) * 100, 2) AS nb_victoire
+                                                                ROUND(SUM(CASE WHEN m.gagnant = "My Team" THEN 1 ELSE 0 END) / COUNT(p.id_Joueur) * 100, 2) AS nb_victoire
                                                                 FROM participe p, matchs m
                                                                 WHERE p.id_Match = m.id_Match
                                                                 AND p.id_Joueur = :id_Joueur');

@@ -57,7 +57,7 @@ require 'includes/header.php';
                     <span>Gagnant</span>
                     <select name="gagnant" required="required">
                         <option value="<?= htmlspecialchars($match['equipe_adverse']);?>" <?php if ($match['gagnant'] == htmlspecialchars($match['equipe_adverse'])) echo "selected"; ?>><?= htmlspecialchars($match['equipe_adverse']);?></option>
-                        <option value="Mon équipe" <?php if ($match['gagnant'] == "Mon équipe") echo "selected"; ?>>Mon équipe</option>
+                        <option value="My Team" <?php if ($match['gagnant'] == "My Team") echo "selected"; ?>>My Team</option>
                     </select>
                 </div>
 

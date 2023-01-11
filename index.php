@@ -46,21 +46,30 @@
 
     <div class="corps">
         <div class="listeJoueurs">
-            <h1>TOP 5 | Joueurs</h1>
-            <?php 
+            <h1>5 Joueurs</h1>
+            <?php
+                
                 $q = $db->prepare('SELECT id_Joueur, nom, prenom, pseudo, poste, photo FROM joueurs LIMIT 5');
                 $q->execute();
 
                 if ($q->rowCount() > 0) {
                     while ($joueur = $q->fetch()) {
-                        $c = $db->prepare('SELECT count(id_Joueur) as nbSelec FROM participe where id_Joueur = :id_Joueur group by id_Joueur');
-                        $c->execute(['id_Joueur' => $joueur['id_Joueur']]);
-                        if ($c->rowCount() > 0) {
-                            $StatSelc = $c->fetch();
-                        }else{
-                            $StatSelc['nbSelec'] = 0;
+                        $c = $db->prepare('SELECT COUNT(p.id_Joueur) AS nb_Selection,
+                                            ROUND(SUM(CASE WHEN m.gagnant = "My Team" THEN 1 ELSE 0 END) / COUNT(p.id_Joueur) * 100, 2) AS nb_victoire
+                                            FROM participe p, matchs m
+                                            WHERE p.id_Match = m.id_Match
+                                            AND p.id_Joueur = :id_Joueur');
+                        $c->execute([
+                            'id_Joueur' => $joueur['id_Joueur']
+                        ]);
+                        $Stat = $c->fetch();
+                        if ($Stat['nb_victoire'] == null) {
+                            $Stat['nb_victoire'] = 0;
                         }
-                        $carteJoueur = new CarteJoueur($joueur['nom'], $joueur['prenom'], $joueur['pseudo'], $joueur['poste'], $joueur['photo'],0,$StatSelc['nbSelec']);
+                        if ($Stat['nb_Selection'] == null) {
+                            $Stat['nb_Selection'] = 0;
+                        }
+                        $carteJoueur = new CarteJoueur($joueur['nom'], $joueur['prenom'], $joueur['pseudo'], $joueur['poste'], $joueur['photo'],$Stat['nb_victoire'],$Stat['nb_Selection']);
                         $carteJoueur->setIdJoueur($joueur['id_Joueur']);
                         echo $carteJoueur->get_carteJoueurAccueil();
                     }
@@ -80,9 +89,9 @@
 
                 if ($q->rowCount() > 0) {
                     while ($match = $q->fetch()) {
-                        $equipe1 = new CarteEquipe("Mon équipe");
+                        $equipe1 = new CarteEquipe("My Team");
                         $equipe2 = new CarteEquipe($match['equipe_adverse']);
-                        if ($match['gagnant'] == "Mon équipe") {
+                        if ($match['gagnant'] == "My Team") {
                             $equipe1->isGagnant(1);
                         } else if ($match['gagnant'] == $match['equipe_adverse']) {
                             $equipe2->isGagnant(1);

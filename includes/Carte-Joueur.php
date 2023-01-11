@@ -62,7 +62,7 @@
                     <h2> ' . $this->get_pseudo() . ' <br><span> '.$this->get_prenom().' '.$this->get_nom().'</span></h2>
                     <div class="infoJoueur">
                         <h3> Poste<br> <span>'.$this->get_poste().'</span></h3>
-                        <h3> Victoire<br><span>'.$this->get_victoire().'</span></h3>                        
+                        <h3> Victoire<br><span>'.$this->get_victoire().'%</span></h3>                        
                         <h3> Selection<br><span>'.$this->get_nbSelection().'</span>
                     </div>
                 </div>

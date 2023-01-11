@@ -49,7 +49,7 @@
     content: '';
     position: absolute;
     inset: 3px;
-    background: #000;
+    background: #333;
 }
 
 .carteJoueur .boiteimageJoueur{

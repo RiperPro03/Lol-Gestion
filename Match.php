@@ -62,9 +62,9 @@
 
                 if ($q->rowCount() > 0) {
                     while ($match = $q->fetch()) {
-                        $equipe1 = new CarteEquipe("Mon équipe");
+                        $equipe1 = new CarteEquipe("My Team");
                         $equipe2 = new CarteEquipe($match['equipe_adverse']);
-                        if ($match['gagnant'] == "Mon équipe") {
+                        if ($match['gagnant'] == "My Team") {
                             $equipe1->isGagnant(1);
                         } else if ($match['gagnant'] == $match['equipe_adverse']) {
                             $equipe2->isGagnant(1);

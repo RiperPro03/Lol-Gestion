@@ -72,7 +72,7 @@
                             $equipe = new CarteEquipe("Mon Equipe");
                             $equipe2 = new CarteEquipe($match['equipe_adverse']);
                             $equipe->setIdMatch($match['id_Match']);
-                            if ($match['gagnant'] == "Mon équipe") {
+                            if ($match['gagnant'] == "My Team") {
                                 $equipe->isGagnant(1);
                             } else if ($match['gagnant'] == $match['equipe_adverse']) {
                                 $equipe2->isGagnant(1);
