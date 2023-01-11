@@ -92,6 +92,11 @@ require 'includes/header.php';
                                         $q->execute();
                                     }
 
+                                } else {
+                                    $q = $db->prepare('SELECT id_Joueur, nom, prenom, photo, pseudo, poste, statut FROM joueurs');
+                                    $q->execute();
+                                }
+
 
                                 if ($q->rowCount() > 0) {
                                     while ($joueur = $q->fetch()) {
@@ -134,7 +139,6 @@ require 'includes/header.php';
                                 } else {
                                     echo "Aucun utilisateur trouvé";
                                 }
-                            }
                             ?>
                         </table>
                     </div>
