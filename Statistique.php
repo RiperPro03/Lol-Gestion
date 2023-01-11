@@ -78,7 +78,7 @@ require 'includes/header.php';
                             </tr>
                             <?php
                                 if (isset($_GET['search'])) {
-                                    if (empty($_GET['search'])) {
+                                    if (!empty($_GET['search'])) {
                                         $q = $db->prepare('SELECT id_Joueur, nom, prenom, photo, pseudo, poste, statut FROM joueurs');
                                         $q->execute();
                                     } else {
@@ -104,7 +104,6 @@ require 'includes/header.php';
                                         $c = $db->prepare('SELECT COUNT(p.id_Joueur) AS nb_Selection,
                                                                 SUM(p.titulaire) AS nb_Titulaire,
                                                                 SUM(CASE WHEN p.titulaire = 0 THEN 1 ELSE 0 END) AS nb_Remplacant,
-                                                                AVG(p.evaluation) AS moyenne_Note,
                                                                 ROUND(SUM(CASE WHEN m.gagnant = "My Team" THEN 1 ELSE 0 END) / COUNT(p.id_Joueur) * 100, 2) AS nb_victoire
                                                                 FROM participe p, matchs m
                                                                 WHERE p.id_Match = m.id_Match
@@ -116,9 +115,14 @@ require 'includes/header.php';
                                         if ($Stat['nb_victoire'] == 0) {
                                             $Stat['nb_victoire'] = 0;
                                         }
-                                        if ($Stat['moyenne_Note'] == 0) {
-                                            $Stat['moyenne_Note'] = 0;
-                                        }
+                                        $c = $db->prepare('SELECT ROUND(AVG(p.evaluation), 2) AS moyenne_note
+                                                                FROM participe p
+                                                                WHERE p.evaluation >= 0
+                                                                AND p.id_Joueur = :id_Joueur');
+                                        $c->execute([
+                                            'id_Joueur' => $joueur['id_Joueur']
+                                        ]);
+                                        $note = $c->fetch();
                                 ?>
                                         <tr>
                                             <td><?= $joueur['nom'] ?></td>
@@ -131,7 +135,7 @@ require 'includes/header.php';
                                             <td><?= $Stat['nb_Titulaire'] ?></td>
                                             <td><?= $Stat['nb_Remplacant'] ?></td>
                                             <td><?= $Stat['nb_victoire'] ?>%</td>
-                                            <td><?= $Stat['moyenne_Note'] ?>/5</td>
+                                            <td><?= $note['moyenne_note'] ?>/5</td>
                                         </tr>
 
                             <?php
