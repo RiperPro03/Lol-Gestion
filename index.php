@@ -46,10 +46,15 @@
 
     <div class="corps">
         <div class="listeJoueurs">
-            <h1>5 Joueurs</h1>
+            <h1>Top | Joueurs</h1>
             <?php
                 
-                $q = $db->prepare('SELECT id_Joueur, nom, prenom, pseudo, poste, photo FROM joueurs LIMIT 5');
+                $q = $db->prepare('SELECT j.id_Joueur, nom, prenom, pseudo, poste, photo, ROUND(SUM(CASE WHEN gagnant = "My Team" THEN 1 ELSE 0 END) / COUNT(Participe.id_Joueur) * 100, 2) AS nb_victoire
+                                    FROM Joueurs j
+                                    JOIN Participe ON j.id_Joueur = Participe.id_Joueur 
+                                    JOIN Matchs ON Participe.id_Match = Matchs.id_Match 
+                                    GROUP BY j.id_Joueur
+                                    ORDER BY nb_victoire DESC');
                 $q->execute();
 
                 if ($q->rowCount() > 0) {

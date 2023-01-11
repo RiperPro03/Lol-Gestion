@@ -31,18 +31,18 @@ require 'includes/header.php';
                 <div class="boiteStatGeneral">
                     <div class="statGeneral">
                         <?php
-                            $q = $db->prepare('SELECT COUNT(id_Match) AS nb_match,
+                        $q = $db->prepare('SELECT COUNT(id_Match) AS nb_match,
                                                 SUM(CASE WHEN gagnant = "My Team" THEN 1 ELSE 0 END) AS nb_victoire,
                                                 COUNT(id_Match) - SUM(CASE WHEN gagnant = "My Team" THEN 1 ELSE 0 END) AS nb_defaite
                                                 FROM matchs');
-                            $q->execute();
-                            $StatMatch = $q->fetch();
-                            if ($StatMatch['nb_victoire'] == 0) {
-                                $StatMatch['nb_victoire'] = 0;
-                            }
-                            if ($StatMatch['nb_defaite'] == 0) {
-                                $StatMatch['nb_defaite'] = 0;
-                            }
+                        $q->execute();
+                        $StatMatch = $q->fetch();
+                        if ($StatMatch['nb_victoire'] == 0) {
+                            $StatMatch['nb_victoire'] = 0;
+                        }
+                        if ($StatMatch['nb_defaite'] == 0) {
+                            $StatMatch['nb_defaite'] = 0;
+                        }
                         ?>
 
                         <h2> Statistique Globale</h2>
@@ -59,92 +59,129 @@ require 'includes/header.php';
                         <input type="submit" value="Rechercher">
                         <a href="./Statistique"><i class="fa-solid fa-rotate-right"></i></a>
                     </form>
-                    
+
 
                     <div class="tableauStatJ" id="tableauStatJ">
-                        <table>
+                        <table id="sortTable">
                             <tr>
-                                <th>Nom</th>
-                                <th>Prenom</th>
-                                <th>Photo</th>
-                                <th>Pseudo</th>
-                                <th>Poste</th>
-                                <th>Statut</th>
-                                <th>Nombre de selection</th>
-                                <th>Selection titulaire</th>
-                                <th>Selection Remplacant</th>
-                                <th>Ratio de victoire</th>
-                                <th>Moyenne Note</th>
+                                <th onclick="sortTable(0)">Nom</th>
+                                <th onclick="sortTable(1)">Prenom</th>
+                                <th onclick="sortTable(2)">Photo</th>
+                                <th onclick="sortTable(3)">Pseudo</th>
+                                <th onclick="sortTable(4)">Poste</th>
+                                <th onclick="sortTable(5)">Statut</th>
+                                <th onclick="sortTable(6)">Nombre de selection</th>
+                                <th onclick="sortTable(7)">Selection titulaire</th>
+                                <th onclick="sortTable(8)">Selection Remplacant</th>
+                                <th onclick="sortTable(9)">Ratio de victoire</th>
+                                <th onclick="sortTable(10)">Moyenne Note</th>
                             </tr>
                             <?php
-                                if (isset($_GET['search'])) {
-                                    if (!empty($_GET['search'])) {
-                                        $q = $db->prepare('SELECT id_Joueur, nom, prenom, photo, pseudo, poste, statut FROM joueurs');
-                                        $q->execute();
-                                    } else {
-                                        $recherche = htmlspecialchars($_GET['search']);
-                                        $q = $db->prepare('SELECT id_Joueur, nom, prenom, photo, pseudo, poste, statut FROM joueurs 
+                            if (isset($_GET['search'])) {
+                                if (!empty($_GET['search'])) {
+                                    $q = $db->prepare('SELECT id_Joueur, nom, prenom, photo, pseudo, poste, statut FROM joueurs');
+                                    $q->execute();
+                                } else {
+                                    $recherche = htmlspecialchars($_GET['search']);
+                                    $q = $db->prepare('SELECT id_Joueur, nom, prenom, photo, pseudo, poste, statut FROM joueurs 
                                                             WHERE nom LIKE "%' . $recherche . '%" 
                                                             OR prenom LIKE "%' . $recherche . '%" 
                                                             OR pseudo LIKE "%' . $recherche . '%"
                                                             OR poste LIKE "%' . $recherche . '%"
                                                             OR statut LIKE "%' . $recherche . '%"');
-                                        $q->execute();
-                                    }
-
-                                } else {
-                                    $q = $db->prepare('SELECT id_Joueur, nom, prenom, photo, pseudo, poste, statut FROM joueurs');
                                     $q->execute();
                                 }
+                            } else {
+                                $q = $db->prepare('SELECT id_Joueur, nom, prenom, photo, pseudo, poste, statut FROM joueurs');
+                                $q->execute();
+                            }
 
 
-                                if ($q->rowCount() > 0) {
-                                    while ($joueur = $q->fetch()) {
+                            if ($q->rowCount() > 0) {
+                                while ($joueur = $q->fetch()) {
 
-                                        $c = $db->prepare('SELECT COUNT(p.id_Joueur) AS nb_Selection,
+                                    $c = $db->prepare('SELECT COUNT(p.id_Joueur) AS nb_Selection,
                                                                 SUM(p.titulaire) AS nb_Titulaire,
                                                                 SUM(CASE WHEN p.titulaire = 0 THEN 1 ELSE 0 END) AS nb_Remplacant,
                                                                 ROUND(SUM(CASE WHEN m.gagnant = "My Team" THEN 1 ELSE 0 END) / COUNT(p.id_Joueur) * 100, 2) AS nb_victoire
                                                                 FROM participe p, matchs m
                                                                 WHERE p.id_Match = m.id_Match
                                                                 AND p.id_Joueur = :id_Joueur');
-                                        $c->execute(array(
-                                            'id_Joueur' => $joueur['id_Joueur']
-                                        ));
-                                        $Stat = $c->fetch();
-                                        if ($Stat['nb_victoire'] == 0) {
-                                            $Stat['nb_victoire'] = 0;
-                                        }
-                                        $c = $db->prepare('SELECT ROUND(AVG(p.evaluation), 2) AS moyenne_note
+                                    $c->execute(array(
+                                        'id_Joueur' => $joueur['id_Joueur']
+                                    ));
+                                    $Stat = $c->fetch();
+
+                                    $c = $db->prepare('SELECT ROUND(AVG(p.evaluation), 2) AS moyenne_note
                                                                 FROM participe p
                                                                 WHERE p.evaluation >= 0
                                                                 AND p.id_Joueur = :id_Joueur');
-                                        $c->execute([
-                                            'id_Joueur' => $joueur['id_Joueur']
-                                        ]);
-                                        $note = $c->fetch();
-                                ?>
-                                        <tr>
-                                            <td><?= $joueur['nom'] ?></td>
-                                            <td><?= $joueur['prenom'] ?></td>
-                                            <td><?= "<img src='vue-img.php?img=" . $joueur['photo'] . "' width='100px' >" ?></td>
-                                            <td><a href="./details-Joueur?id=<?= $joueur['id_Joueur'] ?>"><?= $joueur['pseudo'] ?></a></td>
-                                            <td><?= $joueur['poste'] ?></td>
-                                            <td><?= $joueur['statut'] ?></td>
-                                            <td><?= $Stat['nb_Selection'] ?></td>
-                                            <td><?= $Stat['nb_Titulaire'] ?></td>
-                                            <td><?= $Stat['nb_Remplacant'] ?></td>
-                                            <td><?= $Stat['nb_victoire'] ?>%</td>
-                                            <td><?= $note['moyenne_note'] ?>/5</td>
-                                        </tr>
+                                    $c->execute([
+                                        'id_Joueur' => $joueur['id_Joueur']
+                                    ]);
+                                    $note = $c->fetch();
+                            ?>
+                                    <tr>
+                                        <td><?= $joueur['nom'] ?></td>
+                                        <td><?= $joueur['prenom'] ?></td>
+                                        <td><?= "<img src='vue-img.php?img=" . $joueur['photo'] . "' width='100px' >" ?></td>
+                                        <td><a href="./details-Joueur?id=<?= $joueur['id_Joueur'] ?>"><?= $joueur['pseudo'] ?></a></td>
+                                        <td><?= $joueur['poste'] ?></td>
+                                        <td><?= $joueur['statut'] ?></td>
+                                        <td><?= $Stat['nb_Selection'] ?></td>
+                                        <td><?= $Stat['nb_Titulaire'] ?></td>
+                                        <td><?= $Stat['nb_Remplacant'] ?></td>
+                                        <td><?= $Stat['nb_victoire'] ?>%</td>
+                                        <td><?= $note['moyenne_note'] ?>/5</td>
+                                    </tr>
 
                             <?php
-                                    }
-                                } else {
-                                    echo "Aucun utilisateur trouvé";
                                 }
+                            } else {
+                                echo "Aucun utilisateur trouvé";
+                            }
                             ?>
                         </table>
+
+                        <script>
+                            function sortTable(n) {
+                                var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+                                table = document.getElementById("sortTable");
+                                switching = true;
+                                dir = "desc";
+                                while (switching) {
+                                    switching = false;
+                                    rows = table.rows;
+                                    for (i = 1; i < (rows.length - 1); i++) {
+                                        shouldSwitch = false;
+                                        x = rows[i].getElementsByTagName("TD")[n];
+                                        y = rows[i + 1].getElementsByTagName("TD")[n];
+                                        if (dir == "asc") {
+                                            if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                                                shouldSwitch = true;
+                                                break;
+                                            }
+                                        } else if (dir == "desc") {
+                                            if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                                                shouldSwitch = true;
+                                                break;
+                                            }
+                                        }
+                                    }
+                                    if (shouldSwitch) {
+                                        rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                                        switching = true;
+                                        switchcount++;
+                                    } else {
+                                        if (switchcount == 0 && dir == "desc") {
+                                            dir = "asc";
+                                            switching = true;
+                                        }
+                                    }
+                                }
+                            }
+                        </script>
+
                     </div>
                 </div>
             </div>
