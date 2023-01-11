@@ -49,6 +49,8 @@ require 'includes/header.php';
                         <p> Nombre de match: <span> <?= $StatMatch['nb_match'] ?> </span></p>
                         <p> Nombre de victoire: <span> <?= $StatMatch['nb_victoire'] ?></span></p>
                         <p> Nombre de defaite: <span> <?= $StatMatch['nb_defaite'] ?></span></p>
+                        <p> Ratio de victoire: <span> <?= round($StatMatch['nb_victoire'] / $StatMatch['nb_match'] * 100, 2) ?>%</span></p>
+                        <p> Ratio de defaite: <span> <?= round($StatMatch['nb_defaite'] / $StatMatch['nb_match'] * 100, 2) ?>%</span></p>
                     </div>
                 </div>
                 <div class="boiteStatParJoueur">
