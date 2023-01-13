@@ -90,6 +90,7 @@
             <div class="optionDetails">
                 <a href="modification-Match?id=<?= $match['id_Match'] ?>" class="boutonDetail"><i class="fa-solid fa-pen"></i></a>
                 <a href="./details-Equipe.php?id=<?= $match['id_Match'] ?>" class="boutonDetail"><i class="fa-solid fa-people-group"></i></a>
+                <a href="./TEST-saisieApresMatch.php?=<? $match['id_Match'] ?>" class="boutonDetail"><i class="fa-solid fa-star"></i></a>
                 <a href="suppression-Match?id=<?= $match['id_Match'] ?>" class="boutonDetail"><i class="fa-solid fa-trash"></i></a>
             </div>
         </div>

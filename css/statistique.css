@@ -33,7 +33,7 @@ body{
 .boiteDetailsStat{
     position: relative;
     width: 80%;
-    height: 450px;
+    min-height: 450px;
     background: #fff;
     margin-top: 50px;
     display: flex;
@@ -70,7 +70,6 @@ body{
 }
 
 .boiteDetailsStat .boiteTexte{
-    position: absolute;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -202,6 +201,7 @@ body{
     margin: auto;
     text-align: center;
     width: 95%;
+    margin-bottom: 3%;
 }
 
 .boiteStatParJoueur .tableauStatJ table{

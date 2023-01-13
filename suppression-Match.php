@@ -26,8 +26,8 @@
             <form method="post">
                 <input type="hidden" name="token" value="<?=$_SESSION['authToken']?>">
                 <div class="option">
-                    <input type="submit" name="reponse" value="Oui" class="button">
                     <input type="submit" name="reponse" value="Annuler" class="button">
+                    <input type="submit" name="reponse" value="Oui" class="button">
                 </div>
             </form>
         </div>

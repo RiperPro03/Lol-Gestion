@@ -13,7 +13,7 @@ require 'includes/header.php';
     <link rel="icon" href="vue-img.php?img=logo.png">
     <script src="https://kit.fontawesome.com/acf8d5192c.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./css/nav-bar.css">
-    <link rel="stylesheet" href="./css/TEST-Statistique.css">
+    <link rel="stylesheet" href="./css/statistique.css">
     <link rel="stylesheet" href="./css/carteJoueur.css">
 </head>
 
