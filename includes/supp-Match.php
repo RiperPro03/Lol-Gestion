@@ -35,6 +35,6 @@
                 
             }
         }
-        header("Location:./");
+        header("Location:./Match");
     }
 ?>

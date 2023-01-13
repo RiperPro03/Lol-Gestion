@@ -20,7 +20,7 @@
                 <h2>Resultat du match</h2>
                 <div class="Resultat">
                     <div class="inputBox">
-                        <input type="text" name="Score" required="required" autocomplete="off">
+                        <input type="text" name="Score" pattern="^([0-9]+):([0-9]+)$" required="required" autocomplete="off">
                         <span>Score</span>
                     </div>
                     <div class="box">

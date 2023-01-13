@@ -30,8 +30,7 @@
                         'equipe_adverse' => $equipe_adverse
                     ]);
 
-                    //header("Location: " . $_SERVER['HTTP_REFERER']);
-                    header("Location:./");
+                    header("Location:./details-Equipe?id=" . $db->lastInsertId() . "");
 
                 } else {
                     echo '<script>alert("Cette équipe a déjà un match prévue pour cette date et heure ");</script>';

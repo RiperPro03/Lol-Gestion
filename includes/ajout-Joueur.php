@@ -48,7 +48,7 @@
                             'poste' => $poste
                         ]);
 
-                        header('Location:./');
+                        header('Location:./Joueur');
 
                     } else {
                         echo '<script>alert("Une erreur est survenue avec la photo, extention ou la taille de la photo invalide");</script>';

@@ -73,7 +73,7 @@
                         'id_Joueur' => $id
                     ]);
 
-                    header('Location:./');
+                    header('Location:./Joueur');
                 } else {
                     echo '<script>alert("Ce Joueur existe déjà");</script>';
                 }

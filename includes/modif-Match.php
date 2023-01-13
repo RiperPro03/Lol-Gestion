@@ -57,7 +57,7 @@
                         'id_Match' => $id
                     ]);
 
-                    header('Location:./');
+                    header('Location:./details-Match?id=' . $match['id_Match'] . '');
                 } else {
                     echo '<script>alert("Ce match existe déjà");</script>';
                 }

@@ -36,6 +36,6 @@
                 }
             }
         }
-        header("Location:./");
+        header("Location:./Joueur");
     }
 ?>
