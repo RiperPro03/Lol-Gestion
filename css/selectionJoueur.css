@@ -25,8 +25,8 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 400px;
-    width: 400px;
+    min-height: 600px;
+    width: 600px;
     flex-direction: column;
     gap: 35px;
     border-radius: 15px;
@@ -44,11 +44,36 @@ h1 {
 }
 
 form{
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 }
+
+.checkJoueur{
+    display:inline-flex;
+    width: 100%;
+    margin-bottom: 2%;
+    justify-content: space-between;
+}
+
+.checkTitulaire{
+    display: flex;
+    align-items: center;
+}
+
+.option{
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.option .ajout{
+    margin-right:30%;
+
+}
+
 .box {
     width: 250px;
     padding: 0.4rem 0.8rem;

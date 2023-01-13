@@ -49,17 +49,15 @@ body{
 .boiteDetailsEquipe{
     position: relative;
     width: 60%;
-    height: 1700px;
+    min-height: 500px;
     background: #fff;
     transition: 0.5s;
-    overflow: hidden;
     margin-top: 50px;
     display: flex;
     flex-direction: column;
 }
 
 .boiteDetailsEquipe .contourDetails{
-    position: absolute;
     inset: 0;
     background: #000;
     overflow: hidden;
@@ -88,7 +86,6 @@ body{
 }
 
 .boiteDetailsEquipe .boiteTexte{
-    position: absolute;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -134,10 +131,11 @@ body{
 }
 
 .boiteDetailsEquipe .optionDetails{
+    margin-top: 2%;
+    margin-bottom: 2%;
     display: flex;
     width: 100%;
     z-index: 1;
-    transform: translateY(1600px);
 }
 
 .boiteDetailsEquipe .optionDetails .boutonDetail{

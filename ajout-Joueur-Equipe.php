@@ -28,7 +28,7 @@
                 
                 <input type="hidden" name="token" value="<?=$_SESSION['authToken']?>">
 
-                <div class="ajout"><a href="./saisie-Joueur"><i class="fa-solid fa-user-plus"></i></a></div>
+                
 
                 <div class="box">
                     <span>Joueur</span>
@@ -57,8 +57,11 @@
                         ?>
                     </datalist>
                 </div>
-                <a href="javascript:history.back()">Retour</a>
-                <input type="submit" name="formsend" value="Ajouter" class="button">
+                <div class="option">
+                    <div class="ajout"><a href="./saisie-Joueur"><i class="fa-solid fa-user-plus"></i></a></div>
+                    <a href="javascript:history.back()">Retour</a>
+                    <input type="submit" name="formsend" value="Ajouter" class="button">
+                </div>
             </form>
         </div>
     </div>

@@ -88,8 +88,10 @@
                     <span>Photo</span>
                     <input type="file" name="photo" required="required">
                 </div>
-                <a href="javascript:history.back()">Retour</a>
-                <input type="submit" name="formsend" value="Ajouter" class="button">
+                <div class="option">
+                    <a href="javascript:history.back()">Retour</a>
+                    <input type="submit" name="formsend" value="Ajouter" class="button">
+                </div>
             </form>
         </div>
     </div>

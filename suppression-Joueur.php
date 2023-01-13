@@ -24,10 +24,10 @@
             <p><?= "<img src='vue-img.php?img=".$joueur['photo']."' width='80px' >"?></p>
             <form method="post">
                 <input type="hidden" name="token" value="<?=$_SESSION['authToken']?>">
-                <p>
-                    <input type="submit" name="reponse" value="Oui" class="button">
+                <div class="option">
                     <input type="submit" name="reponse" value="Annuler" class="button">
-                </p>
+                    <input type="submit" name="reponse" value="Oui" class="button">
+                </div>
             </form>
         </div>
     </div>

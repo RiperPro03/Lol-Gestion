@@ -25,10 +25,10 @@
             <p>Equipe adverse : <?= $match['equipe_adverse'] ?></p>
             <form method="post">
                 <input type="hidden" name="token" value="<?=$_SESSION['authToken']?>">
-                <p>
+                <div class="option">
                     <input type="submit" name="reponse" value="Oui" class="button">
                     <input type="submit" name="reponse" value="Annuler" class="button">
-                </p>
+                </div>
             </form>
         </div>
     </div>
