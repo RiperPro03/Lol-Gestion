@@ -66,10 +66,10 @@
                     </p>
                     <p> Gagnant : <span> <?= $match['gagnant']?></span></p>
                     <p> Score : <span> <?= $match['score']?></span></p>
-                    <p> Equipe : </p>
+                    
                     <div class="equipesMatch">
                         <?php
-                            $equipe = new CarteEquipe("Mon Equipe");
+                            $equipe = new CarteEquipe("My Team");
                             $equipe2 = new CarteEquipe($match['equipe_adverse']);
                             $equipe->setIdMatch($match['id_Match']);
                             if ($match['gagnant'] == "My Team") {
@@ -88,10 +88,10 @@
                 </div>
             </div>
             <div class="optionDetails">
-                <a href="modification-Match?id=<?= $match['id_Match'] ?>" class="boutonDetail"><i class="fa-solid fa-pen"></i></a>
+                <a href="./modification-Match?id=<?= $match['id_Match'] ?>" class="boutonDetail"><i class="fa-solid fa-pen"></i></a>
                 <a href="./details-Equipe.php?id=<?= $match['id_Match'] ?>" class="boutonDetail"><i class="fa-solid fa-people-group"></i></a>
-                <a href="./TEST-saisieApresMatch.php?=<? $match['id_Match'] ?>" class="boutonDetail"><i class="fa-solid fa-star"></i></a>
-                <a href="suppression-Match?id=<?= $match['id_Match'] ?>" class="boutonDetail"><i class="fa-solid fa-trash"></i></a>
+                <a href="./resultat-Match?id=<?= $match['id_Match'] ?>" class="boutonDetail"><i class="fa-solid fa-star"></i></a>
+                <a href="./suppression-Match?id=<?= $match['id_Match'] ?>" class="boutonDetail"><i class="fa-solid fa-trash"></i></a>
             </div>
         </div>
     </div>

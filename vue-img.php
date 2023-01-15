@@ -10,19 +10,20 @@
         exit;
     }
 
+    header('Content-Type: image/*');
     if(isset($_GET['img']) && !empty($_GET['img'])) {
-        $chemin = "img/players/".$_GET['img'];
+        $chemin = "./img/players/".$_GET['img'];
         if (file_exists($chemin)) {
-            echo file_get_contents($chemin);
+            readfile($chemin);
 
         } else {
-            $chemin = "img/content/".$_GET['img'];
+            $chemin = "./img/content/".$_GET['img'];
             if (file_exists($chemin)) {
-                echo file_get_contents($chemin);
+                readfile($chemin);
             } else {
-                $chemin = "img/content/icone/".$_GET['img'];
+                $chemin = "./img/content/icone/".$_GET['img'];
                 if (file_exists($chemin)){
-                    echo file_get_contents($chemin);
+                    readfile($chemin);
                 }else{
                 header("Location:./");
                 }
