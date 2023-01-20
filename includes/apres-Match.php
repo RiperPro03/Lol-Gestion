@@ -26,11 +26,12 @@
         if(!empty($score) && !empty($gagnant)) {
             
             $q = $db->prepare("UPDATE matchs set gagnant = :gagnant,
-                                                score = :score, 
+                                                score = :score
                                                 WHERE id_Match = :id_Match");
             $q->execute([
                 'gagnant' => $gagnant,
                 'score' => $score,
+                'id_Match' => $match['id_Match']
             ]);
 
             header('Location:./details-Match?id=' . $match['id_Match'] . '');

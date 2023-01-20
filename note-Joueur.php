@@ -33,7 +33,7 @@ require 'includes/header.php';
 
                 <div class="notes">
                     <label>Note :</label>
-                    <input type="number" name="note" min="0" max="5" pattern="^[0-5]$" required="required" value="<?= htmlspecialchars($participe['evaluation']); ?>">
+                    <input type="number" name="note" min="0" max="5" pattern="^[0-5]$" required="required" value="<?php if($participe['evaluation'] >=0) htmlspecialchars($participe['evaluation']); ?>">
                 </div>
 
 

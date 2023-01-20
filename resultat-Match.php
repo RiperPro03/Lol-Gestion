@@ -12,7 +12,7 @@
     <script src="https://kit.fontawesome.com/acf8d5192c.js" crossorigin="anonymous"></script>
     <title>LoL Gestion | Saisie résultat match</title>
     <link rel="icon" href="./img/content/logo.png">
-    <link rel="stylesheet" href="./css/TEST-saisieApresMatch.css">
+    <link rel="stylesheet" href="./css/saisieApresMatch.css">
     <link rel="stylesheet" href="./css/carteJoueur.css">
 </head>
 
@@ -23,13 +23,13 @@
     <div class="container">
         <div class="card">
             <h1>Saisie des resultat : </h1>
-            <form action="post">
+            <form method="post">
                 <h2>Resultat du match</h2>
                 <input type="hidden" name="token" value="<?= $_SESSION['authToken'] ?>">
                 <span>Entrer le score dans le format <strong>0:0</strong></span>
                 <div class="Resultat">
                     <div class="inputBox">
-                        <input type="text" name="Score" pattern="^([0-9]+):([0-9]+)$" required="required" autocomplete="off">
+                        <input type="text" name="score" pattern="^([0-9]+):([0-9]+)$" required="required" autocomplete="off">
                         <span>Score</span>
                     </div>
                     <div class="box">
