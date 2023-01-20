@@ -79,7 +79,7 @@
                             }
                             echo $equipe->get_carteEquipeAccueil();
                             echo '<div class="Versus">
-                                <img src="vue-img.php?img=Versus.png" style="width:100%;">
+                                <img src="./img/content/icone/Versus.png" style="width:100%;">
                                 </div>';
                             echo $equipe2->get_carteEquipeAccueilNonClickable();
                         ?>
