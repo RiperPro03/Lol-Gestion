@@ -146,35 +146,8 @@ a:hover {
     transition: 0.1s;
 }
 
-.inputBox span {
-    margin-top: 5px;
-    position: absolute;
-    left: 0;
-    transform: translateY(-4px);
-    margin-left: 10px;
-    padding: 10px;
-    pointer-events: none;
-    font-size: 12px;
-    color: #000;
-    text-transform: uppercase;
-    transition: 0.5s;
-    letter-spacing: 3px;
-}
-
-.inputBox input:valid~span,
-.inputBox input:focus~span {
-    transform: translateX(113px) translateY(-15px);
-    font-size: 0.8em;
-    padding: 5px 10px;
-    background: #000;
-    letter-spacing: 0.2em;
-    color: #fff;
-    border: 2px;
-}
-
-.inputBox input:valid,
-.inputBox input:focus {
-    border: 2px solid #000;
+.inputBox input:valid {
+    color: rgb(0, 149, 255);
 }
 
 .carteJoueurDetail{

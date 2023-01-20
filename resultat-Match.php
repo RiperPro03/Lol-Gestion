@@ -29,8 +29,7 @@
                 <span>Entrer le score dans le format <strong>0:0</strong></span>
                 <div class="Resultat">
                     <div class="inputBox">
-                        <input type="text" name="score" pattern="^([0-9]+):([0-9]+)$" required="required" autocomplete="off">
-                        <span>Score</span>
+                        <input type="text" name="score" pattern="^([0-9]+):([0-9]+)$" placeholder="Score" required="required" autocomplete="off">
                     </div>
                     <div class="box">
                         <label>Gagnant</label>

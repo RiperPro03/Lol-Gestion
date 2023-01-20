@@ -93,7 +93,7 @@
 
         function get_carteJoueurSelection(){
             return
-            '<div class="carteJoueurDetail">
+            '<div class="carteJoueurDetail" id="nonClickable">
                 <div class="contourJoueurDetail">
                 </div>
                 <div class="boiteimageJoueurDetail">

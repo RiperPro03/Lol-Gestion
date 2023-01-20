@@ -12,6 +12,10 @@
     cursor: pointer;
 }
 
+#nonClickable{
+    cursor: default;
+}
+
 .carteJoueur:hover{
     height: 350px;
 }
