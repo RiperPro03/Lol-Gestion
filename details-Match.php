@@ -39,7 +39,7 @@
     <div class="corps">
         <div class="boutonRetour">
             <div class="retour">
-                <a href="javascript:history.back()" >
+                <a href="./Match" >
                     <img src="./img/content/icone/turn-left.png" style="width: 100%;">
                 </a>
             </div>

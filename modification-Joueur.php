@@ -21,7 +21,7 @@ require 'includes/header.php';
 
             <?php require 'includes/modif-Joueur.php'; ?>
 
-            <h3>Saisie d'un joueur</h3>
+            <h3>Modification d'un joueur</h3>
 
             <form method="post" enctype="multipart/form-data">
 
@@ -90,7 +90,7 @@ require 'includes/header.php';
                     <input type="file" name="photo">
                 </div>
                 <div class="option">
-                    <a href="javascript:history.back()">Retour</a>
+                    <a href="./details-Joueur?id=<?= htmlspecialchars($joueur['id_Joueur'])?>">Retour</a>
                     <input type="submit" name="formsend" value="Envoyer" class="button">
                 </div> 
             </form>

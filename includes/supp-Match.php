@@ -33,8 +33,9 @@
                     'id_Match' => $id
                 ]);
                 
+                header("Location:./Match");
             }
         }
-        header("Location:./Match");
+        header('Location:./details-Match?id='.$id.'');
     }
 ?>

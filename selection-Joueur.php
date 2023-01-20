@@ -61,7 +61,7 @@
                     <div class="ajout">
                         <a href="./ajout-Joueur-Equipe?id=<?= $match['id_Match'] ?>"><i class="fa-solid fa-user-plus"></i></a>
                     </div>
-                    <a href="javascript:history.back()">Retour</a>
+                    <a href="./details-Equipe?id=<?= htmlspecialchars($match['id_Match'])?>">Retour</a>
                     <input type="submit" name="formsend" value="Envoyer" class="button">
                 </div>  
             </form>

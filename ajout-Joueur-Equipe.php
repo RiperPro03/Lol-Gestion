@@ -59,7 +59,7 @@
                 </div>
                 <div class="option">
                     <div class="ajout"><a href="./saisie-Joueur"><i class="fa-solid fa-user-plus"></i></a></div>
-                    <a href="javascript:history.back()">Retour</a>
+                    <a href="./details-Equipe?id=<?= htmlspecialchars($match['id_Match'])?>">Retour</a>
                     <input type="submit" name="formsend" value="Ajouter" class="button">
                 </div>
             </form>

@@ -34,8 +34,9 @@
                     echo '<script>alert("Il y a eu une erreur lors de la suppression du fichier");</script>';
                     exit;
                 }
+                header("Location:./Joueur");
             }
         }
-        header("Location:./Joueur");
+        header('Location:./details-Joueur?id='.$id.'');
     }
 ?>

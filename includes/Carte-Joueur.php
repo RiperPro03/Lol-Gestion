@@ -161,6 +161,7 @@
                     </div>
                     <div class="optionJoueur">
                             <a href="supprimer-Joueur-Equipe?idJ='. $this->idJoueur .'&idM='. $this->idMatch .'" class="boutonJoueur"><i class="fa-solid fa-trash"></i></a>
+                            <a href="note-Joueur?idJ='. $this->idJoueur .'&idM='. $this->idMatch .'" class="boutonJoueur"><i class="fa-solid fa-star"></i></a>
                     </div>
                 </div>
             </div>

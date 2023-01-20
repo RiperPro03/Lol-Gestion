@@ -41,43 +41,8 @@
                     </div>
                 </div>
 
-                <h2>Notes</h2>
-                <div class="boxCard">
-                    <?php
-                        
-                        $q = $db->prepare('SELECT j.*
-                                            FROM joueurs j 
-                                            JOIN participe p ON p.id_joueur = j.id_Joueur 
-                                            JOIN matchs m ON m.id_Match = p.id_match 
-                                            WHERE m.id_Match = :id_Match
-                                            AND p.titulaire = :titulaire
-                                            ORDER BY FIELD(poste,\'Top\', \'Jungle\', \'Middle\', \'Bottom\', \'Support\')
-                                            ');
-                        $q->execute([
-                            'id_Match' => $match['id_Match'],
-                            'titulaire' => 1
-                        ]);
-                
-                        if ($q->rowCount() > 0) {
-                            while ($joueur = $q->fetch()) {
-                                $cartejoueur = new CarteJoueur($joueur['nom'], $joueur['prenom'], $joueur['pseudo'], $joueur['poste'], $joueur['photo'], 0, 0);
-                                echo '
-                                    <div class="joueurEquipe">
-                                            ' . $cartejoueur->get_carteJoueurStat() . '
-                                        <div class="notes">
-                                            <label>Note</label>
-                                            <input type="number" name="NoteJ[]" min="0" max="5" required="required">
-                                        </div>
-                                    </div>';
-                            }
-                        } else {
-                            echo '<div class="noResult"> <p><span>Aucun Joueur trouvé</span></p></div>';
-                        }
-                    ?>
-                </div>
-
                 <div class="bouton">
-                    <a href="javascript:history.back()">Retour</a>
+                    <a href="./details-Match?id=<?= $match['id_Match'] ?>">Retour</a>
                     <input type="submit" name="formsend" value="Valider" class="button">
                 </div>
 

@@ -66,7 +66,7 @@ require 'includes/header.php';
                     <span>Equipe adverse</span>
                 </div>
                 <div class="option">
-                    <a href="javascript:history.back()">Retour</a>
+                    <a href="./details-Match?id=<?= htmlspecialchars($match['id_Match'])?>">Retour</a>
                     <input type="submit" name="formsend" value="Envoyer" class="button">
                 </div>
             </form>

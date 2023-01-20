@@ -41,7 +41,7 @@
     <div class="corps">
         <div class="boutonRetour">
             <div class="retour">
-                <a href="javascript:history.back()" >
+                <a href="./details-Match?id=<?= $match['id_Match'] ?>" >
                     <img src="./img/content/icone/turn-left.png" style="width: 100%;">
                 </a>
             </div>
