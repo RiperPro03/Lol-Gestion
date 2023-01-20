@@ -10,7 +10,7 @@ require 'includes/header.php';
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LoL Gestion | Statistique</title>
-    <link rel="icon" href="vue-img.php?img=logo.png">
+    <link rel="icon" href="./img/content/logo.png">
     <script src="https://kit.fontawesome.com/acf8d5192c.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./css/nav-bar.css">
     <link rel="stylesheet" href="./css/statistique.css">
@@ -126,7 +126,7 @@ require 'includes/header.php';
                                     <tr>
                                         <td><?= $joueur['nom'] ?></td>
                                         <td><?= $joueur['prenom'] ?></td>
-                                        <td><?= "<img src='vue-img.php?img=" . $joueur['photo'] . "' width='100px' >" ?></td>
+                                        <td><?= "<img src='./img/players/" . $joueur['photo'] . "' width='100px' >" ?></td>
                                         <td><a href="./details-Joueur?id=<?= $joueur['id_Joueur'] ?>"><?= $joueur['pseudo'] ?></a></td>
                                         <td><?= $joueur['poste'] ?></td>
                                         <td><?= $joueur['statut'] ?></td>

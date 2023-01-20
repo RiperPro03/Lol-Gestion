@@ -12,7 +12,7 @@ require 'includes/header.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LoL Gestion | Modification Joueur</title>
     <link rel="stylesheet" href="css/form-saisie.css">
-    <link rel="icon" href="vue-img.php?img=logo.png">
+    <link rel="icon" href="./img/content/logo.png">
 </head>
 
 <body>
@@ -27,7 +27,7 @@ require 'includes/header.php';
 
                 <input type="hidden" name="token" value="<?= $_SESSION['authToken'] ?>">
 
-                <?= "<img src='vue-img.php?img=" . $joueur['photo'] . "' width='100px' >" ?>
+                <?= "<img src='./img/players/" . $joueur['photo'] . "' width='100px' >" ?>
 
                 <div class="inputBox">
                     <input type="text" name="nom" required="required" autocomplete="off" value="<?= htmlspecialchars($joueur['nom']); ?>">

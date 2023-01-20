@@ -12,7 +12,7 @@
     <title>LoL Gestion | Ajout Joueur</title>
     <script src="https://kit.fontawesome.com/acf8d5192c.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/form-saisie.css">
-    <link rel="icon" href="vue-img.php?img=logo.png">
+    <link rel="icon" href="./img/content/logo.png">
 </head>
 <body>
 <div class="container">

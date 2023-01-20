@@ -27,7 +27,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/acf8d5192c.js" crossorigin="anonymous"></script>
     <title>LoL Gestion | Détails Match</title>
-    <link rel="icon" href="vue-img.php?img=logo.png">
+    <link rel="icon" href="./img/content/logo.png">
     <link rel="stylesheet" href="./css/nav-bar.css">
     <link rel="stylesheet" href="./css/detailsMatch.css">
     <link rel="stylesheet" href="./css/carteEquipe.css">
@@ -40,7 +40,7 @@
         <div class="boutonRetour">
             <div class="retour">
                 <a href="javascript:history.back()" >
-                    <img src="vue-img.php?img=turn-left.png" style="width: 100%;">
+                    <img src="./img/content/icone/turn-left.png" style="width: 100%;">
                 </a>
             </div>
         </div>

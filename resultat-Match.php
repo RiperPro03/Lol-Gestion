@@ -11,7 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/acf8d5192c.js" crossorigin="anonymous"></script>
     <title>LoL Gestion | Saisie résultat match</title>
-    <link rel="icon" href="vue-img.php?img=logo.png">
+    <link rel="icon" href="./img/content/logo.png">
     <link rel="stylesheet" href="./css/TEST-saisieApresMatch.css">
     <link rel="stylesheet" href="./css/carteJoueur.css">
 </head>
