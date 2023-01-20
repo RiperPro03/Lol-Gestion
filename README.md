@@ -5,7 +5,9 @@ Le projet est une application pour la gestion d'une équipe de e-sport de League
 
 ## Authors
 
-- [Christopher Asin](https://www.github.com/RiperPro03)
+- [Christopher Asin](https://www.github.com/RiperPro03) <a href="https://github.com/RiperPro03" target="_blank">
+<img src=https://img.shields.io/badge/github-%2324292e.svg?&style=for-the-badge&logo=github&logoColor=white alt=github style="margin-bottom: 5px;" />
+</a>
 
 
 - [Henri JEZEQUEL](https://github.com/HenriJez)
