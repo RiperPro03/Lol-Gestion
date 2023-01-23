@@ -33,7 +33,7 @@
                     'id_Joueur' => $id_joueur
                 ]);
             }
-            header('Location:./details-Equipe?id='.$equipe['id_Equipe'].'');
+            header('Location:./details-Equipe?id='.$match['id_Match']);
         } else {
             echo '<script>alert("Vous devez sélectionner 5 joueur");</script>';
         }

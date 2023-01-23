@@ -36,7 +36,8 @@
                 }
                 header("Location:./Joueur");
             }
+        } else {
+            header('Location:./details-Joueur?id='.$id);
         }
-        header('Location:./details-Joueur?id='.$id.'');
     }
 ?>

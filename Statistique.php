@@ -38,10 +38,14 @@ require 'includes/header.php';
                         $q->execute();
                         $StatMatch = $q->fetch();
                         if ($StatMatch['nb_victoire'] == 0) {
-                            $StatMatch['nb_victoire'] = 0;
+                            $nb_victoire = 0;
+                        } else {
+                            $nb_victoire = round($StatMatch['nb_victoire'] / $StatMatch['nb_match'] * 100, 2);
                         }
                         if ($StatMatch['nb_defaite'] == 0) {
-                            $StatMatch['nb_defaite'] = 0;
+                            $nb_defaite = 0;
+                        } else {
+                            $nb_defaite = round($StatMatch['nb_defaite'] / $StatMatch['nb_match'] * 100, 2);
                         }
                         ?>
 
@@ -49,8 +53,11 @@ require 'includes/header.php';
                         <p> Nombre de match: <span> <?= $StatMatch['nb_match'] ?> </span></p>
                         <p> Nombre de victoire: <span> <?= $StatMatch['nb_victoire'] ?></span></p>
                         <p> Nombre de defaite: <span> <?= $StatMatch['nb_defaite'] ?></span></p>
-                        <p> Ratio de victoire: <span> <?= round($StatMatch['nb_victoire'] / $StatMatch['nb_match'] * 100, 2) ?>%</span></p>
-                        <p> Ratio de defaite: <span> <?= round($StatMatch['nb_defaite'] / $StatMatch['nb_match'] * 100, 2) ?>%</span></p>
+                        <p> Ratio de victoire: <span id="nb_victoire"> <?= $nb_victoire ?></span>%</p>
+                        <p> Ratio de defaite: <span id="nb_defaite"> <?= $nb_defaite ?></span>%</p>
+                        <div style="width: 200px;">
+                            <canvas id="myChart"></canvas>
+                        </div>
                     </div>
                 </div>
                 <div class="boiteStatParJoueur">
@@ -144,6 +151,37 @@ require 'includes/header.php';
                             }
                             ?>
                         </table>
+
+                        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+                        <script> 
+                            //generer le graphique
+                            var ctx = document.getElementById('myChart');
+                            new Chart(ctx, {
+                                type: 'doughnut',
+                                data: {
+                                    labels: ['Victoires', 'Défaites'],
+                                    datasets: [{
+                                        data: [<?= $nb_victoire?>, <?= $nb_defaite?>],
+                                        backgroundColor: ['green', 'red'],
+                                        borderWidth: 1
+                                    }]
+                                },
+                                options: {
+                                    responsive: true,
+                                    legend: {
+                                        position: 'top',
+                                    },
+                                    title: {
+                                        display: true,
+                                        text: 'Ratio de victoires'
+                                    },
+                                    animation: {
+                                        animateScale: true,
+                                        animateRotate: true
+                                    }
+                                }
+                            });
+                        </script>
 
                         <script>
                             function sortTable(n) {

@@ -36,7 +36,8 @@
                 'id_Joueur' => $participe['id_Joueur'],
                 'id_Match' => $participe['id_Match']
             ]);
+        } else {
+            header('Location:./details-Equipe?id='.$participe['id_Match']);
         }
-        header('Location:./details-Equipe?id='.$match['id_Match'].'');
     }
 ?>

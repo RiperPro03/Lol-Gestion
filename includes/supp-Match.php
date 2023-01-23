@@ -35,7 +35,8 @@
                 
                 header("Location:./Match");
             }
+        } else {
+            header('Location:./details-Match?id='.$id);
         }
-        header('Location:./details-Match?id='.$id.'');
     }
 ?>
