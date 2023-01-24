@@ -9,3 +9,6 @@ Le projet est une application pour la gestion d'une équipe de e-sport de League
 
 
 - [Henri JEZEQUEL](https://github.com/HenriJez)
+
+
+- [Clement SAURY](https://github.com/kleeeem)
