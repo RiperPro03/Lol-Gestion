@@ -77,7 +77,7 @@
                                 $cartejoueur = new CarteJoueur($joueur['nom'], $joueur['prenom'], $joueur['pseudo'], $joueur['poste'], $joueur['photo'], 0, 0);
                                 $cartejoueur->setIdJoueur($joueur['id_Joueur']);
                                 $cartejoueur->setIdMatch($match['id_Match']);
-                                echo '<div><p><span>'.$cartejoueur->get_poste().'</span></p>'.$cartejoueur->get_carteJoueurPourDetails().'</div>';
+                                echo $cartejoueur->get_carteJoueurPourDetails();
                             }
                         } else {
                             echo '<div class="noResult"> <p><span>Aucun Joueur trouvé</span></p></div>';
