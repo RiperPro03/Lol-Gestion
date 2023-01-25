@@ -40,7 +40,6 @@
 
         <div class="listeMatch">
             <?php
-            //il manque le score du match
                 if (isset($_POST['search'])) {
                     if (empty($_POST['search'])) {
                         $q = $db->prepare('SELECT id_Match, date_match, heure_match, equipe_adverse, score, gagnant FROM matchs');

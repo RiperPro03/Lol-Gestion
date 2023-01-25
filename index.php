@@ -79,7 +79,7 @@
                         echo $carteJoueur->get_carteJoueurAccueil();
                     }
                 } else {
-                    echo '<div class="noResult"> <p >Aucun Match trouvé</p></div>';
+                    echo '<div class="noResult"> <p >Aucun Joueur trouvé</p></div>';
                 }
             ?>
         </div>

@@ -48,4 +48,15 @@ body{
     margin-left: auto;
     margin-right: auto; 
 }
+.noResult{
+    width: 300px;
+    height: 100px;
+    margin-top: 5%;
+    font-size: 20px;
+    background: #00bfff64;
+    text-align: center;
+    color: #fff;
+    border-radius: 20px;
+    padding-top: 3%;
+  }
 /*fin contenu de la page*/
