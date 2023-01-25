@@ -220,6 +220,9 @@ body{
     color: #fff;
 }
 
+.btnRechercher:hover{
+    cursor: pointer;
+}
 
 /*fin stat pour chaque joueur*/
 /*fin css statistique*/

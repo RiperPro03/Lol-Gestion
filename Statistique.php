@@ -72,7 +72,7 @@ require 'includes/header.php';
 
                     <form method="get">
                         <input type="search" name="search" placeholder="Rechercher un Joueur" autocomplete="off">
-                        <input type="submit" value="Rechercher">
+                        <input type="submit" class="btnRechercher"value="Rechercher">
                         <a href="./Statistique"><i class="fa-solid fa-rotate-right"></i></a>
                     </form>
 
