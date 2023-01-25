@@ -47,7 +47,7 @@
                     <span>Equipe adverse</span>
                 </div>
                 <div class="option">
-                    <a href="javascript:history.back()">Retour</a>
+                    <a href="./Match.php">Retour</a>
                     <input type="submit" name="formsend" value="Ajouter" class="button">
                 </div>
             </form>
