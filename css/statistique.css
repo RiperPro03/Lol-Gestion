@@ -215,6 +215,10 @@ body{
     padding-bottom: 1%;
 }
 
+.boiteStatParJoueur .tableauStatJ td a{
+    text-decoration: none;
+    color: #fff;
+}
 
 
 /*fin stat pour chaque joueur*/

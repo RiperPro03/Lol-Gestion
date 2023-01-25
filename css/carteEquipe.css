@@ -47,7 +47,7 @@
 }
 
 #victoire {
-    --Couleur-Contour: #00ff00;
+    --Couleur-Contour: rgb(0, 0, 255);
 }
 
 /*fin des line du contour*/
