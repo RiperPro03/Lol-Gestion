@@ -86,8 +86,26 @@ body{
 
 .boiteDetailsStat .boiteTexte .boiteStatGeneral .statGeneral{
     width: 100%;
+    display: inline-flex;
+    justify-content: space-between;
 }
-.boiteDetailsStat .boiteTexte .boiteStatGeneral .statGeneral h2{
+
+.boiteDetailsStat .boiteTexte .boiteStatGeneral .statGeneral .nombreStat{
+    width: 50%;
+    display: inline-flex;
+    justify-content: space-between;
+}
+
+.boiteDetailsStat .boiteTexte .boiteStatGeneral .statGeneral .pourcentStat{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+.boiteDetailsStat .boiteTexte .boiteStatGeneral h2{
     width: 100%;
     color: #fff;
     text-align: center;
@@ -139,63 +157,31 @@ body{
     padding: 1%;
     cursor: pointer;
 }
-/*popup de selection d'un joueur*/
-.popup{
-    width: 80%;
-    padding: 2.5%;
-    height: 20px;
-    border-radius: 20px;
-    justify-content: center;
-    align-content: center;
-    display: flex;
-    background: #ffffff;
-    box-shadow: 0 2px 5px;
-    visibility: hidden;
-    margin: auto;
-    flex-direction: column;
-    transform: translateY(-350px);
-    opacity: 0;
-    transition: 1s;
+
+.boiteStatParJoueur form{
+
+    margin-left: 5%;
+    margin-right: 50%;
+    margin-bottom: 3%;
+    display: inline-flex;
+    justify-content: space-around;
 }
 
-.popup h2{
-    text-align: center;
-    color: #000;
-}
-.popup .listeJoueur{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-}
-.popup .listeJoueur .carteJoueurDetail{
-    margin-top: 1%;
-    margin-bottom: 1%;
+.boiteStatParJoueur form input{
+    padding: 2%;
+    color: #e8e8e8;
+    background: #022d3b;
+    border: solid 2px #96810b;
+    border-radius: 15px;
 }
 
-.popup button{
-    width: 90%;
-    text-decoration: none;
-    color: white;
-    border: #dc143c;
-    border-radius: 17px;
-    background: #dc143c;
-    box-shadow:  5px 5px 2px #b21031;
-    padding: 1%;
-    margin: auto;
-    cursor: pointer;
+.boiteStatParJoueur form a{
+    padding: 2%;
+    color: #e8e8e8;
+    background: #022d3b;
+    border: solid 2px #96810b;
+    border-radius: 15px;
 }
-
-.open-popup{
-    visibility: visible;
-    height: auto;
-    opacity: 1;
-    
-}
-
-.popupActive{
-    visibility: hidden;
-}
-/*fin du popup*/
 
 .boiteStatParJoueur .tableauStatJ{
     margin: auto;

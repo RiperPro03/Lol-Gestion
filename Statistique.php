@@ -29,6 +29,7 @@ require 'includes/header.php';
             <div class="boiteTexte">
 
                 <div class="boiteStatGeneral">
+                    <h2> Statistique Globale</h2>
                     <div class="statGeneral">
                         <?php
                         $q = $db->prepare('SELECT COUNT(id_Match) AS nb_match,
@@ -49,14 +50,20 @@ require 'includes/header.php';
                         }
                         ?>
 
-                        <h2> Statistique Globale</h2>
-                        <p> Nombre de match: <span> <?= $StatMatch['nb_match'] ?> </span></p>
-                        <p> Nombre de victoire: <span> <?= $StatMatch['nb_victoire'] ?></span></p>
-                        <p> Nombre de defaite: <span> <?= $StatMatch['nb_defaite'] ?></span></p>
-                        <p> Ratio de victoire: <span id="nb_victoire"> <?= $nb_victoire ?></span>%</p>
-                        <p> Ratio de defaite: <span id="nb_defaite"> <?= $nb_defaite ?></span>%</p>
-                        <div style="width: 200px;">
-                            <canvas id="myChart"></canvas>
+                        
+                        <div class="nombreStat">
+                            <p> Nombre de match: <span> <?= $StatMatch['nb_match'] ?> </span></p>
+                            <p> Nombre de victoire: <span> <?= $StatMatch['nb_victoire'] ?></span></p>
+                            <p> Nombre de defaite: <span> <?= $StatMatch['nb_defaite'] ?></span></p>
+                        </div>
+                        <div class="pourcentStat">
+                            <div class="textStat" style="width: 100%;">
+                                <p> Ratio de victoire: <span id="nb_victoire"> <?= $nb_victoire ?></span>%</p>
+                                <p> Ratio de defaite: <span id="nb_defaite"> <?= $nb_defaite ?></span>%</p>
+                           </div>
+                            <div style="width: 50%;">
+                                <canvas id="myChart"></canvas>
+                            </div>
                         </div>
                     </div>
                 </div>
