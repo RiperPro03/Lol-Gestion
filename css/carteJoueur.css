@@ -175,7 +175,7 @@
 
 .carteJoueurDetail{
     position: relative;
-    width: 350px;
+    width: 400px;
     height: 130px;
     transition: 0.5s;
     cursor: pointer;
