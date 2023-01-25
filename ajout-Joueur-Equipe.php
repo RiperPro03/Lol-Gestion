@@ -23,7 +23,6 @@
             
             <h3>Ajouter un joueur dans l'équipe</h3>
 
-
             <form method="post" onsubmit="return validateForm()">
                 
                 <input type="hidden" name="token" value="<?=$_SESSION['authToken']?>">

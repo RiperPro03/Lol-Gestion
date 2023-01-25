@@ -106,6 +106,11 @@
                     <div class="JoueurDetail">
                         <h2> ' . $this->get_pseudo() . ' <br><span> '.$this->get_prenom().' '.$this->get_nom().'</span></h2>
                     </div>
+                    
+                    <div class="infoJoueur" style="color:white;">
+                        <h3> Poste<br> <span>'.$this->get_poste().'</span></h3>
+                    </div>
+
                     <div class="optionJoueur">
                             <a href="supprimer-Joueur-Equipe?idJ='. $this->idJoueur .'&idE='. $this->idMatch .'" class="boutonJoueur"><i class="fa-solid fa-trash"></i></a>
                     </div>
@@ -158,6 +163,9 @@
                 <div class="boiteInfoJoueurDetail">
                     <div class="JoueurDetail">
                         <h2> ' . $this->get_pseudo() . ' <br><span> '.$this->get_prenom().' '.$this->get_nom().'</span></h2>
+                    </div>
+                    <div class="infoJoueur" style="color:white;">
+                        <h3> Poste<br> <span>'.$this->get_poste().'</span></h3>
                     </div>
                     <div class="optionJoueur">
                             <a href="supprimer-Joueur-Equipe?idJ='. $this->idJoueur .'&idM='. $this->idMatch .'" class="boutonJoueur"><i class="fa-solid fa-trash"></i></a>
