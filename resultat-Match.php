@@ -32,7 +32,7 @@
                         <input type="text" name="score" pattern="^([0-9]+):([0-9]+)$" placeholder="Score" required="required" autocomplete="off">
                     </div>
                     <div class="box">
-                        <label>Gagnant</label>
+                        <label style="padding-top: 5%;">Gagnant</label>
                         <select name="gagnant" required="required">
                             <option value="<?= htmlspecialchars($match['equipe_adverse']); ?>" <?php if ($match['gagnant'] == htmlspecialchars($match['equipe_adverse'])) echo "selected"; ?>><?= htmlspecialchars($match['equipe_adverse']); ?></option>
                             <option value="My Team" <?php if ($match['gagnant'] == "My Team") echo "selected"; ?>>My Team</option>

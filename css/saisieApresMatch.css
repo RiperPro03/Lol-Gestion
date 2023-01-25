@@ -50,23 +50,43 @@ form{
     flex-direction: column;
     width: 100%;
 }
-.box {
-    width: 40%;
-    padding: 0.4rem 0.8rem;
-    display: flex;
-    justify-content: space-between;
-}
+
+
 
 .boxCard{
     width: 100%;
 }
+
 .Resultat{
     margin-bottom: 5%;
     width: 100%;
-    justify-content: center;
     align-items: center;
     display: flex;
+    flex-direction: column;
 }
+
+.box {
+    width: 40%;
+    padding: 0.4rem 0.8rem;
+    display: inline-flex;
+    justify-content: space-between;
+    font-family: Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+    margin: 2%;
+}
+
+.box select{
+    padding: 10px;
+    outline: none;
+    border: none;
+    color: #000;
+    background: transparent;
+    border: 2px solid #000;
+    transition: 0.1s;
+    font-size: 1em;
+    margin-left: 6%;
+}
+
 .joueurEquipe{
     width: 100%;
 }
@@ -129,8 +149,9 @@ a:hover {
 
 .inputBox {
     position: relative;
-    width: 250px;
+    width: 30%;
     padding: 15px;
+    margin: 2%;
 }
 
 .inputBox input {
