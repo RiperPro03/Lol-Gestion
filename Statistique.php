@@ -52,9 +52,9 @@ require 'includes/header.php';
 
                         
                         <div class="nombreStat">
-                            <p> Nombre de match: <span> <?= $StatMatch['nb_match'] ?> </span></p>
-                            <p> Nombre de victoire: <span> <?= $StatMatch['nb_victoire'] ?></span></p>
-                            <p> Nombre de defaite: <span> <?= $StatMatch['nb_defaite'] ?></span></p>
+                            <p>Nombre de match: <span><?= $StatMatch['nb_match'] ?></span></p>
+                            <p>Nombre de victoire: <span><?= $StatMatch['nb_victoire'] ?></span></p>
+                            <p>Nombre de defaite: <span><?= $StatMatch['nb_defaite'] ?></span></p>
                         </div>
                         <div class="pourcentStat">
                             <div class="textStat" style="width: 100%;">
