@@ -16,6 +16,6 @@ Le projet est une application pour la gestion d'une équipe de e-sport de League
 
 # MCD & MLD
 
-![MLD](https://i.imgur.io/Hr6cEpy_d.webp?maxwidth=600&shape=thumb&fidelity=medium)
+<img src="https://i.imgur.io/Hr6cEpy_d.webp" alt="MLD" width="600x"/>
 
-![MCD](https://i.imgur.com/7haPMpz.png =600x)
+<img src="https://i.imgur.com/7haPMpz.png" alt="MCD" width="600x"/>
