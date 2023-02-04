@@ -12,3 +12,10 @@ Le projet est une application pour la gestion d'une équipe de e-sport de League
 
 
 - [Clement SAURY](https://github.com/kleeeem)
+
+
+# MCD & MLD
+
+![MLD](https://imgur.com/a/ouJYwH1)
+
+![MCD](https://imgur.com/a/dmXIBOp)
