@@ -18,4 +18,4 @@ Le projet est une application pour la gestion d'une équipe de e-sport de League
 
 ![MLD](https://imgur.com/a/ouJYwH1)
 
-![MCD](https://imgur.com/a/dmXIBOp)
+![MCD](https://i.imgur.com/7haPMpz.png)
